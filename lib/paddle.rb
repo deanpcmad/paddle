@@ -1,8 +1,20 @@
 # frozen_string_literal: true
 
+require "faraday"
+require "faraday_middleware"
+
 require_relative "paddle/version"
 
 module Paddle
-  class Error < StandardError; end
-  # Your code goes here...
+  
+  autoload :Client, "paddle/client"
+  autoload :Collection, "paddle/collection"
+  autoload :Error, "paddle/error"
+  autoload :Resource, "paddle/resource"
+  autoload :Object, "paddle/object"
+
+  autoload :PlansResource, "paddle/resources/plans"
+
+  autoload :Plan, "paddle/objects/plan"
+  
 end

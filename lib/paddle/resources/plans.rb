@@ -6,7 +6,6 @@ module Paddle
       Collection.from_response(response, type: Plan)
     end
 
-    # Broadcaster ID must match the user in the OAuth token
     def create(name:, type:, **params)
       attrs = {plan_name: name, plan_type: type}
       create_response = post_request("subscription/plans_create", body: attrs.merge(params))

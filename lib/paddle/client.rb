@@ -1,7 +1,7 @@
 module Paddle
   class Client
-    BASE_URL = "https://vendors.paddle.com/api/2.0"
-    SANDBOX_BASE_URL = "https://sandbox-vendors.paddle.com/api/2.0"
+    BASE_URL = "https://vendors.paddle.com/api"
+    SANDBOX_BASE_URL = "https://sandbox-vendors.paddle.com/api"
 
     attr_reader :vendor_id, :vendor_auth_code, :sandbox, :adapter
 
@@ -17,6 +17,10 @@ module Paddle
 
     def plans
       PlansResource.new(self)
+    end
+
+    def coupons
+      CouponsResource.new(self)
     end
 
     def connection

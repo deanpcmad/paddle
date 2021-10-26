@@ -14,7 +14,9 @@ module Paddle
   autoload :Object, "paddle/object"
 
   autoload :PlansResource, "paddle/resources/plans"
+  autoload :CouponsResource, "paddle/resources/coupons"
 
   autoload :Plan, "paddle/objects/plan"
+  autoload :Coupon, "paddle/objects/coupon"
   
 end

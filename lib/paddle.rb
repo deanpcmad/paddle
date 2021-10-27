@@ -19,6 +19,7 @@ module Paddle
   autoload :LicensesResource, "paddle/resources/licenses"
   autoload :PayLinksResource, "paddle/resources/pay_links"
   autoload :TransactionsResource, "paddle/resources/transactions"
+  autoload :PaymentsResource, "paddle/resources/payments"
 
   autoload :Plan, "paddle/objects/plan"
   autoload :Coupon, "paddle/objects/coupon"
@@ -26,5 +27,7 @@ module Paddle
   autoload :License, "paddle/objects/license"
   autoload :PayLink, "paddle/objects/pay_link"
   autoload :Transaction, "paddle/objects/transaction"
+  autoload :Payment, "paddle/objects/payment"
+  autoload :PaymentRefund, "paddle/objects/payment_refund"
   
 end

@@ -27,6 +27,10 @@ module Paddle
       ProductsResource.new(self)
     end
 
+    def licenses
+      LicensesResource.new(self)
+    end
+
     def connection
       url = (sandbox == true ? SANDBOX_BASE_URL : BASE_URL)
       @connection ||= Faraday.new(url) do |conn|

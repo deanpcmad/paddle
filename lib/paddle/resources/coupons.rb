@@ -9,7 +9,7 @@ module Paddle
     def create(coupon_type:, discount_type:, discount_amount:, **params)
       attrs = {coupon_type: coupon_type, discount_type: discount_type, discount_amount: discount_amount}
 
-       response = post_request("2.1/product/create_coupon", body: attrs.merge(params))
+      response = post_request("2.1/product/create_coupon", body: attrs.merge(params))
 
       coupons =  response.body["response"]["coupon_codes"]
 

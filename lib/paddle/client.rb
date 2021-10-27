@@ -47,8 +47,8 @@ module Paddle
       UsersResource.new(self)
     end
 
-    def alert_webhooks
-      AlertWebhooksResource.new(self)
+    def webhooks
+      WebhooksResource.new(self)
     end
 
     def connection

@@ -1,5 +1,5 @@
 module Paddle
-  class AlertWebhooksResource < Resource
+  class WebhooksResource < Resource
 
     def list(**params)
       response = post_request("2.0/alert/webhooks", body: params)

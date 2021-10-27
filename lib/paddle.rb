@@ -22,7 +22,7 @@ module Paddle
   autoload :PaymentsResource, "paddle/resources/payments"
   autoload :UsersResource, "paddle/resources/users"
 
-  autoload :AlertWebhooksResource, "paddle/resources/alert_webhooks"
+  autoload :WebhooksResource, "paddle/resources/webhooks"
 
   autoload :Plan, "paddle/objects/plan"
   autoload :Coupon, "paddle/objects/coupon"

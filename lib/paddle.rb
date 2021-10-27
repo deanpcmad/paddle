@@ -20,6 +20,7 @@ module Paddle
   autoload :PayLinksResource, "paddle/resources/pay_links"
   autoload :TransactionsResource, "paddle/resources/transactions"
   autoload :PaymentsResource, "paddle/resources/payments"
+  autoload :UsersResource, "paddle/resources/users"
 
   autoload :Plan, "paddle/objects/plan"
   autoload :Coupon, "paddle/objects/coupon"
@@ -29,5 +30,6 @@ module Paddle
   autoload :Transaction, "paddle/objects/transaction"
   autoload :Payment, "paddle/objects/payment"
   autoload :PaymentRefund, "paddle/objects/payment_refund"
+  autoload :User, "paddle/objects/user"
   
 end

@@ -22,5 +22,10 @@ module Paddle
       return true if response.success?
     end
 
+    def update(**params)
+      response = post_request("2.1/product/update_coupon", body: params)
+      return true if response.success?
+    end
+
   end
 end

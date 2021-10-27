@@ -23,6 +23,7 @@ module Paddle
   autoload :UsersResource, "paddle/resources/users"
   autoload :WebhooksResource, "paddle/resources/webhooks"
   autoload :ModifiersResource, "paddle/resources/modifiers"
+  autoload :ChargesResource, "paddle/resources/charges"
 
   autoload :Plan, "paddle/objects/plan"
   autoload :Coupon, "paddle/objects/coupon"
@@ -35,5 +36,6 @@ module Paddle
   autoload :User, "paddle/objects/user"
   autoload :Webhook, "paddle/objects/webhook"
   autoload :Modifier, "paddle/objects/modifier"
+  autoload :Charge, "paddle/objects/charge"
   
 end

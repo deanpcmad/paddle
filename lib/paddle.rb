@@ -22,6 +22,8 @@ module Paddle
   autoload :PaymentsResource, "paddle/resources/payments"
   autoload :UsersResource, "paddle/resources/users"
 
+  autoload :AlertWebhooksResource, "paddle/resources/alert_webhooks"
+
   autoload :Plan, "paddle/objects/plan"
   autoload :Coupon, "paddle/objects/coupon"
   autoload :Product, "paddle/objects/product"
@@ -31,5 +33,6 @@ module Paddle
   autoload :Payment, "paddle/objects/payment"
   autoload :PaymentRefund, "paddle/objects/payment_refund"
   autoload :User, "paddle/objects/user"
+  autoload :Webhook, "paddle/objects/webhook"
   
 end

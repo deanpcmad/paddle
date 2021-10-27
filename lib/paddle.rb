@@ -18,11 +18,13 @@ module Paddle
   autoload :ProductsResource, "paddle/resources/products"
   autoload :LicensesResource, "paddle/resources/licenses"
   autoload :PayLinksResource, "paddle/resources/pay_links"
+  autoload :TransactionsResource, "paddle/resources/transactions"
 
   autoload :Plan, "paddle/objects/plan"
   autoload :Coupon, "paddle/objects/coupon"
   autoload :Product, "paddle/objects/product"
   autoload :License, "paddle/objects/license"
   autoload :PayLink, "paddle/objects/pay_link"
+  autoload :Transaction, "paddle/objects/transaction"
   
 end

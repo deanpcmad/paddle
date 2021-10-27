@@ -35,6 +35,10 @@ module Paddle
       PayLinksResource.new(self)
     end
 
+    def transactions
+      TransactionsResource.new(self)
+    end
+
     def connection
       url = (sandbox == true ? SANDBOX_BASE_URL : BASE_URL)
       @connection ||= Faraday.new(url) do |conn|

@@ -5,8 +5,6 @@ module Paddle
     def self.from_response(response, type:, key: nil)
       body = response.body
 
-      puts body
-
       if key.is_a?(String)
         data  = body["response"][key].map { |attrs| type.new(attrs) }
         total = body["response"]["total"]
@@ -14,8 +12,6 @@ module Paddle
         data  = body["response"].map { |attrs| type.new(attrs) }
         total = body["response"].count
       end
-
-      puts data
 
       new(
         data: data,

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    paddlerb (0.1.1)
+    paddlerb (0.1.2)
       faraday (~> 1.7)
       faraday_middleware (~> 1.1)
 
@@ -9,7 +9,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     dotenv (2.7.6)
-    faraday (1.9.3)
+    faraday (1.10.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)

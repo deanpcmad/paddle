@@ -1,5 +1,5 @@
 module Paddle
-  class SubscriptionsResource < Resource
+  class UsersResource < Resource
 
     def list(**params)
       response = post_request("2.0/subscription/users", body: params)

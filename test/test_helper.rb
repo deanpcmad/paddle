@@ -9,11 +9,11 @@ class Minitest::Test
     [status, headers, File.read("test/fixtures/#{fixture}.json")]
   end
 
-  def stub_request(path, response:, method: :get, body: {})
-    Faraday::Adapter::Test::Stubs.new do |stub|
-      arguments = [method, "/v2/#{path}"]
-      arguments << body.to_json if [:post, :put, :patch].include?(method)
-      stub.send(*arguments) { |env| response }
+  def stub_request(path, response:, body: {})
+    stubs = Faraday::Adapter::Test::Stubs.new
+    stubs.post("/api/#{path}") do
+      stub_response(fixture: response)
     end
+    stubs
   end
 end

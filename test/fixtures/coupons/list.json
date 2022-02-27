@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "response": [
+    {
+      "coupon": "56604810a6990",
+      "description": "56604810a6dcd",
+      "discount_type": "percentage",
+      "discount_amount": 0.5,
+      "discount_currency": "USD",
+      "allowed_uses": 3,
+      "times_used": 2,
+      "is_recurring": true,
+      "expires": "2020-12-03 00:00:00"
+    }
+  ]
+}

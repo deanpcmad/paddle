@@ -64,7 +64,6 @@ module Paddle
       @connection ||= Faraday.new(url) do |conn|
         conn.request :json
 
-        conn.response :dates
         conn.response :json, content_type: "application/json"
 
         conn.adapter adapter, @stubs

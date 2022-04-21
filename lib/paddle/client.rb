@@ -43,8 +43,8 @@ module Paddle
       PaymentsResource.new(self)
     end
 
-    def subscriptions
-      SubscriptionsResource.new(self)
+    def users
+      UsersResource.new(self)
     end
 
     def webhooks

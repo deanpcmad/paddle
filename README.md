@@ -1,8 +1,6 @@
-# Paddle
+# PaddleRB
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/paddle`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+PaddleRB is a Ruby library for interacting with the Paddle API.
 
 ## Installation
 
@@ -12,24 +10,62 @@ Add this line to your application's Gemfile:
 gem "paddlerb"
 ```
 
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install paddle
-
 ## Usage
 
-TODO: Write usage instructions here
+### Set Client Details
 
-## Development
+Firstly you'll need to set your Vendor ID, Vendor Auth Code and if you want
+to use the Sandbox API or not.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+You can find your vendor details [here for production](https://vendors.paddle.com/authentication),
+or [here for sandbox](https://sandbox-vendors.paddle.com/authentication)
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+@client = Paddle::Client.new(
+  vendor_id: "",
+  vendor_auth_code: "",
+  sandbox: true
+)
+```
+
+### Plans
+
+```ruby
+# Retrieves a list of Plans
+@client.plans.list
+```
+
+### Subscription Users
+
+```ruby
+# List all users subscribed to any plan
+@client.users.list
+@client.users.list(subscription_id: "abc123")
+@client.users.list(plan_id: "abc123")
+@client.users.list(state: "active")
+@client.users.list(state: "deleted")
+
+# Update a user's subscription
+# https://developer.paddle.com/api-reference/e3872343dfbba-update-user
+@client.users.update(subscription_id: "abc123")
+
+# Pause a user's subscription
+@client.users.pause(subscription_id: "abc123")
+
+# Unpause a user's subscription
+@client.users.unpause(subscription_id: "abc123")
+
+# Update the Postcode/ZIP Code of a user's subscription
+@client.users.update_postcode(subscription_id: "abc123", postcode: "123abc")
+
+# Cancel a user's subscription
+@client.users.cancel(subscription_id: "abc123")
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/paddle.
+Bug reports and pull requests are welcome on GitHub at https://github.com/deanpcmad/paddlerb.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

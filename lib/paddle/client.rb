@@ -1,13 +1,18 @@
 module Paddle
   class Client
-    BASE_URL = "https://vendors.paddle.com/api"
-    SANDBOX_BASE_URL = "https://sandbox-vendors.paddle.com/api"
+
+    BASE_URL = "https://api.paddle.com"
+    SANDBOX_BASE_URL = "https://sandbox-api.paddle.com"
+
+    CLASSIC_BASE_URL = "https://vendors.paddle.com/api"
+    SANDBOX_CLASSIC_BASE_URL = "https://sandbox-vendors.paddle.com/api"
 
     attr_reader :vendor_id, :vendor_auth_code, :sandbox, :adapter
 
-    def initialize(vendor_id:, vendor_auth_code:, sandbox: false, adapter: Faraday.default_adapter, stubs: nil)
+    def initialize(vendor_id:, vendor_auth_code:, classic: false, sandbox: false, adapter: Faraday.default_adapter, stubs: nil)
       @vendor_id = vendor_id
       @vendor_auth_code = vendor_auth_code
+      @classic = classic
       @sandbox = sandbox
       @adapter = adapter
 
@@ -15,52 +20,96 @@ module Paddle
       @stubs = stubs
     end
 
+    def classic?
+      @classic == true
+    end
+    def sandbox?
+      @sandbox == true
+    end
+
     def plans
-      PlansResource.new(self)
+      if classic?
+        Classic::PlansResource.new(self)
+      end
     end
 
     def coupons
-      CouponsResource.new(self)
+      if classic?
+        Classic::CouponsResource.new(self)
+      end
     end
 
     def products
-      ProductsResource.new(self)
+      if classic?
+        Classic::ProductsResource.new(self)
+      end
     end
 
     def licenses
-      LicensesResource.new(self)
+      if classic?
+        Classic::LicensesResource.new(self)
+      end
     end
 
     def pay_links
-      PayLinksResource.new(self)
+      if classic?
+        Classic::PayLinksResource.new(self)
+      end
     end
 
     def transactions
-      TransactionsResource.new(self)
+      if classic?
+        Classic::TransactionsResource.new(self)
+      end
     end
 
     def payments
-      PaymentsResource.new(self)
+      if classic?
+        Classic::PaymentsResource.new(self)
+      end
     end
 
     def users
-      UsersResource.new(self)
+      if classic?
+        Classic::UsersResource.new(self)
+      end
     end
 
     def webhooks
-      WebhooksResource.new(self)
+      if classic?
+        Classic::WebhooksResource.new(self)
+      end
     end
 
     def modifiers
-      ModifiersResource.new(self)
+      if classic?
+        Classic::ModifiersResource.new(self)
+      end
     end
 
     def charges
-      ChargesResource.new(self)
+      if classic?
+        Classic::ChargesResource.new(self)
+      end
+    end
+
+    def url
+      if classic?
+        if sandbox?
+          SANDBOX_CLASSIC_BASE_URL
+        else
+          CLASSIC_BASE_URL
+        end
+      else
+        if sandbox?
+          SANDBOX_BASE_URL
+        else
+          BASE_URL
+        end
+      end
     end
 
     def connection
-      url = (sandbox == true ? SANDBOX_BASE_URL : BASE_URL)
       @connection ||= Faraday.new(url) do |conn|
         conn.request :json
 

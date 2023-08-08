@@ -15,6 +15,7 @@ require 'dotenv/load'
 # Pry.start
 
 @client = Paddle::Client.new(vendor_id: ENV["PADDLE_VENDOR_ID"], vendor_auth_code: ENV["PADDLE_VENDOR_AUTH_CODE"], sandbox: true)
+@client_classic = Paddle::Client.new(vendor_id: ENV["PADDLE_VENDOR_ID"], vendor_auth_code: ENV["PADDLE_VENDOR_AUTH_CODE"], sandbox: true, classic: true)
 
 require "irb"
 IRB.start(__FILE__)

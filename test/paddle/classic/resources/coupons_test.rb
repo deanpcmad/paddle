@@ -3,7 +3,7 @@ require "test_helper"
 class ClassicCouponsResourceTest < Minitest::Test
 
   def test_list
-    stub = stub_request("2.0/product/list_coupons", response: "classic/coupons/list")
+    stub = stub_classic_request("2.0/product/list_coupons", response: "classic/coupons/list")
     client = Paddle::Classic::Client.new(vendor_id: "123", vendor_auth_code: "abc", adapter: :test, stubs: stub)
 
     coupons = client.coupons.list(product_id: "123")

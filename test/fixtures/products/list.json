@@ -1,0 +1,76 @@
+{
+  "data": [
+    {
+      "id": "pro_01gsz97mq9pa4fkyy0wqenepkz",
+      "name": "Custom domains",
+      "tax_category": "standard",
+      "description": "Make ChatApp truly your own with custom domains! Custom domains reinforce your brand identity and make it easy for your team to access ChatApp.",
+      "image_url": "https://twemoji.maxcdn.com/v/latest/72x72/1f30e.png",
+      "custom_data": {
+        "customer_reference_id": "abcd1234"
+      },
+      "status": "active",
+      "created_at": "2023-02-23T14:01:02.441Z"
+    },
+    {
+      "id": "pro_01gsz92krfzy3hcx5h5rtgnfwz",
+      "name": "VIP support",
+      "tax_category": "standard",
+      "description": "Get exclusive access to our expert team of product specialists, available to help you make the most of your ChatApp subscription. We're also on hand to help with technical questions or billing issues.",
+      "image_url": "https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/1f481-1f3fe.png",
+      "custom_data": {
+        "customer_reference_id": "abcd1234"
+      },
+      "status": "active",
+      "created_at": "2023-02-23T13:58:17.615Z"
+    },
+    {
+      "id": "pro_01gsz4vmqbjk3x4vvtafffd540",
+      "name": "ChatApp Enterprise",
+      "tax_category": "standard",
+      "description": "The ultimate solution for businesses that require top-of-the-line features and customizations. Includes all the features of the Pro plan, plus personalized onboarding, dedicated account management, and the ability to pay via invoice.",
+      "image_url": "https://twemoji.maxcdn.com/v/latest/72x72/1f680.png",
+      "custom_data": {
+        "customer_reference_id": "abcd1234"
+      },
+      "status": "active",
+      "created_at": "2023-02-23T12:44:34.923Z"
+    },
+    {
+      "id": "pro_01gsz4t5hdjse780zja8vvr7jg",
+      "name": "ChatApp Pro",
+      "tax_category": "standard",
+      "description": "Everything in basic, plus access to a suite of powerful tools and features designed to take your team's productivity to the next level. Enjoy advanced integrations, improved admin controls, and cross-company chat.",
+      "image_url": "https://twemoji.maxcdn.com/v/latest/72x72/2708.png",
+      "custom_data": {
+        "customer_reference_id": "abcd1234"
+      },
+      "status": "active",
+      "created_at": "2023-02-23T12:43:46.605Z"
+    },
+    {
+      "id": "pro_01gsz4s0w61y0pp88528f1wvvb",
+      "name": "ChatApp Basic",
+      "tax_category": "standard",
+      "description": "Ideal for small teams who want to stay connected and organized. Access to all the essential features, including unlimited messaging, file sharing, and integrations with your favorite tools.",
+      "image_url": "https://twemoji.maxcdn.com/v/latest/72x72/1f6b2.png",
+      "custom_data": {
+        "customer_reference_id": "abcd1234"
+      },
+      "status": "active",
+      "created_at": "2023-02-23T12:43:09.062Z"
+    }
+  ],
+  "meta": {
+    "request_id": "935768b4-8cf4-4691-801c-3e1281a8d942",
+    "pagination": {
+      "per_page": 10,
+      "next": "https://api.paddle.com/products?after=pro_01gsz4s0w61y0pp88528f1wvvb",
+      "custom_data": {
+        "customer_reference_id": "abcd1234"
+      },
+      "has_more": false,
+      "estimated_total": 5
+    }
+  }
+}

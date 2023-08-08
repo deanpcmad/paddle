@@ -11,7 +11,7 @@ module Paddle
       Product.new(response.body["data"])
     end
 
-    def retrieve(id:)
+    def retrieve(id)
       response = get_request("products/#{id}")
       Product.new(response.body["data"])
     end

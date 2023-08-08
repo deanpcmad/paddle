@@ -28,7 +28,6 @@ module Paddle
     end
 
     def connection
-      url = (sandbox == true ? SANDBOX_BASE_URL : BASE_URL)
       @connection ||= Faraday.new(url) do |conn|
         conn.request :authorization, :Bearer, api_key
 

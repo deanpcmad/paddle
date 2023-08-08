@@ -14,6 +14,10 @@ module Paddle
 
   # Load Classic API
   module Classic
+    autoload :Client, "paddle/classic/client"
+    autoload :Collection, "paddle/classic/collection"
+    autoload :Resource, "paddle/classic/resource"
+
     autoload :PlansResource, "paddle/classic/resources/plans"
     autoload :CouponsResource, "paddle/classic/resources/coupons"
     autoload :ProductsResource, "paddle/classic/resources/products"

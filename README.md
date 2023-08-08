@@ -1,6 +1,6 @@
 # PaddleRB
 
-PaddleRB is a Ruby library for interacting with the Paddle API.
+PaddleRB is a Ruby library for interacting with the Paddle APIs, both Classic and Billing.
 
 **This library is currently under development for Paddle's new Billing APIs**
 
@@ -12,7 +12,14 @@ Add this line to your application's Gemfile:
 gem "paddlerb"
 ```
 
-## Usage
+## Billing API
+
+For accessing the new Billing API from Paddle.
+
+
+## Classic API
+
+For accessing the Paddle Classic API
 
 ### Set Client Details
 
@@ -22,16 +29,12 @@ to use the Sandbox API or not.
 You can find your vendor details [here for production](https://vendors.paddle.com/authentication),
 or [here for sandbox](https://sandbox-vendors.paddle.com/authentication)
 
-For Paddle's Classic API, add `classic: true` to the client options.
-
 ```ruby
-@client = Paddle::Client.new(
+@client = Paddle::Classic::Client.new(
   vendor_id: "",
   vendor_auth_code: "",
   # Use the sandbox version of the API
-  sandbox: true,
-  # To use the Classic API
-  classic: true
+  sandbox: true
 )
 ```
 

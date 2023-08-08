@@ -2,16 +2,11 @@ module Paddle
   class Collection
     attr_reader :data, :total
 
-    def self.from_response(response, type:, key: nil)
+    def self.from_response(response, type:)
       body = response.body
 
-      if key.is_a?(String)
-        data  = body["response"][key].map { |attrs| type.new(attrs) }
-        total = body["response"]["total"]
-      else
-        data  = body["response"].map { |attrs| type.new(attrs) }
-        total = body["response"].count
-      end
+      data  = body["data"].map { |attrs| type.new(attrs) }
+      total = body["meta"]["pagination"]["estimated_total"]
 
       new(
         data: data,

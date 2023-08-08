@@ -16,6 +16,44 @@ gem "paddlerb"
 
 For accessing the new Billing API from Paddle.
 
+I've designed this library to be similar to Stripe.
+
+### Set Client Details
+
+Firstly you'll need to set your API Key and if you want
+to use the Sandbox API or not.
+
+You can find your vendor details [here for production](https://vendors.paddle.com/authentication),
+or [here for sandbox](https://sandbox-vendors.paddle.com/authentication)
+
+```ruby
+@client = Paddle::Client.new(
+  api_key: "abc123",
+  # Use the sandbox version of the API
+  sandbox: true
+)
+```
+
+### Products
+
+```ruby
+# List all products
+# https://developer.paddle.com/api-reference/products/list-products
+@client.products.list
+@client.products.list({status: "active"})
+@client.products.list({tax_category: "saas"})
+
+# Create a product
+# https://developer.paddle.com/api-reference/products/create-product
+@client.products.create({name: "My SAAS Plan", tax_category: "saas"})
+
+# Retrieve a product
+@client.products.retrieve "pro_abc123"
+
+# Update a product
+# https://developer.paddle.com/api-reference/products/update-product
+@client.products.update("pro_abc123", {description: "This is a plan"})
+```
 
 ## Classic API
 

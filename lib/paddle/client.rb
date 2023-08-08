@@ -15,6 +15,10 @@ module Paddle
       @stubs = stubs
     end
 
+    def products
+      ProductsResource.new(self)
+    end
+
     def url
       if sandbox == true
         SANDBOX_BASE_URL

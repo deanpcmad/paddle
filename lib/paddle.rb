@@ -12,7 +12,12 @@ module Paddle
   autoload :Resource, "paddle/resource"
   autoload :Object, "paddle/object"
 
-  # Load Classic API
+  # Load Billing APIs
+  autoload :ProductsResource, "paddle/resources/products"
+
+  autoload :Product, "paddle/objects/product"
+
+  # Load Classic APIs
   module Classic
     autoload :Client, "paddle/classic/client"
     autoload :Collection, "paddle/classic/collection"

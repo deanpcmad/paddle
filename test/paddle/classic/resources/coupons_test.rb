@@ -1,6 +1,6 @@
 require "test_helper"
 
-class CouponsResourceTest < Minitest::Test
+class ClassicCouponsResourceTest < Minitest::Test
 
   def test_list
     stub = stub_request("2.0/product/list_coupons", response: "classic/coupons/list")

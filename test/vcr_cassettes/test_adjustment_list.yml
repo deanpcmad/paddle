@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-api.paddle.com/adjustments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - paddlerb/v0.1.4 (github.com/deanpcmad/paddlerb)
+      Authorization:
+      - Bearer <AUTHORIZATION>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 09 Aug 2023 21:23:10 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store, max-age=0
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      pragma:
+      - no-cache
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - 31e9142a-62ff-49d5-b056-d76c384f849c
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 7f430f045ed088b6-LHR
+      content-encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"adj_01h7e2wz3srndp9f5ttbgn6dhp","action":"credit","credit_applied_to_balance":true,"transaction_id":"txn_01h7e0r43zjgzbcpqs093spymc","subscription_id":"sub_01h7e0rzxvwdy5qy6g08h4y3tz","customer_id":"ctm_01h7dtf1yg8jge7980baqdkjk8","reason":"subscription_recurring","currency_code":"USD","status":"approved","items":[{"id":"adjitm_01h7e2wz3srndp9f5ttf39ja43","item_id":"txnitm_01h7e0rc8we655bjx8km2kpyg0","type":"proration","amount":"999","proration":{"rate":"0.99915","billing_period":{"starts_at":"2023-08-09T21:23:01.267342Z","ends_at":"2023-09-09T20:45:52.444756Z"}},"totals":{"subtotal":"833","tax":"166","total":"999"}}],"totals":{"subtotal":"833","tax":"166","total":"999","fee":"100","earnings":"733","currency_code":"USD"},"payout_totals":{"subtotal":"833","tax":"166","total":"999","fee":"100","earnings":"733","currency_code":"USD"},"created_at":"2023-08-09T21:23:01.376589Z","updated_at":"2023-08-09T21:23:03.439004Z"}],"meta":{"request_id":"31e9142a-62ff-49d5-b056-d76c384f849c","pagination":{"per_page":10,"next":"https://sandbox-api.paddle.com/adjustments?after=adj_01h7e2wz3srndp9f5ttbgn6dhp","has_more":false,"estimated_total":3}}}'
+  recorded_at: Wed, 09 Aug 2023 21:23:10 GMT
+recorded_with: VCR 6.2.0

@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://sandbox-api.paddle.com/discounts/dsc_01h7dv1243xervzbkfxkg56cnn
+    body:
+      encoding: UTF-8
+      string: '{"code":"WELCOME","enabled_for_checkout":true}'
+    headers:
+      User-Agent:
+      - paddlerb/v0.1.4 (github.com/deanpcmad/paddlerb)
+      Authorization:
+      - Bearer <AUTHORIZATION>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 09 Aug 2023 19:05:56 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store, max-age=0
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      pragma:
+      - no-cache
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - d0aace20-552b-4e15-b6cc-3e458a4a7fdb
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 7f4245fe6d16dc51-LHR
+      content-encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"id":"dsc_01h7dv1243xervzbkfxkg56cnn","status":"active","description":"$10
+        off","enabled_for_checkout":true,"code":"WELCOME","type":"flat","amount":"1000","currency_code":"USD","recur":false,"maximum_recurring_intervals":null,"usage_limit":null,"restrict_to":null,"expires_at":null,"times_used":0,"created_at":"2023-08-09T19:05:26.915Z","updated_at":"2023-08-09T19:05:56.413Z"},"meta":{"request_id":"d0aace20-552b-4e15-b6cc-3e458a4a7fdb"}}'
+  recorded_at: Wed, 09 Aug 2023 19:05:56 GMT
+recorded_with: VCR 6.2.0

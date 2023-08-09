@@ -14,24 +14,22 @@ gem "paddlerb"
 
 ## Billing API
 
-For accessing the new Billing API from Paddle.
+For accessing the new Billing API from Paddle. This library is designed to be similar to Stripe's Ruby library.
 
-I've designed this library to be similar to Stripe.
+### Configuration
 
-### Set Client Details
+Firstly you'll need to generate and set your API Key and the environment.
 
-Firstly you'll need to set your API Key and if you want
-to use the Sandbox API or not.
-
-You can find your vendor details [here for production](https://vendors.paddle.com/authentication),
+You can find and generate an API key [here for production](https://vendors.paddle.com/authentication),
 or [here for sandbox](https://sandbox-vendors.paddle.com/authentication)
 
 ```ruby
-@client = Paddle::Client.new(
-  api_key: "abc123",
-  # Use the sandbox version of the API
-  sandbox: true
-)
+Paddle.configure do |config|
+  # Use :development or :sandbox for the Sandbox API
+  # Or use :production for the Production API
+  config.environment = :sandbox
+  config.api_key = ENV["PADDLE_API_KEY"]
+end
 ```
 
 ### Products
@@ -39,20 +37,20 @@ or [here for sandbox](https://sandbox-vendors.paddle.com/authentication)
 ```ruby
 # List all products
 # https://developer.paddle.com/api-reference/products/list-products
-@client.products.list
-@client.products.list({status: "active"})
-@client.products.list({tax_category: "saas"})
+Paddle::Product.list
+Paddle::Product.list({status: "active"})
+Paddle::Product.list({tax_category: "saas"})
 
 # Create a product
 # https://developer.paddle.com/api-reference/products/create-product
-@client.products.create({name: "My SAAS Plan", tax_category: "saas"})
+Paddle::Product.create({name: "My SAAS Plan", tax_category: "saas"})
 
 # Retrieve a product
-@client.products.retrieve "pro_abc123"
+Paddle::Product.retrieve "pro_abc123"
 
 # Update a product
 # https://developer.paddle.com/api-reference/products/update-product
-@client.products.update("pro_abc123", {description: "This is a plan"})
+Paddle::Product.update("pro_abc123", {description: "This is a plan"})
 ```
 
 ### Prices
@@ -60,21 +58,21 @@ or [here for sandbox](https://sandbox-vendors.paddle.com/authentication)
 ```ruby
 # List all prices
 # https://developer.paddle.com/api-reference/prices/list-prices
-@client.prices.list
-@client.prices.list({status: "active"})
-@client.prices.list({product_id: "pro_abc123"})
+Paddle::Price.list
+Paddle::Price.list({status: "active"})
+Paddle::Price.list({product_id: "pro_abc123"})
 
 # Create a price
 # Note that unit_price amount should be a string
 # https://developer.paddle.com/api-reference/prices/create-price
-@client.prices.create({product_id: "pro_abc123", description: "A one off price", unit_price: {amount: "1000", currency_code: "GBP"}})
+Paddle::Price.create({product_id: "pro_abc123", description: "A one off price", unit_price: {amount: "1000", currency_code: "GBP"}})
 
 # Retrieve a price
-@client.prices.retrieve "pri_123abc"
+Paddle::Price.retrieve "pri_123abc"
 
 # Update a price
 # https://developer.paddle.com/api-reference/prices/update-price
-@client.prices.update("pri_123abc", {description: "An updated description"})
+Paddle::Price.update("pri_123abc", {description: "An updated description"})
 ```
 
 ### Discounts
@@ -82,20 +80,20 @@ or [here for sandbox](https://sandbox-vendors.paddle.com/authentication)
 ```ruby
 # List all discounts
 # https://developer.paddle.com/api-reference/discounts/list-discounts
-@client.discounts.list
-@client.discounts.list({status: "active"})
+Paddle::Discount.list
+Paddle::Discount.list({status: "active"})
 
 # Create a discount
 # Note that amount should be a string
 # https://developer.paddle.com/api-reference/discounts/create-discount
-@client.discounts.create({description: "$5 off", type: "flat", amount: "500", currency_code: "USD"})
+Paddle::Discount.create({description: "$5 off", type: "flat", amount: "500", currency_code: "USD"})
 
 # Retrieve a discount
-@client.discounts.retrieve "dsc_abc123"
+Paddle::Discount.retrieve "dsc_abc123"
 
 # Update a discount
 # https://developer.paddle.com/api-reference/discounts/update-discount
-@client.discounts.update("dsc_abc123", {description: "An updated description"})
+Paddle::Discount.update("dsc_abc123", {description: "An updated description"})
 ```
 
 ### Customers
@@ -103,19 +101,19 @@ or [here for sandbox](https://sandbox-vendors.paddle.com/authentication)
 ```ruby
 # List all customers
 # https://developer.paddle.com/api-reference/customers/list-customers
-@client.customers.list
-@client.customers.list({status: "active"})
+Paddle::Customer.list
+Paddle::Customer.list({status: "active"})
 
 # Create a customer
 # https://developer.paddle.com/api-reference/customers/create-customer
-@client.customers.create({email: "myemail@mydomain.com", name: "Customer Name"})
+Paddle::Customer.create({email: "myemail@mydomain.com", name: "Customer Name"})
 
 # Retrieve a customer
-@client.customers.retrieve "ctm_abc123"
+Paddle::Customer.retrieve "ctm_abc123"
 
 # Update a customer
 # https://developer.paddle.com/api-reference/customers/update-customer
-@client.customers.update("ctm_abc123", {status: "archived"})
+Paddle::Customer.update("ctm_abc123", {status: "archived"})
 ```
 
 

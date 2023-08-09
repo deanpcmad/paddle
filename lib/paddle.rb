@@ -6,26 +6,31 @@ require_relative "paddle/version"
 
 module Paddle
 
+  autoload :Configuration, "paddle/configuration"
   autoload :Client, "paddle/client"
   autoload :Collection, "paddle/collection"
   autoload :Error, "paddle/error"
-  autoload :Resource, "paddle/resource"
   autoload :Object, "paddle/object"
 
-  # Load Billing APIs
-  autoload :ProductsResource, "paddle/resources/products"
-  autoload :PricesResource, "paddle/resources/prices"
-  autoload :DiscountsResource, "paddle/resources/discounts"
-  autoload :CustomersResource, "paddle/resources/customers"
-  autoload :AddressesResource, "paddle/resources/addresses"
-  autoload :SubscriptionsResource, "paddle/resources/subscriptions"
+  class << self
+    attr_writer :config
+  end
 
-  autoload :Product, "paddle/objects/product"
-  autoload :Price, "paddle/objects/price"
-  autoload :Discount, "paddle/objects/discount"
-  autoload :Customer, "paddle/objects/customer"
-  autoload :Address, "paddle/objects/address"
-  autoload :Subscription, "paddle/objects/subscription"
+  def self.configure
+    yield(config) if block_given?
+  end
+
+  def self.config
+    @config ||= Paddle::Configuration.new
+  end
+
+  # Load Billing APIs
+  autoload :Product, "paddle/models/product"
+  autoload :Price, "paddle/models/price"
+  autoload :Discount, "paddle/models/discount"
+  autoload :Customer, "paddle/models/customer"
+  autoload :Address, "paddle/models/address"
+  autoload :Subscription, "paddle/models/subscription"
 
   # Load Classic APIs
   module Classic

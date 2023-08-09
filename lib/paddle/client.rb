@@ -1,66 +1,64 @@
 module Paddle
   class Client
 
-    BASE_URL = "https://api.paddle.com"
-    SANDBOX_BASE_URL = "https://sandbox-api.paddle.com"
+    class << self
 
-    attr_reader :api_key, :sandbox, :adapter
+      def connection
+        @connection ||= Faraday.new(Paddle.config.url) do |conn|
+          conn.request :authorization, :Bearer, Paddle.config.api_key
 
-    def initialize(api_key:, sandbox: false, adapter: Faraday.default_adapter, stubs: nil)
-      @api_key = api_key
-      @sandbox = sandbox
-      @adapter = adapter
+          conn.headers = {
+            "User-Agent" => "paddlerb/v#{VERSION} (github.com/deanpcmad/paddlerb)"
+          }
 
-      # Test stubs for requests
-      @stubs = stubs
-    end
+          conn.request :json
 
-    def products
-      ProductsResource.new(self)
-    end
-
-    def prices
-      PricesResource.new(self)
-    end
-
-    def discounts
-      DiscountsResource.new(self)
-    end
-
-    def customers
-      CustomersResource.new(self)
-    end
-
-    def addresses
-      AddressesResource.new(self)
-    end
-
-    def subscriptions
-      SubscriptionsResource.new(self)
-    end
-
-    def url
-      if sandbox == true
-        SANDBOX_BASE_URL
-      else
-        BASE_URL
+          conn.response :json, content_type: "application/json"
+        end
       end
-    end
 
-    def connection
-      @connection ||= Faraday.new(url) do |conn|
-        conn.request :authorization, :Bearer, api_key
 
-        conn.headers = {
-          "User-Agent" => "paddlerb/v#{VERSION} (github.com/deanpcmad/paddlerb)"
-        }
-
-        conn.request :json
-
-        conn.response :json, content_type: "application/json"
-
-        conn.adapter adapter, @stubs
+      def get_request(url, params: {}, headers: {})
+        handle_response connection.get(url, params, headers)
       end
+
+      def post_request(url, body: {}, headers: {})
+        handle_response connection.post(url, body, headers)
+      end
+
+      def patch_request(url, body:, headers: {})
+        handle_response connection.patch(url, body, headers)
+      end
+
+      def handle_response(response)
+        case response.status
+        when 400
+          raise Error, "Error 400: Your request was malformed. '#{response.body["error"]["code"]}'"
+        when 401
+          raise Error, "Error 401: You did not supply valid authentication credentials. '#{response.body["error"]}'"
+        when 403
+          raise Error, "Error 403: You are not allowed to perform that action. '#{response.body["error"]["code"]}'"
+        when 404
+          raise Error, "Error 404: No results were found for your request. '#{response.body["error"]["code"]}'"
+        when 409
+          raise Error, "Error 409: Your request was a conflict. '#{response.body["error"]["code"]}'"
+        when 429
+          raise Error, "Error 429: Your request exceeded the API rate limit. '#{response.body["error"]["code"]}'"
+        when 500
+          raise Error, "Error 500: We were unable to perform the request due to server-side problems. '#{response.body["error"]["code"]}'"
+        when 503
+          raise Error, "Error 503: You have been rate limited for sending more than 20 requests per second. '#{response.body["error"]["code"]}'"
+        when 501
+          raise Error, "Error 501: This resource has not been implemented. '#{response.body["error"]["code"]}'"
+        end
+
+        if response.body && response.body["error"]
+          raise Error, "Error #{response.body["error"]["code"]} - #{response.body["errors"]["message"]}"
+        end
+
+        response
+      end
+
     end
 
   end

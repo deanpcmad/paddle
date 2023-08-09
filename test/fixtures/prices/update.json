@@ -1,0 +1,69 @@
+{
+  "data": {
+    "id": "pri_01gsz8z1q1n00f12qt82y31smh",
+    "product_id": "pro_01gsz4t5hdjse780zja8vvr7jg",
+    "description": "Annual (per seat) with 30 day trial",
+    "billing_cycle": {
+      "interval": "year",
+      "frequency": 1
+    },
+    "trial_period": {
+      "interval": "day",
+      "frequency": 30
+    },
+    "tax_mode": "account_setting",
+    "unit_price": {
+      "amount": "31500",
+      "currency_code": "USD"
+    },
+    "unit_price_overrides": [
+      {
+        "country_codes": [
+          "PL"
+        ],
+        "unit_price": {
+          "amount": "84000",
+          "currency_code": "PLN"
+        }
+      },
+      {
+        "country_codes": [
+          "IN"
+        ],
+        "unit_price": {
+          "amount": "0",
+          "currency_code": "INR"
+        }
+      },
+      {
+        "country_codes": [
+          "UA"
+        ],
+        "unit_price": {
+          "amount": "424000",
+          "currency_code": "UAH"
+        }
+      },
+      {
+        "country_codes": [
+          "NG"
+        ],
+        "unit_price": {
+          "amount": "15000",
+          "currency_code": "USD"
+        }
+      }
+    ],
+    "status": "active",
+    "quantity": {
+      "minimum": 10,
+      "maximum": 999
+    },
+    "custom_data": {
+      "customer_reference_id": "abcd1231"
+    }
+  },
+  "meta": {
+    "request_id": "fb6b92f9-77a0-4443-9363-70adbfdfcaaf"
+  }
+}

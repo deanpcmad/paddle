@@ -1,0 +1,15 @@
+{
+  "data": {
+    "id": "ctm_01gw1xk43eqy2rrf0cs93zvm6t",
+    "name": "George Oscar Bluth, Jr",
+    "email": "gob@bluthcompany.com",
+    "marketing_consent": true,
+    "status": "active",
+    "locale": "en",
+    "created_at": "2023-03-21T11:06:42.670321Z",
+    "updated_at": "2023-03-28T09:16:53.397216Z"
+  },
+  "meta": {
+    "request_id": "d573c423-34c4-48a9-b12c-2e3287108fa0"
+  }
+}

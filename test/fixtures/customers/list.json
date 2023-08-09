@@ -1,0 +1,33 @@
+{
+  "data": [
+    {
+      "id": "ctm_01gw1xk43eqy2rrf0cs93zvm6t",
+      "name": "George Oscar Bluth, Jr.",
+      "email": "gob@gobiasindustries.com",
+      "marketing_consent": false,
+      "status": "active",
+      "locale": "en",
+      "created_at": "2023-03-21T11:06:42.670321Z",
+      "updated_at": "2023-03-21T11:06:42.670321Z"
+    },
+    {
+      "id": "ctm_01gvcz30f4d77tfnn60snnyxfd",
+      "name": "Michael Bluth",
+      "email": "michael@bluthcompany.com",
+      "marketing_consent": false,
+      "status": "active",
+      "locale": "en",
+      "created_at": "2023-03-13T07:48:48.740757Z",
+      "updated_at": "2023-03-13T07:48:48.740757Z"
+    }
+  ],
+  "meta": {
+    "request_id": "a19b8aac-13bb-43fd-beb9-5aae77d1119f",
+    "pagination": {
+      "per_page": 10,
+      "next": "https://api.paddle.com/customers?after=ctm_01gt1gxayskhdpf2s5hm47a2de",
+      "has_more": false,
+      "estimated_total": 2
+    }
+  }
+}

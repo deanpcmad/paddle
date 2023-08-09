@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://sandbox-api.paddle.com/notification-settings/ntfset_01h7e0ebp7dz0ygz22bdkb5ckb
+    body:
+      encoding: UTF-8
+      string: '{"subscribed_events":["transaction.billed","subscription.activated"]}'
+    headers:
+      User-Agent:
+      - paddlerb/v0.1.4 (github.com/deanpcmad/paddlerb)
+      Authorization:
+      - Bearer <AUTHORIZATION>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 09 Aug 2023 20:42:01 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache, private
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      correlation-id:
+      - 1804c33b-e7e1-4bd2-90bd-73c492af9344
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - 1804c33b-e7e1-4bd2-90bd-73c492af9344
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      x-correlation-id:
+      - 1804c33b-e7e1-4bd2-90bd-73c492af9344
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 7f42d2be3cd97785-LHR
+      content-encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"id":"ntfset_01h7e0ebp7dz0ygz22bdkb5ckb","description":"Test
+        Webhook","type":"url","destination":"http://localhost:3000/webhook","active":true,"api_version":1,"include_sensitive_fields":false,"subscribed_events":[{"name":"transaction.billed","description":"Occurs
+        when a transaction is billed. Its status field changes to billed and billed_at
+        is populated.","group":"Transaction","available_versions":[1]},{"name":"subscription.activated","description":"Occurs
+        when a subscription becomes active. Its status field changes to active. This
+        means any trial period has elapsed and Paddle has successfully billed the
+        customer.","group":"Subscription","available_versions":[1]}],"endpoint_secret_key":"pdl_ntfset_01h7e0ebp7dz0ygz22bdkb5ckb_DKzEps5c1KskQVLjpzbffMnWy6xesXEl"},"meta":{"request_id":"1804c33b-e7e1-4bd2-90bd-73c492af9344"}}'
+  recorded_at: Wed, 09 Aug 2023 20:42:01 GMT
+recorded_with: VCR 6.2.0

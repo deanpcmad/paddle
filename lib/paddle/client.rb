@@ -30,6 +30,10 @@ module Paddle
         handle_response connection.patch(url, body, headers)
       end
 
+      def delete_request(url, headers: {})
+        handle_response connection.delete(url, headers)
+      end
+
       def handle_response(response)
         case response.status
         when 400
@@ -50,6 +54,8 @@ module Paddle
           raise Error, "Error 503: You have been rate limited for sending more than 20 requests per second. '#{response.body["error"]["code"]}'"
         when 501
           raise Error, "Error 501: This resource has not been implemented. '#{response.body["error"]["code"]}'"
+        when 204
+          return true
         end
 
         if response.body && response.body["error"]

@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://sandbox-api.paddle.com/notification-settings/ntfset_01h7e0ebp7dz0ygz22bdkb5ckb
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - paddlerb/v0.1.4 (github.com/deanpcmad/paddlerb)
+      Authorization:
+      - Bearer <AUTHORIZATION>
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      date:
+      - Wed, 09 Aug 2023 20:43:16 GMT
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache, private
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      correlation-id:
+      - a588fb60-ff29-4dfb-9e7d-8fde0f9bf536
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - a588fb60-ff29-4dfb-9e7d-8fde0f9bf536
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      x-correlation-id:
+      - a588fb60-ff29-4dfb-9e7d-8fde0f9bf536
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 7f42d4939f7f23b3-LHR
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Wed, 09 Aug 2023 20:43:16 GMT
+recorded_with: VCR 6.2.0

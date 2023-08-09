@@ -34,6 +34,7 @@ module Paddle
   autoload :Subscription, "paddle/models/subscription"
   autoload :EventType, "paddle/models/event_type"
   autoload :Event, "paddle/models/event"
+  autoload :NotificationSetting, "paddle/models/notification_setting"
 
   # Load Classic APIs
   module Classic

@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox-api.paddle.com/transactions
+    body:
+      encoding: UTF-8
+      string: '{"items":[{"price_id":"pri_01h7dt1t5fhgpx7c4ze66vg3wt","quantity":2}]}'
+    headers:
+      User-Agent:
+      - paddlerb/v0.1.4 (github.com/deanpcmad/paddlerb)
+      Authorization:
+      - Bearer <AUTHORIZATION>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      date:
+      - Wed, 09 Aug 2023 21:44:20 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '1891'
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store, max-age=0
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      pragma:
+      - no-cache
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - 3f8ca70c-60b3-4db2-9401-ec234e342d81
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 7f432e05dbf4416a-LHR
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"txn_01h7e44011m1h8p70jgwcx23mg","status":"draft","customer_id":null,"address_id":null,"business_id":null,"custom_data":null,"origin":"api","collection_mode":"automatic","subscription_id":null,"invoice_id":null,"invoice_number":null,"billing_details":null,"billing_period":null,"currency_code":"USD","discount_id":null,"created_at":"2023-08-09T21:44:20.352977172Z","updated_at":"2023-08-09T21:44:20.352977172Z","billed_at":null,"items":[{"price":{"id":"pri_01h7dt1t5fhgpx7c4ze66vg3wt","description":"Monthly","product_id":"pro_01h7dsrdafzk113p2fbj07wpfd","billing_cycle":{"interval":"month","frequency":1},"trial_period":null,"tax_mode":"account_setting","unit_price":{"amount":"1000","currency_code":"USD"},"unit_price_overrides":[],"quantity":{"minimum":1,"maximum":100},"status":"active"},"quantity":2}],"details":{"tax_rates_used":[{"tax_rate":"0","totals":{"subtotal":"2000","discount":"0","tax":"0","total":"2000"}}],"totals":{"subtotal":"2000","tax":"0","discount":"0","total":"2000","grand_total":"2000","fee":null,"credit":"0","balance":"2000","earnings":null,"currency_code":"USD"},"adjusted_totals":{"subtotal":"2000","tax":"0","total":"2000","grand_total":"2000","fee":"0","earnings":"0","currency_code":"USD"},"payout_totals":null,"adjusted_payout_totals":null,"line_items":[{"id":"txnitm_01h7e4402ym1v0xascxk96ernc","price_id":"pri_01h7dt1t5fhgpx7c4ze66vg3wt","quantity":2,"totals":{"subtotal":"2000","tax":"0","discount":"0","total":"2000"},"product":{"id":"pro_01h7dsrdafzk113p2fbj07wpfd","name":"Test
+        Product 1","description":"This is a test product","tax_category":"standard","image_url":"","status":"active"},"tax_rate":"0","unit_totals":{"subtotal":"1000","tax":"0","discount":"0","total":"1000"}}]},"payments":[],"checkout":{"url":"https://localhost:3000?_ptxn=txn_01h7e44011m1h8p70jgwcx23mg"}},"meta":{"request_id":"3f8ca70c-60b3-4db2-9401-ec234e342d81"}}'
+  recorded_at: Wed, 09 Aug 2023 21:44:20 GMT
+recorded_with: VCR 6.2.0

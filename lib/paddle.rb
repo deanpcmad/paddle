@@ -31,6 +31,7 @@ module Paddle
   autoload :Customer, "paddle/models/customer"
   autoload :Address, "paddle/models/address"
   autoload :Business, "paddle/models/business"
+  autoload :Transaction, "paddle/models/transaction"
   autoload :Subscription, "paddle/models/subscription"
   autoload :Adjustment, "paddle/models/adjustment"
   autoload :EventType, "paddle/models/event_type"

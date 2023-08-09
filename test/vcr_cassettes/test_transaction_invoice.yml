@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-api.paddle.com/transactions/txn_01h7e2wz65er1fwbkqbzpng9th/invoice
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - paddlerb/v0.1.4 (github.com/deanpcmad/paddlerb)
+      Authorization:
+      - Bearer <AUTHORIZATION>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 09 Aug 2023 21:50:43 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store, max-age=0
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      pragma:
+      - no-cache
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - 1453a903-6e3d-4c83-9384-e4340b8b077e
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      vary:
+      - Origin
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 7f433761795e3854-LHR
+      content-encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"url":"https://paddle-sandbox-invoice-service-pdfs.s3.amazonaws.com/invoices/13851/8b7d381c-c0fd-4831-bb05-f9de3ed2f4b1/invoice_3742-10004_Voupe-Dev.pdf"},"meta":{"request_id":"1453a903-6e3d-4c83-9384-e4340b8b077e"}}'
+  recorded_at: Wed, 09 Aug 2023 21:50:43 GMT
+recorded_with: VCR 6.2.0

@@ -14,8 +14,10 @@ module Paddle
 
   # Load Billing APIs
   autoload :ProductsResource, "paddle/resources/products"
+  autoload :PricesResource, "paddle/resources/prices"
 
   autoload :Product, "paddle/objects/product"
+  autoload :Price, "paddle/objects/price"
 
   # Load Classic APIs
   module Classic

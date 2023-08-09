@@ -55,6 +55,28 @@ or [here for sandbox](https://sandbox-vendors.paddle.com/authentication)
 @client.products.update("pro_abc123", {description: "This is a plan"})
 ```
 
+### Prices
+
+```ruby
+# List all prices
+# https://developer.paddle.com/api-reference/prices/list-prices
+@client.prices.list
+@client.prices.list({status: "active"})
+@client.prices.list({product_id: "pro_abc123"})
+
+# Create a product
+# Note that unit_price amount should be a string
+# https://developer.paddle.com/api-reference/prices/create-price
+@client.prices.create({product_id: "pro_abc123", description: "A one off price", unit_price: {amount: "1000", currency_code: "GBP"}})
+
+# Retrieve a product
+@client.prices.retrieve "pro_abc123"
+
+# Update a product
+# https://developer.paddle.com/api-reference/prices/update-price
+@client.prices.update("pro_abc123", {description: "An updated description"})
+```
+
 ## Classic API
 
 For accessing the Paddle Classic API

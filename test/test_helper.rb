@@ -3,31 +3,29 @@ require "paddle"
 require "minitest/autorun"
 require "faraday"
 require "json"
+require "vcr"
+require "dotenv/load"
+
+VCR.configure do |config|
+  config.cassette_library_dir = "test/vcr_cassettes"
+  config.hook_into :faraday
+
+  config.filter_sensitive_data("<AUTHORIZATION>") { ENV["PADDLE_API_KEY_TEST"] }
+end
+
+Paddle.configure do |config|
+  config.environment = :sandbox
+  config.api_key = ENV["PADDLE_API_KEY_TEST"]
+end
 
 class Minitest::Test
 
-  def stub_response(fixture:, status: 200, headers: {"Content-Type" => "application/json"})
-    [status, headers, File.read("test/fixtures/#{fixture}.json")]
+  def setup
+    VCR.insert_cassette(name)
   end
 
-  def stub_classic_request(path, response:, body: {})
-    stubs = Faraday::Adapter::Test::Stubs.new
-    stubs.post("/api/#{path}") do
-      stub_response(fixture: response)
-    end
-    stubs
-  end
-
-  def stub_request(path, response:, method: :get, body: {})
-    stubs = Faraday::Adapter::Test::Stubs.new
-    if method == :get
-      stubs.get(path) { stub_response(fixture: response) }
-    elsif method == :post
-      stubs.post(path) { stub_response(fixture: response) }
-    elsif method == :patch
-      stubs.patch(path) { stub_response(fixture: response) }
-    end
-    stubs
+  def teardown
+    VCR.eject_cassette
   end
 
 end

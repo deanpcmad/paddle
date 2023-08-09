@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox-api.paddle.com/prices
+    body:
+      encoding: UTF-8
+      string: '{"product_id":"pro_01h7dsxd2sg6aky4e70p96rb1y","description":"Annual
+        (per seat)","unit_price":{"amount":"1000","currency_code":"GBP"}}'
+    headers:
+      User-Agent:
+      - paddlerb/v0.1.4 (github.com/deanpcmad/paddlerb)
+      Authorization:
+      - Bearer <AUTHORIZATION>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      date:
+      - Wed, 09 Aug 2023 18:52:09 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '637'
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store, max-age=0
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      pragma:
+      - no-cache
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - 6414fc7e-5efd-40d2-a8c5-bfde1df598b3
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 7f4231cf3e82dd78-LHR
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"pri_01h7dt8qgnh9jya9gcqsxd0r7p","product_id":"pro_01h7dsxd2sg6aky4e70p96rb1y","description":"Annual
+        (per seat)","billing_cycle":null,"trial_period":null,"tax_mode":"account_setting","unit_price":{"amount":"1000","currency_code":"GBP"},"unit_price_overrides":[],"custom_data":null,"status":"active","quantity":{"minimum":1,"maximum":100},"product":{"id":"pro_01h7dsxd2sg6aky4e70p96rb1y","name":"ChatApp
+        Enterprise (old)","tax_category":"standard","description":null,"image_url":null,"custom_data":null,"status":"active","created_at":"2023-08-09T18:45:58.489Z"}},"meta":{"request_id":"6414fc7e-5efd-40d2-a8c5-bfde1df598b3"}}'
+  recorded_at: Wed, 09 Aug 2023 18:52:09 GMT
+recorded_with: VCR 6.2.0

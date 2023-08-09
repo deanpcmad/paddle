@@ -70,11 +70,32 @@ or [here for sandbox](https://sandbox-vendors.paddle.com/authentication)
 @client.prices.create({product_id: "pro_abc123", description: "A one off price", unit_price: {amount: "1000", currency_code: "GBP"}})
 
 # Retrieve a product
-@client.prices.retrieve "pro_abc123"
+@client.prices.retrieve "pri_123abc"
 
 # Update a product
 # https://developer.paddle.com/api-reference/prices/update-price
-@client.prices.update("pro_abc123", {description: "An updated description"})
+@client.prices.update("pri_123abc", {description: "An updated description"})
+```
+
+### Discounts
+
+```ruby
+# List all discounts
+# https://developer.paddle.com/api-reference/discounts/list-discounts
+@client.discounts.list
+@client.discounts.list({status: "active"})
+
+# Create a product
+# Note that amount should be a string
+# https://developer.paddle.com/api-reference/discounts/create-discount
+@client.discounts.create({description: "$5 off", type: "flat", amount: "500", currency_code: "USD"})
+
+# Retrieve a product
+@client.discounts.retrieve "dsc_abc123"
+
+# Update a product
+# https://developer.paddle.com/api-reference/discounts/update-discount
+@client.discounts.update("dsc_abc123", {description: "An updated description"})
 ```
 
 ## Classic API

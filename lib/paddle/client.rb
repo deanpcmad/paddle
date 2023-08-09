@@ -23,6 +23,10 @@ module Paddle
       PricesResource.new(self)
     end
 
+    def discounts
+      DiscountsResource.new(self)
+    end
+
     def url
       if sandbox == true
         SANDBOX_BASE_URL

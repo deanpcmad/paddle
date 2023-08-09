@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "id": "add_01gvczbeepz72bfgsvbcmy1vpg",
+      "description": "Seawind Unit",
+      "first_line": "1 Lucille Lane",
+      "second_line": "",
+      "city": "Sudden Valley",
+      "postal_code": "92688",
+      "region": "California",
+      "country_code": "US",
+      "status": "active",
+      "created_at": "2023-03-13T07:53:25.206162Z",
+      "updated_at": "2023-03-28T09:24:47.363977Z"
+    },
+    {
+      "id": "add_01gvcz6r0t0g5cphhwd8n952gb",
+      "description": "Bluth Company Head Office",
+      "first_line": "Balboa Center",
+      "second_line": "Fourth floor",
+      "city": "Newport Beach",
+      "postal_code": "92663",
+      "region": "California",
+      "country_code": "US",
+      "status": "active",
+      "created_at": "2023-03-13T07:50:51.162511Z",
+      "updated_at": "2023-03-28T09:34:22.359192Z"
+    }
+  ],
+  "meta": {
+    "request_id": "5830ea37-7e06-4d3d-ae8e-b20c3974258f",
+    "pagination": {
+      "per_page": 10,
+      "next": "https://api.paddle.com/customers/ctm_01gvcz30f4d77tfnn60snnyxfd/addresses?after=add_01gvcz6r0t0g5cphhwd8n952gb&status=active%2Carchived",
+      "has_more": false,
+      "estimated_total": 2
+    }
+  }
+}

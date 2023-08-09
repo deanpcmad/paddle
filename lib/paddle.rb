@@ -30,6 +30,7 @@ module Paddle
   autoload :Discount, "paddle/models/discount"
   autoload :Customer, "paddle/models/customer"
   autoload :Address, "paddle/models/address"
+  autoload :Business, "paddle/models/business"
   autoload :Subscription, "paddle/models/subscription"
 
   # Load Classic APIs

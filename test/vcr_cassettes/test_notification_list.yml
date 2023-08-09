@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-api.paddle.com/notifications
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - paddlerb/v0.1.4 (github.com/deanpcmad/paddlerb)
+      Authorization:
+      - Bearer <AUTHORIZATION>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 09 Aug 2023 20:56:54 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache, private
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      correlation-id:
+      - fe6710a9-4751-4250-9488-b218f99fa1d4
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - fe6710a9-4751-4250-9488-b218f99fa1d4
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      x-correlation-id:
+      - fe6710a9-4751-4250-9488-b218f99fa1d4
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 7f42e88a2a0075d8-LHR
+      content-encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"id":"ntf_01h7e0s0xktjj1cjd955aah5v5","type":"subscription.activated","status":"delivered","payload":{"data":{"id":"sub_01h7e0rzxvwdy5qy6g08h4y3tz","items":[{"price":{"id":"pri_01h7dt1t5fhgpx7c4ze66vg3wt","tax_mode":"account_setting","product_id":"pro_01h7dsrdafzk113p2fbj07wpfd","unit_price":{"amount":"1000","currency_code":"USD"},"description":"Monthly","trial_period":null,"billing_cycle":{"interval":"month","frequency":1}},"status":"active","quantity":1,"recurring":true,"created_at":"2023-08-09T20:45:53.979992Z","updated_at":"2023-08-09T20:45:53.979992Z","next_billed_at":"2023-09-09T20:45:52.444756Z","previously_billed_at":"2023-08-09T20:45:52.444756Z"}],"status":"active","paused_at":null,"address_id":"add_01h7e0rc3zd2b9dmb85m509jt2","created_at":"2023-08-09T20:45:53.979992Z","started_at":"2023-08-09T20:45:52.444756Z","updated_at":"2023-08-09T20:45:53.979992Z","business_id":null,"canceled_at":null,"custom_data":null,"customer_id":"ctm_01h7dtf1yg8jge7980baqdkjk8","billing_cycle":{"interval":"month","frequency":1},"currency_code":"USD","next_billed_at":"2023-09-09T20:45:52.444756Z","billing_details":null,"collection_mode":"automatic","first_billed_at":"2023-08-09T20:45:52.444756Z","scheduled_change":null,"current_billing_period":{"ends_at":"2023-09-09T20:45:52.444756Z","starts_at":"2023-08-09T20:45:52.444756Z"}},"event_id":"evt_01h7e0s0tqhk4vy53p9pb8n4kx","event_type":"subscription.activated","occurred_at":"2023-08-09T20:45:54.903884Z","notification_id":"ntf_01h7e0s0xktjj1cjd955aah5v5"},"occurred_at":"2023-08-09T20:45:54.903884Z","delivered_at":"2023-08-09T20:45:55.273508Z","replayed_at":null,"origin":"event","last_attempt_at":"2023-08-09T20:45:55.048389Z","retry_at":null,"times_attempted":1,"notification_setting_id":"ntfset_01h7e0amn9q4wzn3k3syjszhtc"}],"meta":{"pagination":{"per_page":50,"estimated_total":1,"next":"http://sandbox-api.paddle.com/notifications?after=ntf_01h7e0s0xktjj1cjd955aah5v5","has_more":false},"request_id":"fe6710a9-4751-4250-9488-b218f99fa1d4"}}'
+  recorded_at: Wed, 09 Aug 2023 20:56:54 GMT
+recorded_with: VCR 6.2.0

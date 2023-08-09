@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-api.paddle.com/notifications/ntf_01h7e0s0xktjj1cjd955aah5v5/logs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - paddlerb/v0.1.4 (github.com/deanpcmad/paddlerb)
+      Authorization:
+      - Bearer <AUTHORIZATION>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 09 Aug 2023 21:08:39 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache, private
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      correlation-id:
+      - e18f876c-0b9b-4474-99fd-ef488bdfe108
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - e18f876c-0b9b-4474-99fd-ef488bdfe108
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      x-correlation-id:
+      - e18f876c-0b9b-4474-99fd-ef488bdfe108
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 7f42f9bdbb7248cd-LHR
+      content-encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"id":"ntflog_01h7e0s16fncg0f8xxjqpq59ge","response_code":200,"response_content_type":null,"response_body":"","attempted_at":"2023-08-09T20:45:55.279441Z"}],"meta":{"pagination":{"per_page":50,"estimated_total":1,"next":"http://sandbox-api.paddle.com/notifications/ntf_01h7e0s0xktjj1cjd955aah5v5/logs?after=ntflog_01h7e0s16fncg0f8xxjqpq59ge","has_more":false},"request_id":"e18f876c-0b9b-4474-99fd-ef488bdfe108"}}'
+  recorded_at: Wed, 09 Aug 2023 21:08:39 GMT
+recorded_with: VCR 6.2.0

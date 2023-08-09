@@ -18,12 +18,14 @@ module Paddle
   autoload :DiscountsResource, "paddle/resources/discounts"
   autoload :CustomersResource, "paddle/resources/customers"
   autoload :AddressesResource, "paddle/resources/addresses"
+  autoload :SubscriptionsResource, "paddle/resources/subscriptions"
 
   autoload :Product, "paddle/objects/product"
   autoload :Price, "paddle/objects/price"
   autoload :Discount, "paddle/objects/discount"
   autoload :Customer, "paddle/objects/customer"
   autoload :Address, "paddle/objects/address"
+  autoload :Subscription, "paddle/objects/subscription"
 
   # Load Classic APIs
   module Classic

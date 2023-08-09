@@ -1,0 +1,238 @@
+{
+  "data": [
+    {
+      "id": "sub_01gt25ckjxg1v11jnq9dnrkpfz",
+      "status": "active",
+      "customer_id": "ctm_01gt25aq4b2zcfw12szwtjrbdt",
+      "address_id": "add_01gt25aq58yh9ne06zkjvysnaa",
+      "business_id": null,
+      "currency_code": "USD",
+      "created_at": "2023-02-24T16:51:34.109677Z",
+      "updated_at": "2023-03-24T16:52:04.670874Z",
+      "started_at": "2023-02-24T16:51:33.176163Z",
+      "first_billed_at": "2023-04-24T16:51:33.176163Z",
+      "next_billed_at": "2023-04-24T16:51:33.176163Z",
+      "paused_at": null,
+      "canceled_at": null,
+      "collection_mode": "automatic",
+      "billing_details": null,
+      "current_billing_period": {
+        "starts_at": "2023-03-24T16:51:33.176163Z",
+        "ends_at": "2023-04-24T16:51:33.176163Z"
+      },
+      "billing_cycle": {
+        "frequency": 1,
+        "interval": "month"
+      },
+      "recurring_transaction_details": null,
+      "next_transaction": null,
+      "scheduled_change": null,
+      "items": [
+        {
+          "status": "active",
+          "quantity": 10,
+          "recurring": true,
+          "created_at": "2023-02-24T16:51:34.109677Z",
+          "updated_at": "2023-03-24T16:52:00.242Z",
+          "previously_billed_at": "2023-04-24T16:51:33.176163Z",
+          "next_billed_at": "2023-04-24T16:51:33.176163Z",
+          "price": {
+            "id": "pri_01gsz8ntc6z7npqqp6j4ys0w1w",
+            "product_id": "pro_01gsz4s0w61y0pp88528f1wvvb",
+            "description": "Monthly (per seat)",
+            "tax_mode": "account_setting",
+            "billing_cycle": {
+              "frequency": 1,
+              "interval": "month"
+            },
+            "trial_period": null,
+            "unit_price": {
+              "amount": "1200",
+              "currency_code": "USD"
+            }
+          }
+        },
+        {
+          "status": "active",
+          "quantity": 1,
+          "recurring": false,
+          "created_at": "2023-03-16T12:23:47.556571Z",
+          "updated_at": "2023-03-16T12:23:47.556571Z",
+          "previously_billed_at": null,
+          "next_billed_at": null,
+          "price": {
+            "id": "pri_01gsz98e27ak2tyhexptwc58yk",
+            "product_id": "pro_01gsz97mq9pa4fkyy0wqenepkz",
+            "description": "One-time charge",
+            "tax_mode": "account_setting",
+            "billing_cycle": null,
+            "trial_period": null,
+            "unit_price": {
+              "amount": "19900",
+              "currency_code": "USD"
+            }
+          }
+        }
+      ],
+      "custom_data": {},
+      "management_urls": {
+        "update_payment_method": "https://buyer-portal.paddle.com/subscriptions/sub_01gt25ckjxg1v11jnq9dnrkpfz/update-payment-method",
+        "cancel": "https://buyer-portal.paddle.com/subscriptions/sub_01gt25ckjxg1v11jnq9dnrkpfz/cancel"
+      }
+    },
+    {
+      "id": "sub_01gw99spk043n12h7ej3rwbqcs",
+      "status": "active",
+      "customer_id": "ctm_01gvcz30f4d77tfnn60snnyxfd",
+      "address_id": "add_01gvcz6r0t0g5cphhwd8n952gb",
+      "business_id": null,
+      "currency_code": "USD",
+      "created_at": "2023-03-24T07:54:42.144843Z",
+      "updated_at": "2023-03-25T07:55:00.239062Z",
+      "started_at": "2023-03-24T07:54:42.144839Z",
+      "first_billed_at": "2023-04-25T07:54:42.144839Z",
+      "next_billed_at": "2023-04-25T07:54:42.144839Z",
+      "paused_at": null,
+      "canceled_at": null,
+      "collection_mode": "manual",
+      "billing_details": {
+        "enable_checkout": false,
+        "purchase_order_number": "",
+        "additional_information": "",
+        "payment_terms": {
+          "frequency": 2,
+          "interval": "week"
+        }
+      },
+      "current_billing_period": {
+        "starts_at": "2023-03-25T07:54:42.144839Z",
+        "ends_at": "2023-04-25T07:54:42.144839Z"
+      },
+      "billing_cycle": {
+        "frequency": 1,
+        "interval": "month"
+      },
+      "recurring_transaction_details": null,
+      "next_transaction": null,
+      "scheduled_change": null,
+      "items": [
+        {
+          "status": "active",
+          "quantity": 10,
+          "recurring": true,
+          "created_at": "2023-03-24T07:54:42.144843Z",
+          "updated_at": "2023-03-25T07:55:00.251937Z",
+          "previously_billed_at": "2023-04-25T07:54:42.144839Z",
+          "next_billed_at": "2023-04-25T07:54:42.144839Z",
+          "trial_dates": {
+            "starts_at": "2023-03-24T07:54:42.144839Z",
+            "ends_at": "2023-03-25T07:54:42.144839Z"
+          },
+          "price": {
+            "id": "pri_01gsz8x8sawmvhz1pv30nge1ke",
+            "product_id": "pro_01gsz4t5hdjse780zja8vvr7jg",
+            "description": "Monthly (per seat)",
+            "tax_mode": "account_setting",
+            "billing_cycle": {
+              "frequency": 1,
+              "interval": "month"
+            },
+            "trial_period": {
+              "frequency": 1,
+              "interval": "day"
+            },
+            "unit_price": {
+              "amount": "3000",
+              "currency_code": "USD"
+            }
+          }
+        }
+      ],
+      "custom_data": {},
+      "management_urls": {
+        "update_payment_method": "https://buyer-portal.paddle.com/subscriptions/sub_01gw99spk043n12h7ej3rwbqcs/update-payment-method",
+        "cancel": "https://buyer-portal.paddle.com/subscriptions/sub_01gw99spk043n12h7ej3rwbqcs/cancel"
+      }
+    },
+    {
+      "id": "sub_01gvndzn8hdwvd38hsrmv303xb",
+      "status": "active",
+      "customer_id": "ctm_01gvcz30f4d77tfnn60snnyxfd",
+      "address_id": "add_01gvczbeepz72bfgsvbcmy1vpg",
+      "business_id": null,
+      "currency_code": "USD",
+      "created_at": "2023-03-16T14:43:03.057332Z",
+      "updated_at": "2023-03-21T16:19:40.566479Z",
+      "started_at": "2023-03-16T14:43:03.057326Z",
+      "first_billed_at": "2023-03-16T14:43:03.057326Z",
+      "next_billed_at": "2024-03-16T14:43:03.057326Z",
+      "paused_at": null,
+      "canceled_at": null,
+      "collection_mode": "manual",
+      "billing_details": {
+        "enable_checkout": false,
+        "purchase_order_number": "",
+        "additional_information": "",
+        "payment_terms": {
+          "frequency": 2,
+          "interval": "week"
+        }
+      },
+      "current_billing_period": {
+        "starts_at": "2023-03-16T14:43:03.057326Z",
+        "ends_at": "2024-03-16T14:43:03.057326Z"
+      },
+      "billing_cycle": {
+        "frequency": 1,
+        "interval": "year"
+      },
+      "recurring_transaction_details": null,
+      "next_transaction": null,
+      "scheduled_change": {
+        "action": "pause",
+        "effective_at": "2024-03-16T14:43:03.057326Z",
+        "resume_at": null
+      },
+      "items": [
+        {
+          "status": "active",
+          "quantity": 1,
+          "recurring": true,
+          "created_at": "2023-03-16T14:43:03.057333Z",
+          "updated_at": "2023-03-16T14:43:03.057333Z",
+          "previously_billed_at": "2023-03-16T14:43:03.057326Z",
+          "next_billed_at": "2024-03-16T14:43:03.057326Z",
+          "price": {
+            "id": "pri_01gsz8s48pyr4mbhvv2xfggesg",
+            "product_id": "pro_01gsz4s0w61y0pp88528f1wvvb",
+            "description": "Annual (per seat)",
+            "tax_mode": "account_setting",
+            "billing_cycle": {
+              "frequency": 1,
+              "interval": "year"
+            },
+            "trial_period": null,
+            "unit_price": {
+              "amount": "15000",
+              "currency_code": "USD"
+            }
+          }
+        }
+      ],
+      "custom_data": {},
+      "management_urls": {
+        "update_payment_method": "https://buyer-portal.paddle.com/subscriptions/sub_01gvndzn8hdwvd38hsrmv303xb/update-payment-method",
+        "cancel": "https://buyer-portal.paddle.com/subscriptions/sub_01gvndzn8hdwvd38hsrmv303xb/cancel"
+      }
+    }
+  ],
+  "meta": {
+    "request_id": "1732982c-cd50-4b4d-bfdf-9cd5a79e13db",
+    "pagination": {
+      "per_page": 3,
+      "next": "https://api.paddle.com/subscriptions?after=sub_01gvndzn8hdwvd38hsrmv303xb",
+      "has_more": false,
+      "estimated_total": 3
+    }
+  }
+}

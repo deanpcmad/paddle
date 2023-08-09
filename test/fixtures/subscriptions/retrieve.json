@@ -1,0 +1,85 @@
+{
+  "data": {
+    "id": "sub_01gt25ckjxg1v11jnq9dnrkpfz",
+    "status": "active",
+    "customer_id": "ctm_01gt25aq4b2zcfw12szwtjrbdt",
+    "address_id": "add_01gt25aq58yh9ne06zkjvysnaa",
+    "business_id": null,
+    "currency_code": "USD",
+    "created_at": "2023-02-24T16:51:34.109677Z",
+    "updated_at": "2023-03-24T16:52:04.670874Z",
+    "started_at": "2023-02-24T16:51:33.176163Z",
+    "first_billed_at": "2023-04-24T16:51:33.176163Z",
+    "next_billed_at": "2023-04-24T16:51:33.176163Z",
+    "paused_at": null,
+    "canceled_at": null,
+    "collection_mode": "automatic",
+    "billing_details": null,
+    "current_billing_period": {
+      "starts_at": "2023-03-24T16:51:33.176163Z",
+      "ends_at": "2023-04-24T16:51:33.176163Z"
+    },
+    "billing_cycle": {
+      "frequency": 1,
+      "interval": "month"
+    },
+    "recurring_transaction_details": null,
+    "next_transaction": null,
+    "scheduled_change": null,
+    "items": [
+      {
+        "status": "active",
+        "quantity": 10,
+        "recurring": true,
+        "created_at": "2023-02-24T16:51:34.109677Z",
+        "updated_at": "2023-03-24T16:52:00.242Z",
+        "previously_billed_at": "2023-04-24T16:51:33.176163Z",
+        "next_billed_at": "2023-04-24T16:51:33.176163Z",
+        "price": {
+          "id": "pri_01gsz8ntc6z7npqqp6j4ys0w1w",
+          "product_id": "pro_01gsz4s0w61y0pp88528f1wvvb",
+          "description": "Monthly (per seat)",
+          "tax_mode": "account_setting",
+          "billing_cycle": {
+            "frequency": 1,
+            "interval": "month"
+          },
+          "trial_period": null,
+          "unit_price": {
+            "amount": "1200",
+            "currency_code": "USD"
+          }
+        }
+      },
+      {
+        "status": "active",
+        "quantity": 1,
+        "recurring": false,
+        "created_at": "2023-03-16T12:23:47.556571Z",
+        "updated_at": "2023-03-16T12:23:47.556571Z",
+        "previously_billed_at": null,
+        "next_billed_at": null,
+        "price": {
+          "id": "pri_01gsz98e27ak2tyhexptwc58yk",
+          "product_id": "pro_01gsz97mq9pa4fkyy0wqenepkz",
+          "description": "One-time charge",
+          "tax_mode": "account_setting",
+          "billing_cycle": null,
+          "trial_period": null,
+          "unit_price": {
+            "amount": "19900",
+            "currency_code": "USD"
+          }
+        }
+      }
+    ],
+    "custom_data": null,
+    "management_urls": {
+      "update_payment_method": "https://buyer-portal.paddle.com/subscriptions/sub_01gt25ckjxg1v11jnq9dnrkpfz/update-payment-method",
+      "cancel": "https://sandbox-buyer-portal.paddle.com/subscriptions/sub_01gt25ckjxg1v11jnq9dnrkpfz/cancel"
+    }
+  },
+  "meta": {
+    "request_id": "fbff6118-f968-4e97-83f2-74f7d534b950"
+  }
+}

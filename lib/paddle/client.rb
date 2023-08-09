@@ -35,6 +35,10 @@ module Paddle
       AddressesResource.new(self)
     end
 
+    def subscriptions
+      SubscriptionsResource.new(self)
+    end
+
     def url
       if sandbox == true
         SANDBOX_BASE_URL

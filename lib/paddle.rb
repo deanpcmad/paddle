@@ -17,11 +17,13 @@ module Paddle
   autoload :PricesResource, "paddle/resources/prices"
   autoload :DiscountsResource, "paddle/resources/discounts"
   autoload :CustomersResource, "paddle/resources/customers"
+  autoload :AddressesResource, "paddle/resources/addresses"
 
   autoload :Product, "paddle/objects/product"
   autoload :Price, "paddle/objects/price"
   autoload :Discount, "paddle/objects/discount"
   autoload :Customer, "paddle/objects/customer"
+  autoload :Address, "paddle/objects/address"
 
   # Load Classic APIs
   module Classic

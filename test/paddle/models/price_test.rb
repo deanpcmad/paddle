@@ -22,10 +22,8 @@ class PriceTest < Minitest::Test
     price = Paddle::Price.create(
       product_id: "pro_01h7dsxd2sg6aky4e70p96rb1y",
       description: "Annual (per seat)",
-      unit_price: {
-        amount: "1000",
-        currency_code: "GBP"
-      }
+      amount: "1000",
+      currency: "GBP"
     )
 
     assert_equal Paddle::Price, price.class

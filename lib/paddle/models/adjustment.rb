@@ -9,7 +9,7 @@ module Paddle
       end
 
       def create(transaction_id:, action:, reason:, items:, **params)
-        {transaction_id: transaction_id, action: action, reason: reason, items: items}
+        attrs = {transaction_id: transaction_id, action: action, reason: reason, items: items}
         response = Client.post_request("adjustments", body: attrs.merge(params))
         Adjustment.new(response.body["data"])
       end

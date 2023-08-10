@@ -12,7 +12,7 @@ class TransactionTest < Minitest::Test
   end
 
   def test_transaction_retrieve
-    transaction = Paddle::Transaction.retrieve("txn_01h7e2wz65er1fwbkqbzpng9th")
+    transaction = Paddle::Transaction.retrieve(id: "txn_01h7e2wz65er1fwbkqbzpng9th")
 
     assert_equal Paddle::Transaction, transaction.class
     assert_equal "txn_01h7e2wz65er1fwbkqbzpng9th", transaction.id
@@ -20,20 +20,20 @@ class TransactionTest < Minitest::Test
   end
 
   def test_transaction_invoice
-    invoice = Paddle::Transaction.invoice("txn_01h7e2wz65er1fwbkqbzpng9th")
+    invoice = Paddle::Transaction.invoice(id: "txn_01h7e2wz65er1fwbkqbzpng9th")
 
-    assert_match /paddle-sandbox-invoice-service-pdfs/, invoice
+    assert_match (/paddle-sandbox-invoice-service-pdfs/), invoice
   end
 
   def test_transaction_create
-    transaction = Paddle::Transaction.create({
-      "items": [
+    transaction = Paddle::Transaction.create(
+      items: [
         {
-          "price_id": "pri_01h7dt1t5fhgpx7c4ze66vg3wt",
-          "quantity": 2
+          price_id: "pri_01h7dt1t5fhgpx7c4ze66vg3wt",
+          quantity: 2
         }
       ]
-    })
+    )
 
     assert_equal Paddle::Transaction, transaction.class
     assert_equal "txn_01h7e44011m1h8p70jgwcx23mg", transaction.id
@@ -41,14 +41,14 @@ class TransactionTest < Minitest::Test
   end
 
   def test_transaction_update
-    transaction = Paddle::Transaction.update("txn_01h7e44011m1h8p70jgwcx23mg", {
-      "items": [
+    transaction = Paddle::Transaction.update(id: "txn_01h7e44011m1h8p70jgwcx23mg",
+      items: [
         {
-          "price_id": "pri_01h7dt1t5fhgpx7c4ze66vg3wt",
-          "quantity": 3
+          price_id: "pri_01h7dt1t5fhgpx7c4ze66vg3wt",
+          quantity: 3
         }
       ]
-    })
+    )
 
     assert_equal Paddle::Transaction, transaction.class
     assert_equal "draft", transaction.status
@@ -56,15 +56,15 @@ class TransactionTest < Minitest::Test
   end
 
   def test_transaction_preview
-    transaction = Paddle::Transaction.preview({
-      "items": [
+    transaction = Paddle::Transaction.preview(
+      items: [
         {
-          "price_id": "pri_01h7dt1t5fhgpx7c4ze66vg3wt",
-          "quantity": 2
+          price_id: "pri_01h7dt1t5fhgpx7c4ze66vg3wt",
+          quantity: 2
         }
       ],
-      "currency_code": "GBP"
-    })
+      currency_code: "GBP"
+    )
 
     assert_equal Paddle::Transaction, transaction.class
     assert_equal 2, transaction.items.first.quantity

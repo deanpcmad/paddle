@@ -3,27 +3,27 @@ module Paddle
 
     class << self
 
-      def list(params = nil)
+      def list(**params)
         response = Client.get_request("notification-settings", params: params)
         Collection.from_response(response, type: NotificationSetting)
       end
 
-      def create(attrs)
-        response = Client.post_request("notification-settings", body: attrs)
+      def create(**params)
+        response = Client.post_request("notification-settings", body: params)
         NotificationSetting.new(response.body["data"])
       end
 
-      def retrieve(id)
+      def retrieve(id:)
         response = Client.get_request("notification-settings/#{id}")
         NotificationSetting.new(response.body["data"])
       end
 
-      def update(id, attrs)
-        response = Client.patch_request("notification-settings/#{id}", body: attrs)
+      def update(id:, **params)
+        response = Client.patch_request("notification-settings/#{id}", body: params)
         NotificationSetting.new(response.body["data"])
       end
 
-      def delete(id)
+      def delete(id:)
         Client.delete_request("notification-settings/#{id}")
       end
 

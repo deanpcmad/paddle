@@ -3,40 +3,40 @@ module Paddle
 
     class << self
 
-      def list(params = nil)
+      def list(**params)
         response = Client.get_request("transactions", params: params)
         Collection.from_response(response, type: Transaction)
       end
 
-      def create(attrs)
-        response = Client.post_request("transactions", body: attrs)
+      def create(**params)
+        response = Client.post_request("transactions", body: params)
         Transaction.new(response.body["data"])
       end
 
-      def retrieve(id)
+      def retrieve(id:)
         response = Client.get_request("transactions/#{id}")
         Transaction.new(response.body["data"])
       end
 
-      def update(id, attrs)
-        response = Client.patch_request("transactions/#{id}", body: attrs)
+      def update(id:, **params)
+        response = Client.patch_request("transactions/#{id}", body: params)
         Transaction.new(response.body["data"])
       end
 
-      def invoice(id)
+      def invoice(id:)
         response = Client.get_request("transactions/#{id}/invoice")
         if response.success?
           return response.body["data"]["url"]
         end
       end
 
-      def preview(attrs)
-        response = Client.post_request("transactions/preview", body: attrs)
+      def preview(**params)
+        response = Client.post_request("transactions/preview", body: params)
         Transaction.new(response.body["data"])
       end
 
-      def preview_prices(attrs)
-        response = Client.post_request("pricing-preview", body: attrs)
+      def preview_prices(**params)
+        response = Client.post_request("pricing-preview", body: params)
         Transaction.new(response.body["data"])
       end
 

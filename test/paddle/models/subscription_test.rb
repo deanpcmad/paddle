@@ -11,7 +11,7 @@ class SubscriptionTest < Minitest::Test
   end
 
   def test_subscription_retrieve
-    subscription = Paddle::Subscription.retrieve "sub_01h7dvgvc6we84prca8gdhhr9c"
+    subscription = Paddle::Subscription.retrieve(id: "sub_01h7dvgvc6we84prca8gdhhr9c")
 
     assert_equal Paddle::Subscription, subscription.class
     assert_equal "sub_01h7dvgvc6we84prca8gdhhr9c", subscription.id
@@ -19,7 +19,7 @@ class SubscriptionTest < Minitest::Test
   end
 
   def test_subscription_get_transaction
-    subscription = Paddle::Subscription.get_transaction "sub_01h7dvgvc6we84prca8gdhhr9c"
+    subscription = Paddle::Subscription.get_transaction(id: "sub_01h7dvgvc6we84prca8gdhhr9c")
 
     assert_equal Paddle::Subscription, subscription.class
     assert_equal "txn_01h7dxza6whtgdcnb9f1h377j9", subscription.id
@@ -27,15 +27,15 @@ class SubscriptionTest < Minitest::Test
   end
 
   def test_subscription_preview
-    subscription = Paddle::Subscription.preview "sub_01h7dvgvc6we84prca8gdhhr9c", {
-      "items": [
+    subscription = Paddle::Subscription.preview(id: "sub_01h7dvgvc6we84prca8gdhhr9c",
+      items: [
         {
-          "price_id": "pri_01h7dt1t5fhgpx7c4ze66vg3wt",
-          "quantity": 2
+          price_id: "pri_01h7dt1t5fhgpx7c4ze66vg3wt",
+          quantity: 2
         }
       ],
-      "proration_billing_mode": "full_next_billing_period"
-    }
+      proration_billing_mode: "full_next_billing_period"
+    )
 
     assert_equal Paddle::Subscription, subscription.class
     assert_equal "active", subscription.status
@@ -43,9 +43,7 @@ class SubscriptionTest < Minitest::Test
   end
 
   def test_subscription_update
-    subscription = Paddle::Subscription.update "sub_01h7dvgvc6we84prca8gdhhr9c", {
-      "billing_details": {"purchase_order_number": "PO-1234"}
-    }
+    subscription = Paddle::Subscription.update(id: "sub_01h7dvgvc6we84prca8gdhhr9c", billing_details: {purchase_order_number: "PO-1234"})
 
     assert_equal Paddle::Subscription, subscription.class
     assert_equal "active", subscription.status
@@ -54,9 +52,7 @@ class SubscriptionTest < Minitest::Test
   end
 
   def test_subscription_pause
-    subscription = Paddle::Subscription.pause "sub_01h7dvgvc6we84prca8gdhhr9c", {
-      "effective_from": "immediately"
-    }
+    subscription = Paddle::Subscription.pause(id: "sub_01h7dvgvc6we84prca8gdhhr9c", effective_from: "immediately")
 
     assert_equal Paddle::Subscription, subscription.class
     assert_equal "active", subscription.status
@@ -76,24 +72,22 @@ class SubscriptionTest < Minitest::Test
   # end
 
   def test_subscription_charge
-    subscription = Paddle::Subscription.charge "sub_01h7dvgvc6we84prca8gdhhr9c", {
-      "effective_from": "immediately",
-      "items": [
+    subscription = Paddle::Subscription.charge(id: "sub_01h7dvgvc6we84prca8gdhhr9c",
+      effective_from: "immediately",
+      items: [
         {
-          "price_id": "pri_01h7dy3z54j3q6ehcd0gvk35mb",
-          "quantity": 1
+          price_id: "pri_01h7dy3z54j3q6ehcd0gvk35mb",
+          quantity: 1
         }
       ]
-    }
+    )
 
     assert_equal Paddle::Subscription, subscription.class
     assert_equal "active", subscription.status
   end
 
   def test_subscription_cancel
-    subscription = Paddle::Subscription.cancel "sub_01h7dvgvc6we84prca8gdhhr9c", {
-      "effective_from": "next_billing_period"
-    }
+    subscription = Paddle::Subscription.cancel(id: "sub_01h7dvgvc6we84prca8gdhhr9c", effective_from: "next_billing_period")
 
     assert_equal Paddle::Subscription, subscription.class
     assert_equal "active", subscription.status

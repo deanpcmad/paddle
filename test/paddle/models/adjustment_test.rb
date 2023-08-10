@@ -11,17 +11,17 @@ class AdjustmentTest < Minitest::Test
   end
 
   def test_adjustment_create
-    adjustment = Paddle::Adjustment.create({
-      "action": "credit",
-      "transaction_id": "txn_01h7e0r43zjgzbcpqs093spymc",
-      "reason": "error",
-      "items": [
+    adjustment = Paddle::Adjustment.create(
+      action: "credit",
+      transaction_id: "txn_01h7e0r43zjgzbcpqs093spymc",
+      reason: "error",
+      items: [
         {
-          "type": "full",
-          "item_id": "txnitm_01h7e0rc8we655bjx8km2kpyg0"
+          type: "full",
+          item_id: "txnitm_01h7e0rc8we655bjx8km2kpyg0"
         }
       ]
-    })
+    )
 
     assert_equal Paddle::Adjustment, adjustment.class
     assert_equal "credit", adjustment.action

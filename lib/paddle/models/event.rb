@@ -3,7 +3,7 @@ module Paddle
 
     class << self
 
-      def list(params = nil)
+      def list(**params)
         response = Client.get_request("events", params: params)
         Collection.from_response(response, type: Event)
       end

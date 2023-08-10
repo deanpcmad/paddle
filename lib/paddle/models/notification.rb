@@ -3,12 +3,12 @@ module Paddle
 
     class << self
 
-      def list(params = nil)
+      def list(**params)
         response = Client.get_request("notifications", params: params)
         Collection.from_response(response, type: Notification)
       end
 
-      def retrieve(id)
+      def retrieve(id:)
         response = Client.get_request("notifications/#{id}")
         Notification.new(response.body["data"])
       end
@@ -19,7 +19,7 @@ module Paddle
       #   Notification.new(response.body["data"])
       # end
 
-      def logs(id, params = nil)
+      def logs(id:, **params)
         response = Client.get_request("notifications/#{id}/logs", params: params)
         Collection.from_response(response, type: NotificationLog)
       end

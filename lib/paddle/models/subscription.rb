@@ -3,48 +3,48 @@ module Paddle
 
     class << self
 
-      def list(params = nil)
+      def list(**params)
         response = Client.get_request("subscriptions", params: params)
         Collection.from_response(response, type: Subscription)
       end
 
-      def retrieve(id)
+      def retrieve(id:)
         response = Client.get_request("subscriptions/#{id}")
         Subscription.new(response.body["data"])
       end
 
-      def get_transaction(id)
+      def get_transaction(id:)
         response = Client.get_request("subscriptions/#{id}/update-payment-method-transaction")
         Subscription.new(response.body["data"])
       end
 
-      def preview(id, attrs)
-        response = Client.patch_request("subscriptions/#{id}/preview", body: attrs)
+      def preview(id:, **params)
+        response = Client.patch_request("subscriptions/#{id}/preview", body: params)
         Subscription.new(response.body["data"])
       end
 
-      def update(id, attrs)
-        response = Client.patch_request("subscriptions/#{id}", body: attrs)
+      def update(id:, **params)
+        response = Client.patch_request("subscriptions/#{id}", body: params)
         Subscription.new(response.body["data"])
       end
 
-      def charge(id, attrs)
-        response = Client.post_request("subscriptions/#{id}/charge", body: attrs)
+      def charge(id:, **params)
+        response = Client.post_request("subscriptions/#{id}/charge", body: params)
         Subscription.new(response.body["data"])
       end
 
-      def pause(id, attrs)
-        response = Client.post_request("subscriptions/#{id}/pause", body: attrs)
+      def pause(id:, **params)
+        response = Client.post_request("subscriptions/#{id}/pause", body: params)
         Subscription.new(response.body["data"])
       end
 
-      def resume(id, attrs)
-        response = Client.post_request("subscriptions/#{id}/resume", body: attrs)
+      def resume(id:, **params)
+        response = Client.post_request("subscriptions/#{id}/resume", body: params)
         Subscription.new(response.body["data"])
       end
 
-      def cancel(id, attrs)
-        response = Client.post_request("subscriptions/#{id}/cancel", body: attrs)
+      def cancel(id:, **params)
+        response = Client.post_request("subscriptions/#{id}/cancel", body: params)
         Subscription.new(response.body["data"])
       end
 

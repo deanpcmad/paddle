@@ -3,23 +3,23 @@ module Paddle
 
     class << self
 
-      def list(params = nil)
+      def list(**params)
         response = Client.get_request("prices", params: params)
         Collection.from_response(response, type: Price)
       end
 
-      def create(attrs)
-        response = Client.post_request("prices", body: attrs)
+      def create(**params)
+        response = Client.post_request("prices", body: params)
         Price.new(response.body["data"])
       end
 
-      def retrieve(id)
+      def retrieve(id:)
         response = Client.get_request("prices/#{id}")
         Price.new(response.body["data"])
       end
 
-      def update(id, attrs)
-        response = Client.patch_request("prices/#{id}", body: attrs)
+      def update(id:, **params)
+        response = Client.patch_request("prices/#{id}", body: params)
         Price.new(response.body["data"])
       end
 

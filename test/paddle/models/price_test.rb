@@ -11,7 +11,7 @@ class PriceTest < Minitest::Test
   end
 
   def test_price_retrieve
-    price = Paddle::Price.retrieve("pri_01h7dt1t5fhgpx7c4ze66vg3wt")
+    price = Paddle::Price.retrieve(id: "pri_01h7dt1t5fhgpx7c4ze66vg3wt")
 
     assert_equal Paddle::Price, price.class
     assert_equal "pri_01h7dt1t5fhgpx7c4ze66vg3wt", price.id
@@ -20,13 +20,11 @@ class PriceTest < Minitest::Test
 
   def test_price_create
     price = Paddle::Price.create(
-      {
-        product_id: "pro_01h7dsxd2sg6aky4e70p96rb1y",
-        description: "Annual (per seat)",
-        unit_price: {
-          amount: "1000",
-          currency_code: "GBP"
-        }
+      product_id: "pro_01h7dsxd2sg6aky4e70p96rb1y",
+      description: "Annual (per seat)",
+      unit_price: {
+        amount: "1000",
+        currency_code: "GBP"
       }
     )
 
@@ -36,7 +34,7 @@ class PriceTest < Minitest::Test
   end
 
   def test_price_update
-    price = Paddle::Price.update("pri_01h7dt8qgnh9jya9gcqsxd0r7p", {description: "Annual (per seat) with 30 day trial"})
+    price = Paddle::Price.update(id: "pri_01h7dt8qgnh9jya9gcqsxd0r7p", description: "Annual (per seat) with 30 day trial")
 
     assert_equal Paddle::Price, price.class
     assert_equal "Annual (per seat) with 30 day trial", price.description

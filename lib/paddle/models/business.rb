@@ -3,23 +3,23 @@ module Paddle
 
     class << self
 
-      def list(customer, params = nil)
+      def list(customer:, **params)
         response = Client.get_request("customers/#{customer}/businesses", params: params)
         Collection.from_response(response, type: Business)
       end
 
-      def create(customer, attrs)
-        response = Client.post_request("customers/#{customer}/businesses", body: attrs)
+      def create(customer:, **params)
+        response = Client.post_request("customers/#{customer}/businesses", body: params)
         Business.new(response.body["data"])
       end
 
-      def retrieve(customer, id)
+      def retrieve(customer:, id:)
         response = Client.get_request("customers/#{customer}/businesses/#{id}")
         Business.new(response.body["data"])
       end
 
-      def update(customer, id, attrs)
-        response = Client.patch_request("customers/#{customer}/businesses/#{id}", body: attrs)
+      def update(customer:, id:, **params)
+        response = Client.patch_request("customers/#{customer}/businesses/#{id}", body: params)
         Business.new(response.body["data"])
       end
 

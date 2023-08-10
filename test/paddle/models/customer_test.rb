@@ -11,7 +11,7 @@ class CustomerTest < Minitest::Test
   end
 
   def test_customer_retrieve
-    customer = Paddle::Customer.retrieve("ctm_01h7dtf1yg8jge7980baqdkjk8")
+    customer = Paddle::Customer.retrieve(id: "ctm_01h7dtf1yg8jge7980baqdkjk8")
 
     assert_equal Paddle::Customer, customer.class
     assert_equal "ctm_01h7dtf1yg8jge7980baqdkjk8", customer.id
@@ -19,7 +19,7 @@ class CustomerTest < Minitest::Test
   end
 
   def test_customer_create
-    customer = Paddle::Customer.create({name: "Michael Bluth", email: "michael@mycompany.com"})
+    customer = Paddle::Customer.create(name: "Michael Bluth", email: "michael@mycompany.com")
 
     assert_equal Paddle::Customer, customer.class
     assert_equal "active", customer.status
@@ -27,7 +27,7 @@ class CustomerTest < Minitest::Test
   end
 
   def test_customer_update
-    customer = Paddle::Customer.update("ctm_01h7dth5z8q7df4r73r4jek70g", {email: "gob@bluthcompany.com"})
+    customer = Paddle::Customer.update(id: "ctm_01h7dth5z8q7df4r73r4jek70g", email: "gob@bluthcompany.com")
 
     assert_equal Paddle::Customer, customer.class
     assert_equal "gob@bluthcompany.com", customer.email

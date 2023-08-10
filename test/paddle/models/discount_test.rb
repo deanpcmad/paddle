@@ -11,7 +11,7 @@ class DiscountTest < Minitest::Test
   end
 
   def test_discount_retrieve
-    discount = Paddle::Discount.retrieve("dsc_01h7dtzexhveh8sqfm16b0yw4d")
+    discount = Paddle::Discount.retrieve(id: "dsc_01h7dtzexhveh8sqfm16b0yw4d")
 
     assert_equal Paddle::Discount, discount.class
     assert_equal "dsc_01h7dtzexhveh8sqfm16b0yw4d", discount.id
@@ -19,7 +19,7 @@ class DiscountTest < Minitest::Test
   end
 
   def test_discount_create
-    discount = Paddle::Discount.create({description: "$10 off", type: "flat", amount: "1000", currency_code: "USD"})
+    discount = Paddle::Discount.create(description: "$10 off", type: "flat", amount: "1000", currency_code: "USD")
 
     assert_equal Paddle::Discount, discount.class
     assert_equal "active", discount.status
@@ -27,7 +27,7 @@ class DiscountTest < Minitest::Test
   end
 
   def test_discount_update
-    discount = Paddle::Discount.update("dsc_01h7dv1243xervzbkfxkg56cnn", {code: "WELCOME", enabled_for_checkout: true})
+    discount = Paddle::Discount.update(id: "dsc_01h7dv1243xervzbkfxkg56cnn", code: "WELCOME", enabled_for_checkout: true)
 
     assert_equal Paddle::Discount, discount.class
     assert_equal "WELCOME", discount.code

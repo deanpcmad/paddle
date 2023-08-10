@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    paddlerb (0.1.4)
+    paddlerb (1.0.0)
       faraday (~> 2.0)
 
 GEM

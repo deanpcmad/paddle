@@ -28,8 +28,9 @@ module Paddle
         Subscription.new(response.body["data"])
       end
 
-      def charge(id:, **params)
-        response = Client.post_request("subscriptions/#{id}/charge", body: params)
+      def charge(id:, items:, effective_from:, **params)
+        attrs = {items: items, effective_from: effective_from}
+        response = Client.post_request("subscriptions/#{id}/charge", body: attrs.merge(params))
         Subscription.new(response.body["data"])
       end
 
@@ -38,8 +39,9 @@ module Paddle
         Subscription.new(response.body["data"])
       end
 
-      def resume(id:, **params)
-        response = Client.post_request("subscriptions/#{id}/resume", body: params)
+      def resume(id:, effective_from:, **params)
+        attrs = {effective_from: effective_from}
+        response = Client.post_request("subscriptions/#{id}/resume", body: attrs.merge(params))
         Subscription.new(response.body["data"])
       end
 

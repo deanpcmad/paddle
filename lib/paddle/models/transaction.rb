@@ -8,8 +8,9 @@ module Paddle
         Collection.from_response(response, type: Transaction)
       end
 
-      def create(**params)
-        response = Client.post_request("transactions", body: params)
+      def create(items:, **params)
+        attrs = {items: items}
+        response = Client.post_request("transactions", body: attrs.merge(params))
         Transaction.new(response.body["data"])
       end
 
@@ -30,13 +31,15 @@ module Paddle
         end
       end
 
-      def preview(**params)
-        response = Client.post_request("transactions/preview", body: params)
+      def preview(items:, **params)
+        attrs = {items: items}
+        response = Client.post_request("transactions/preview", body: attrs.merge(params))
         Transaction.new(response.body["data"])
       end
 
-      def preview_prices(**params)
-        response = Client.post_request("pricing-preview", body: params)
+      def preview_prices(items:, **params)
+        attrs = {items: items}
+        response = Client.post_request("pricing-preview", body: attrs.merge(params))
         Transaction.new(response.body["data"])
       end
 

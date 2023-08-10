@@ -8,8 +8,9 @@ module Paddle
         Collection.from_response(response, type: NotificationSetting)
       end
 
-      def create(**params)
-        response = Client.post_request("notification-settings", body: params)
+      def create(description:, destination:, type:, events:, **params)
+        {description: description, destination: destination, type: type, subscribed_events: events}
+        response = Client.post_request("notification-settings", body: attrs.merge(params))
         NotificationSetting.new(response.body["data"])
       end
 

@@ -8,8 +8,9 @@ module Paddle
         Collection.from_response(response, type: Discount)
       end
 
-      def create(**params)
-        response = Client.post_request("discounts", body: params)
+      def create(amount:, description:, type:, **params)
+        attrs = {amount: amount, description: description, type: type}
+        response = Client.post_request("discounts", body: attrs.merge(params))
         Discount.new(response.body["data"])
       end
 

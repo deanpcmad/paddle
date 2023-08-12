@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    paddlerb (1.0.0)
+    paddle (1.1.0)
       faraday (~> 2.0)
 
 GEM
@@ -23,7 +23,7 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   minitest (~> 5.0)
-  paddlerb!
+  paddle!
   rake (~> 13.0)
   vcr
 

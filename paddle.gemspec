@@ -3,17 +3,17 @@
 require_relative "lib/paddle/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "paddlerb"
+  spec.name          = "paddle"
   spec.version       = Paddle::VERSION
   spec.authors       = ["Dean Perry"]
   spec.email         = ["dean@deanpcmad.com"]
 
   spec.summary       = "Ruby library for the Paddle Billing & Classic APIs"
-  spec.homepage      = "https://github.com/deanpcmad/paddlerb"
+  spec.homepage      = "https://github.com/deanpcmad/paddle"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/deanpcmad/paddlerb"
+  spec.metadata["source_code_uri"] = "https://github.com/deanpcmad/paddle"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

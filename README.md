@@ -1,15 +1,13 @@
-# PaddleRB
+# Paddle Ruby Library
 
-PaddleRB is a Ruby library for interacting with the Paddle APIs, both Classic and Billing.
-
-**This library is currently under development for Paddle's new Billing APIs**
+A Ruby library for the Paddle APIs, both Classic and Billing.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "paddlerb"
+gem "paddle"
 ```
 
 ## Billing API
@@ -395,7 +393,7 @@ or [here for sandbox](https://sandbox-vendors.paddle.com/authentication)
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/deanpcmad/paddlerb.
+Bug reports and pull requests are welcome on GitHub at https://github.com/deanpcmad/paddle.
 
 ## License
 

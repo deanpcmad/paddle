@@ -27,6 +27,7 @@ module Paddle
   # Load Billing APIs
   autoload :Product, "paddle/models/product"
   autoload :Price, "paddle/models/price"
+  autoload :PricingPreview, "paddle/models/pricing_preview"
   autoload :Discount, "paddle/models/discount"
   autoload :Customer, "paddle/models/customer"
   autoload :Address, "paddle/models/address"

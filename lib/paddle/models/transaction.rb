@@ -37,12 +37,6 @@ module Paddle
         Transaction.new(response.body["data"])
       end
 
-      def preview_prices(items:, **params)
-        attrs = {items: items}
-        response = Client.post_request("pricing-preview", body: attrs.merge(params))
-        Transaction.new(response.body["data"])
-      end
-
     end
 
   end

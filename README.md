@@ -76,6 +76,17 @@ Paddle::Price.retrieve(id: "pri_123abc")
 Paddle::Price.update(id: "pri_123abc", description: "An updated description")
 ```
 
+### Pricing Preview
+
+```ruby
+# Preview calculations for one or more prices
+# This is normally used when building pricing pages
+# https://developer.paddle.com/api-reference/pricing-preview/preview-prices
+Paddle::PricingPreview.generate(items: [ { price_id: "pri_123abc", quantity: 5 } ])
+Paddle::PricingPreview.generate(items: [ { price_id: "pri_123abc", quantity: 5 } ], currency_code: "GBP")
+Paddle::PricingPreview.generate(items: [ { price_id: "pri_123abc", quantity: 5 } ], customer_ip_address: "1.1.1.1")
+```
+
 ### Discounts
 
 ```ruby
@@ -179,13 +190,6 @@ Paddle::Transaction.update(id: "txn_abc123", items: [ { price_id: "pri_abc123", 
 # Preview a transaction
 # https://developer.paddle.com/api-reference/transaction/preview-transaction
 Paddle::Transaction.preview(items: [ { price_id: "pri_123abc", quantity: 5 } ])
-
-# Preview calculations for one or more prices
-# This is normally used when building pricing pages
-# https://developer.paddle.com/api-reference/transaction/preview-prices
-Paddle::Transaction.preview_prices(items: [ { price_id: "pri_123abc", quantity: 5 } ])
-Paddle::Transaction.preview_prices(items: [ { price_id: "pri_123abc", quantity: 5 } ], currency_code: "GBP")
-Paddle::Transaction.preview_prices(items: [ { price_id: "pri_123abc", quantity: 5 } ], customer_ip_address: "1.1.1.1")
 
 # Get a PDF invoice for a transaction
 # Returns a raw URL. This URL is not permanent and will expire.

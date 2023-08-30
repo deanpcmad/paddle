@@ -19,6 +19,15 @@ class TransactionTest < Minitest::Test
     assert_equal "subscription_update", transaction.origin
   end
 
+  def test_transaction_retrieve_with_extra
+    transaction = Paddle::Transaction.retrieve(id: "txn_01h7e2wz65er1fwbkqbzpng9th", extra: "customer")
+
+    assert_equal Paddle::Transaction, transaction.class
+    assert_equal "txn_01h7e2wz65er1fwbkqbzpng9th", transaction.id
+    assert_equal "subscription_update", transaction.origin
+    assert transaction.customer
+  end
+
   def test_transaction_invoice
     invoice = Paddle::Transaction.invoice(id: "txn_01h7e2wz65er1fwbkqbzpng9th")
 

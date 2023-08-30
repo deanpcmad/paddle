@@ -14,8 +14,9 @@ module Paddle
         Transaction.new(response.body["data"])
       end
 
-      def retrieve(id:)
-        response = Client.get_request("transactions/#{id}")
+      def retrieve(id:, extra: nil)
+        params = extra ? {include: extra} : {}
+        response = Client.get_request("transactions/#{id}", params: params)
         Transaction.new(response.body["data"])
       end
 

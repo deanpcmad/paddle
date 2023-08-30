@@ -186,6 +186,10 @@ Paddle::Transaction.create(items: [ { price_id: "pri_abc123", quantity: 1 } ])
 # Retrieve a transaction
 Paddle::Transaction.retrieve(id: "txn_abc123")
 
+# Retrieve a transaction with extra information
+# extra can be either "address", "adjustment", "adjustments_totals", "business", "customer", "discount"
+Paddle::Transaction.retrieve(id: "txn_abc123", extra: "customer")
+
 # Update a transaction
 # https://developer.paddle.com/api-reference/transaction/update-transaction
 Paddle::Transaction.update(id: "txn_abc123", items: [ { price_id: "pri_abc123", quantity: 2 } ])

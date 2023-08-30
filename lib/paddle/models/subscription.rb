@@ -8,8 +8,9 @@ module Paddle
         Collection.from_response(response, type: Subscription)
       end
 
-      def retrieve(id:)
-        response = Client.get_request("subscriptions/#{id}")
+      def retrieve(id:, extra: nil)
+        params = extra ? {include: extra} : {}
+        response = Client.get_request("subscriptions/#{id}", params: params)
         Subscription.new(response.body["data"])
       end
 

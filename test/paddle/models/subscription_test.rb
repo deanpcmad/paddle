@@ -18,6 +18,15 @@ class SubscriptionTest < Minitest::Test
     assert_equal "active", subscription.status
   end
 
+  def test_subscription_retrieve_with_extra
+    subscription = Paddle::Subscription.retrieve(id: "sub_01h7dvgvc6we84prca8gdhhr9c", extra: "next_transaction")
+
+    assert_equal Paddle::Subscription, subscription.class
+    assert_equal "sub_01h7dvgvc6we84prca8gdhhr9c", subscription.id
+    assert_equal "active", subscription.status
+    assert subscription.next_transaction
+  end
+
   def test_subscription_get_transaction
     subscription = Paddle::Subscription.get_transaction(id: "sub_01h7dvgvc6we84prca8gdhhr9c")
 

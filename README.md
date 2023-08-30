@@ -214,6 +214,10 @@ Paddle::Subscription.list(status: "canceled")
 # Retrieve a subscription
 Paddle::Subscription.retrieve(id: "sub_abc123")
 
+# Retrieve a subscription with extra information
+# extra can be either "next_transaction" or "recurring_transaction_details"
+Paddle::Subscription.retrieve(id: "sub_abc123", extra: "next_transaction")
+
 # Preview an update to a subscription
 # https://developer.paddle.com/api-reference/subscriptions/preview-subscription
 Paddle::Subscription.preview(id: "sub_abc123", items: [ { price_id: "pri_123abc", quantity: 2 } ])

@@ -28,4 +28,9 @@ class ConfigurationTest < Minitest::Test
     assert_equal Paddle.config.url, "https://sandbox-api.paddle.com"
   end
 
+  def test_version
+    Paddle.config.version = 2
+    assert_equal 2, Paddle.config.version
+  end
+
 end

@@ -8,7 +8,8 @@ module Paddle
           conn.request :authorization, :Bearer, Paddle.config.api_key
 
           conn.headers = {
-            "User-Agent" => "paddle/v#{VERSION} (github.com/deanpcmad/paddle)"
+            "User-Agent" => "paddle/v#{VERSION} (github.com/deanpcmad/paddle)",
+            "Paddle-Version" => Paddle.config.version
           }
 
           conn.request :json

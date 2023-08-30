@@ -27,6 +27,9 @@ Paddle.configure do |config|
   # Or use :production for the Production API
   config.environment = :sandbox
   config.api_key = ENV["PADDLE_API_KEY"]
+
+  # Set the API version. Defaults to 1
+  config.version = 1
 end
 ```
 

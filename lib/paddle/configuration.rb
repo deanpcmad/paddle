@@ -5,10 +5,12 @@ module Paddle
 
     attr_reader :environment
 
+    attr_accessor :version
     attr_accessor :api_key
 
     def initialize
       @environment ||= :production
+      @version ||= 1
     end
 
     def environment=(env)

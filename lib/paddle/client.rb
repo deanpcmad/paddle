@@ -9,7 +9,7 @@ module Paddle
 
           conn.headers = {
             "User-Agent" => "paddle/v#{VERSION} (github.com/deanpcmad/paddle)",
-            "Paddle-Version" => Paddle.config.version
+            "Paddle-Version" => Paddle.config.version.to_s
           }
 
           conn.request :json

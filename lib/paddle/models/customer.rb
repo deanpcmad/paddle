@@ -9,7 +9,7 @@ module Paddle
       end
 
       def create(email:, **params)
-        attrs = {email: email}
+        attrs = {email: email.gsub(/\s+/, "")}
         response = Client.post_request("customers", body: attrs.merge(params))
         Customer.new(response.body["data"])
       end

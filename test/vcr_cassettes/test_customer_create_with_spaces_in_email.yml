@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox-api.paddle.com/customers
+    body:
+      encoding: UTF-8
+      string: '{"email":"michael@mycompany.com","name":"Michael Bluth"}'
+    headers:
+      User-Agent:
+      - paddle/v2.1.0 (github.com/deanpcmad/paddle)
+      Paddle-Version:
+      - '1'
+      Authorization:
+      - Bearer <AUTHORIZATION>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      date:
+      - Sat, 09 Sep 2023 16:18:17 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '302'
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store, max-age=0
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      pragma:
+      - no-cache
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - ea2447fd-30b3-4dfd-bf3b-604421c2071b
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=04iul_UR9CNsDVP_Nyi6tP8x3uoaYN_d28x.UHi1THI-1694276297-0-AaSAdnxMdUaV+8fPCqY5BfuQdPwjKgZ7CW8C6UhMQGzDAy3ouE5aF5WsUnHobeLXjJE3iPwVrfZLczhY5Vf5UTQ=;
+        path=/; expires=Sat, 09-Sep-23 16:48:17 GMT; domain=.paddle.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 8040bf088b797711-LHR
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"ctm_01h9xbs8fh0a92af83n6e4ah0b","status":"active","name":"Michael
+        Bluth","email":"michael@mycompany.com","marketing_consent":false,"locale":"en","created_at":"2023-09-09T16:18:17.201Z","updated_at":"2023-09-09T16:18:17.201Z"},"meta":{"request_id":"ea2447fd-30b3-4dfd-bf3b-604421c2071b"}}'
+  recorded_at: Sat, 09 Sep 2023 16:18:17 GMT
+recorded_with: VCR 6.2.0

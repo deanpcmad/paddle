@@ -28,11 +28,11 @@ class SubscriptionTest < Minitest::Test
   end
 
   def test_subscription_get_transaction
-    subscription = Paddle::Subscription.get_transaction(id: "sub_01h7dvgvc6we84prca8gdhhr9c")
+    transaction = Paddle::Subscription.get_transaction(id: "sub_01h7dvgvc6we84prca8gdhhr9c")
 
-    assert_equal Paddle::Subscription, subscription.class
-    assert_equal "txn_01h7dxza6whtgdcnb9f1h377j9", subscription.id
-    assert_equal "sub_01h7dvgvc6we84prca8gdhhr9c", subscription.subscription_id
+    assert_equal Paddle::Transaction, transaction.class
+    assert_equal "txn_01h7dxza6whtgdcnb9f1h377j9", transaction.id
+    assert_equal "sub_01h7dvgvc6we84prca8gdhhr9c", transaction.subscription_id
   end
 
   def test_subscription_preview

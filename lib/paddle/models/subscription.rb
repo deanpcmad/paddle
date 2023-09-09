@@ -16,7 +16,7 @@ module Paddle
 
       def get_transaction(id:)
         response = Client.get_request("subscriptions/#{id}/update-payment-method-transaction")
-        Subscription.new(response.body["data"])
+        Transaction.new(response.body["data"])
       end
 
       def preview(id:, **params)

@@ -1,14 +1,16 @@
 PATH
   remote: .
   specs:
-    paddle (2.1.1)
+    paddle (2.1.2)
       faraday (~> 2.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    base64 (0.1.1)
     dotenv (2.7.6)
-    faraday (2.7.10)
+    faraday (2.7.11)
+      base64
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
@@ -28,4 +30,4 @@ DEPENDENCIES
   vcr
 
 BUNDLED WITH
-   2.3.22
+   2.4.21

@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-api.paddle.com/customers/ctm_01hd12bdgxkfjx1cj8ynmjyark/credit-balances
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - paddle/v2.1.1 (github.com/deanpcmad/paddle)
+      Paddle-Version:
+      - '1'
+      Authorization:
+      - Bearer <AUTHORIZATION>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 18 Oct 2023 13:04:09 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store, max-age=0
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      pragma:
+      - no-cache
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - 33321b33-ff85-4ee3-ad96-030e8098cfa1
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=DNofDWkjvLj8qlgQTfE56niddlekkL3jZkyFNlqil_0-1697634249-0-AWvRGYz9bcVhWfnpZSdXIFccNNsSAGsSPL3MRc1mkqj9QUaVVywUVCoUPYgke1s4Orrgc3eO2tjsGDOmffZI+i8=;
+        path=/; expires=Wed, 18-Oct-23 13:34:09 GMT; domain=.paddle.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 8180fc4a3e4f3691-LHR
+      content-encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"customer_id":"ctm_01hd12bdgxkfjx1cj8ynmjyark","currency_code":"USD","balance":{"available":"0","reserved":"0","used":"2499"}}],"meta":{"request_id":"33321b33-ff85-4ee3-ad96-030e8098cfa1"}}'
+  recorded_at: Wed, 18 Oct 2023 13:04:09 GMT
+recorded_with: VCR 6.2.0

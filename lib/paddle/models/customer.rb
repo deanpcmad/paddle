@@ -24,6 +24,11 @@ module Paddle
         Customer.new(response.body["data"])
       end
 
+      def credit(id:)
+        response = Client.get_request("customers/#{id}/credit-balances")
+        CreditBalance.new(response.body["data"][0])
+      end
+
     end
 
   end

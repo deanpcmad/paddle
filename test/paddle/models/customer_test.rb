@@ -41,4 +41,12 @@ class CustomerTest < Minitest::Test
     assert_equal "gob@bluthcompany.com", customer.email
   end
 
+  def test_customer_credit
+    credit = Paddle::Customer.credit(id: "ctm_01hd12bdgxkfjx1cj8ynmjyark")
+
+    assert_equal Paddle::CreditBalance, credit.class
+    assert_equal "USD", credit.currency_code
+    assert_equal "0", credit.balance.available
+  end
+
 end

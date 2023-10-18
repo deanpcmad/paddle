@@ -130,6 +130,10 @@ Paddle::Customer.retrieve(id: "ctm_abc123")
 # Update a customer
 # https://developer.paddle.com/api-reference/customers/update-customer
 Paddle::Customer.update(id: "ctm_abc123", status: "archived")
+
+# Retrieve credit balance for a customer
+# https://developer.paddle.com/api-reference/customers/list-credit-balances
+Paddle::Customer.credit(id: "ctm_abc123")
 ```
 
 ### Addresses

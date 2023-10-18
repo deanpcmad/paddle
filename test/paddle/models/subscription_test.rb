@@ -101,4 +101,12 @@ class SubscriptionTest < Minitest::Test
     assert_equal "cancel", subscription.scheduled_change.action
   end
 
+  def test_subscription_activate
+    subscription = Paddle::Subscription.activate(id: "sub_01hd1drf5htjz45yt2346anmqt")
+
+    assert_equal Paddle::Subscription, subscription.class
+    assert_equal "active", subscription.status
+    assert_equal "sub_01hd1drf5htjz45yt2346anmqt", subscription.id
+  end
+
 end

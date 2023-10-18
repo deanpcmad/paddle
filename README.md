@@ -250,6 +250,10 @@ Paddle::Subscription.resume(id: "sub_abc123", effective_from: "next_billing_peri
 # Cancel a subscription
 # https://developer.paddle.com/api-reference/subscriptions/cancel-subscription
 Paddle::Subscription.cancel(id: "sub_abc123", effective_from: "next_billing_period")
+
+# Activate a trialing subscription
+# https://developer.paddle.com/api-reference/subscriptions/activate-subscription
+Paddle::Subscription.activate(id: "sub_abc123")
 ```
 
 ### Adjustments

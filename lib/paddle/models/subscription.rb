@@ -51,6 +51,11 @@ module Paddle
         Subscription.new(response.body["data"])
       end
 
+      def activate(id:)
+        response = Client.post_request("subscriptions/#{id}/activate")
+        Subscription.new(response.body["data"])
+      end
+
     end
 
   end

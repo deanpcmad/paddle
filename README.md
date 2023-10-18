@@ -247,14 +247,17 @@ Paddle::Subscription.charge(id: "sub_abc123", items: [ { price_id: "pri_123abc",
 # https://developer.paddle.com/api-reference/subscriptions/pause-subscription
 Paddle::Subscription.pause(id: "sub_abc123")
 Paddle::Subscription.pause(id: "sub_abc123", effective_from: "next_billing_period")
+Paddle::Subscription.pause(id: "sub_abc123", effective_from: "immediately")
 
 # Resume a paused subscription
 # https://developer.paddle.com/api-reference/subscriptions/resume-subscription
 Paddle::Subscription.resume(id: "sub_abc123", effective_from: "next_billing_period")
+Paddle::Subscription.resume(id: "sub_abc123", effective_from: "immediately")
 
 # Cancel a subscription
 # https://developer.paddle.com/api-reference/subscriptions/cancel-subscription
 Paddle::Subscription.cancel(id: "sub_abc123", effective_from: "next_billing_period")
+Paddle::Subscription.cancel(id: "sub_abc123", effective_from: "immediately")
 
 # Activate a trialing subscription
 # https://developer.paddle.com/api-reference/subscriptions/activate-subscription

@@ -69,16 +69,13 @@ class SubscriptionTest < Minitest::Test
     assert_equal "pause", subscription.scheduled_change.action
   end
 
-  # def test_subscription_resume
-  #   subscription = Paddle::Subscription.resume "sub_01h7dvgvc6we84prca8gdhhr9c", {
-  #     "effective_from": "immediately"
-  #   }
+  def test_subscription_resume
+    subscription = Paddle::Subscription.resume(id: "sub_01hd14fsxw4tp9tt7ajsk57qsv", effective_from: "immediately")
 
-  #   assert_equal Paddle::Subscription, subscription.class
-  #   assert_equal "active", subscription.status
-  #   assert_equal "sub_01h7dvgvc6we84prca8gdhhr9c", subscription.id
-  #   # assert_equal "2023-09-20T00:00:00.001Z", subscription.scheduled_change.resume_at
-  # end
+    assert_equal Paddle::Subscription, subscription.class
+    assert_equal "active", subscription.status
+    assert_equal "sub_01hd14fsxw4tp9tt7ajsk57qsv", subscription.id
+  end
 
   def test_subscription_charge
     subscription = Paddle::Subscription.charge(id: "sub_01h7dvgvc6we84prca8gdhhr9c",

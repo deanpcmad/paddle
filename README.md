@@ -218,6 +218,7 @@ Paddle::Subscription.list(customer_id: "ctm_abc123")
 Paddle::Subscription.list(price_id: "pri_abc123")
 Paddle::Subscription.list(status: "active")
 Paddle::Subscription.list(status: "canceled")
+Paddle::Subscription.list(collection_mode: "automatic")
 
 # Retrieve a subscription
 Paddle::Subscription.retrieve(id: "sub_abc123")

@@ -219,6 +219,7 @@ Paddle::Subscription.list(price_id: "pri_abc123")
 Paddle::Subscription.list(status: "active")
 Paddle::Subscription.list(status: "canceled")
 Paddle::Subscription.list(collection_mode: "automatic")
+Paddle::Subscription.list(scheduled_change_action: "cancel")
 
 # Retrieve a subscription
 Paddle::Subscription.retrieve(id: "sub_abc123")

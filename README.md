@@ -124,6 +124,7 @@ Paddle::Discount.update(id: "dsc_abc123", description: "An updated description")
 # https://developer.paddle.com/api-reference/customers/list-customers
 Paddle::Customer.list
 Paddle::Customer.list(status: "active")
+Paddle::Customer.list(email: "me@mydomain.com")
 
 # Create a customer
 # https://developer.paddle.com/api-reference/customers/create-customer

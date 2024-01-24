@@ -33,6 +33,11 @@ Paddle.configure do |config|
 end
 ```
 
+### Caveats
+
+The Paddle API doesn't take `nil` values for optional parameters. If you want to
+remove a value, you'll need to pass `"null"` instead.
+
 ### Products
 
 ```ruby

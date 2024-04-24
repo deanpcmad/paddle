@@ -39,6 +39,7 @@ module Paddle
   autoload :Event, "paddle/models/event"
   autoload :NotificationSetting, "paddle/models/notification_setting"
   autoload :Notification, "paddle/models/notification"
+  autoload :Report, "paddle/models/report"
 
   autoload :NotificationLog, "paddle/models/notification_log"
   autoload :CreditBalance, "paddle/models/credit_balance"

@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-api.paddle.com/reports
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - paddle/v2.1.4 (github.com/deanpcmad/paddle)
+      Paddle-Version:
+      - '1'
+      Authorization:
+      - Bearer <AUTHORIZATION>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 24 Apr 2024 15:07:42 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store, max-age=0
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),screen-wake-lock=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),web-share=(),xr-spatial-tracking=()
+      pragma:
+      - no-cache
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - c4267046-98dc-4e9a-b328-722948354cdd
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      x-robots-tag:
+      - noindex, nofollow
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 879701283e8423e2-LHR
+      content-encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"id":"rep_01hw8a1mg788ffxetyzs77vk3n","type":"transactions","rows":9,"status":"ready","filters":[{"name":"updated_at","value":"2024-04-30","operator":"lt"},{"name":"updated_at","value":"2024-04-01","operator":"gte"}],"expires_at":"2024-05-08T15:02:20.027106Z","created_at":"2024-04-24T15:02:06.087Z","updated_at":"2024-04-24T15:02:20.027111Z"}],"meta":{"request_id":"c4267046-98dc-4e9a-b328-722948354cdd","pagination":{"per_page":50,"next":"https://sandbox-api.paddle.com/reports?after=rep_01hw8a1mg788ffxetyzs77vk3n","has_more":false,"estimated_total":1}}}'
+  recorded_at: Wed, 24 Apr 2024 15:07:43 GMT
+recorded_with: VCR 6.2.0

@@ -369,6 +369,25 @@ Paddle::Notification.replay(id: "ntf_abc123")
 Paddle::Notification.logs(id: "ntf_abc123")
 ```
 
+### Reports
+
+```ruby
+# List all reports
+Paddle::Report.list
+
+# Retrieve a report
+Paddle::Report.retrieve(id: "rpt_abc123")
+
+# Get CSV download link for a report
+# Returns a raw URL. This URL is not permanent and will expire.
+# https://developer.paddle.com/api-reference/reports/get-report-csv
+Paddle::Report.csv(id: "rpt_abc123")
+
+# Create a Report
+# https://developer.paddle.com/api-reference/reports/create-report
+Paddle::Report.create type: "transactions", filters: [{name: "updated_at", operator: "lt", value: "2024-04
+-30"}, {name: "updated_at", operator: "gte", value: "2024-04-01"}]
+```
 
 ## Classic API
 

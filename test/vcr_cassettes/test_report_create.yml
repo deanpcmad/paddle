@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox-api.paddle.com/reports
+    body:
+      encoding: UTF-8
+      string: '{"type":"transactions","filters":[{"name":"updated_at","operator":"lt","value":"2024-04-30"},{"name":"updated_at","operator":"gte","value":"2024-04-01"}]}'
+    headers:
+      User-Agent:
+      - paddle/v2.1.4 (github.com/deanpcmad/paddle)
+      Paddle-Version:
+      - '1'
+      Authorization:
+      - Bearer <AUTHORIZATION>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      date:
+      - Wed, 24 Apr 2024 15:09:51 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '391'
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store, max-age=0
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),screen-wake-lock=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),web-share=(),xr-spatial-tracking=()
+      pragma:
+      - no-cache
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - '096ac151-4714-483a-99de-3169c9b8723c'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      x-robots-tag:
+      - noindex, nofollow
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 8797044a1c729407-LHR
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"rep_01hw8aftshkm8myc5nk6w2edmf","type":"transactions","rows":null,"status":"pending","filters":[{"name":"updated_at","value":"2024-04-30","operator":"lt"},{"name":"updated_at","value":"2024-04-01","operator":"gte"}],"expires_at":null,"created_at":"2024-04-24T15:09:51.281Z","updated_at":"2024-04-24T15:09:51.281Z"},"meta":{"request_id":"096ac151-4714-483a-99de-3169c9b8723c"}}'
+  recorded_at: Wed, 24 Apr 2024 15:09:52 GMT
+recorded_with: VCR 6.2.0

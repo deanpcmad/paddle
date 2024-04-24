@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-api.paddle.com/reports/rep_01hw8a1mg788ffxetyzs77vk3n/download-url
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - paddle/v2.1.4 (github.com/deanpcmad/paddle)
+      Paddle-Version:
+      - '1'
+      Authorization:
+      - Bearer <AUTHORIZATION>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 24 Apr 2024 15:10:29 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - no-store, max-age=0
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),screen-wake-lock=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),web-share=(),xr-spatial-tracking=()
+      pragma:
+      - no-cache
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - 35aa36e6-c5bf-48f1-9fcc-34f55ec32db8
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      x-robots-tag:
+      - noindex, nofollow
+      cf-cache-status:
+      - DYNAMIC
+      server:
+      - cloudflare
+      cf-ray:
+      - 879705383fb4772b-LHR
+      content-encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"url":"https://sandbox-reports.paddle.com/transactions-13826-2024-04-24-15-02-07.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=ASIAZWZYLIX3FYAWATXP%2F20240424%2Feu-west-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20240424T151029Z\u0026X-Amz-Expires=180\u0026X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEcaCXVzLWVhc3QtMSJHMEUCIGPIFmLqw2doSKfluNqJR%2B98CBG2rMG7N1i76LIjuSPiAiEAuZ%2B6%2FDCJepQn2tzcA5V%2F6GwiWccRJY8B53KVoDq2S%2BMqjAQIkP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgw2Njc0NDg3MjI5MzQiDJdZlb%2BlDQafPlj8AirgA2yEY8T85icCF7Kn3tBI67wNWSFy%2Bii0SxeAVrS9Fsc%2FpSJq54Q5adJA6jro%2B3xeWbhdZhceeMta28UkwG1pYxWMsPG%2F2bCjJcRYNTJWx16hpzfcSaDNyB7HGLbKPe1rKuzbJhJaKZJpLpys5Or6%2FuL4sAUWuk%2B9hi%2BKWqev7zLxeTvdg6s7yC%2B3MMoS4IMEM%2F71RBcDkoSSlhkG4xi6vg0DpyXegki%2FtpyD1qR1Sp5kkZ9XCR4r5nIG9Ry9M6TihfNwY9lEYq6XgbKLXNw8bR3drj6WnJpP0fZa70wwcn6FBhgrWXIzNaML4eMpZ%2FOrweD3XCgmHCKM8UUE%2BYlnFPVZQabtKMuafJh19oFZ0KbvYhPyk5Fl%2FMNX4XYwKJkHiEPZ7ZT08wzC3ERNx8YttVkiP%2BMyB%2Bt8M3%2FdBNI%2FxHLERmL12BLNGdqXaBgcosvx%2FIq%2BPz0G54PqXzKUtQg7G43vLX9%2BneiMOU0y2r3KGl%2FT75EflD10xlgbWF7u1XJ5ALyGPbtw%2F%2BBGjcj0yENZTHQeHN43t7s%2FmwUP7jHDBtfHi1l6FFRqaD%2ByRDnih3q4I%2BgD8ZG6zjFUYQwnrTOQMtQBxQmcWZw4nbcCQlK%2BaX%2BNsfN%2Bti50OswrmpxLDOh2CDDQvKSxBjqlAadDDNC3uCcMwYEDNTgDPXHfLjHyS%2BZ2eDztskXcSVjJLKuXb2vL7fLR31G81%2Fx2dgvbVCs1psh9k6HHPA%2BpX%2B6waYM3G7oBjCfeJCCzl%2FBKaorARQV5z7%2Fu3pGIzCDszLco%2BsRS7nalCH2tu0RbsOMNCl8tP8y4FC851iFYMcWxGLvSbpH7bTB11gPjNrz0KxIrEuQHVE20Q9RTlhpj%2BisMuYQhOA%3D%3D\u0026X-Amz-SignedHeaders=host\u0026x-id=GetObject\u0026X-Amz-Signature=8d694a98f92247fb73ee66aba2513f0ea06140130980499af9dc19a0da6fe79f"},"meta":{"request_id":"35aa36e6-c5bf-48f1-9fcc-34f55ec32db8"}}'
+  recorded_at: Wed, 24 Apr 2024 15:10:30 GMT
+recorded_with: VCR 6.2.0

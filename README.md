@@ -7,7 +7,7 @@ A Ruby library for the Paddle APIs, both Classic and Billing.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "paddle", "~> 2.1"
+gem "paddle", "~> 2.2"
 ```
 
 ## Billing API
@@ -385,8 +385,13 @@ Paddle::Report.csv(id: "rpt_abc123")
 
 # Create a Report
 # https://developer.paddle.com/api-reference/reports/create-report
-Paddle::Report.create type: "transactions", filters: [{name: "updated_at", operator: "lt", value: "2024-04
--30"}, {name: "updated_at", operator: "gte", value: "2024-04-01"}]
+Paddle::Report.create(
+  type: "transactions",
+  filters: [
+    {name: "updated_at", operator: "lt", value: "2024-04-30"},
+    {name: "updated_at", operator: "gte", value: "2024-04-01"}
+  ]
+)
 ```
 
 ## Classic API

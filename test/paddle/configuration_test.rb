@@ -10,6 +10,12 @@ class ConfigurationTest < Minitest::Test
     assert_equal "abc123", Paddle.config.api_key
   end
 
+  def test_environment_should_default_to_production
+    Paddle.config.environment = nil
+    assert !Paddle.config.environment.nil?
+    assert_equal Paddle.config.url, "https://api.paddle.com"
+  end
+
   def test_production_environment
     Paddle.config.environment = :production
     assert !Paddle.config.url.nil?

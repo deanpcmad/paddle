@@ -14,7 +14,7 @@ module Paddle
     end
 
     def environment=(env)
-      env = env.to_sym
+      env = env.nil? ? :production : env.to_sym
       unless [:development, :sandbox, :production].include?(env)
         raise ArgumentError, "#{env.inspect} is not a valid environment"
       end

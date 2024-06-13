@@ -14,7 +14,7 @@ module Paddle
 
           conn.request :json
 
-          conn.response :json, content_type: "application/json"
+          conn.response :json, parser_options: { object_class: OpenStruct }
         end
       end
 

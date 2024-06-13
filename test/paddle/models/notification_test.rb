@@ -1,7 +1,6 @@
 require "test_helper"
 
 class Notification < Minitest::Test
-
   def test_notification_list
     notifications = Paddle::Notification.list
 
@@ -25,5 +24,4 @@ class Notification < Minitest::Test
     assert_equal Paddle::NotificationLog, notification_logs.data.first.class
     assert_equal 200, notification_logs.data.first.response_code
   end
-
 end

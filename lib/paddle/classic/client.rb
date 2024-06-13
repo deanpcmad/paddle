@@ -1,7 +1,6 @@
 module Paddle
   module Classic
     class Client
-
       BASE_URL = "https://vendors.paddle.com/api"
       SANDBOX_BASE_URL = "https://sandbox-vendors.paddle.com/api"
 

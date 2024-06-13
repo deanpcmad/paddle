@@ -19,7 +19,6 @@ Paddle.configure do |config|
 end
 
 class Minitest::Test
-
   def setup
     VCR.insert_cassette(name)
   end
@@ -27,5 +26,4 @@ class Minitest::Test
   def teardown
     VCR.eject_cassette
   end
-
 end

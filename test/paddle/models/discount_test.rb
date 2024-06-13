@@ -1,7 +1,6 @@
 require "test_helper"
 
 class DiscountTest < Minitest::Test
-
   def test_discount_list
     discounts = Paddle::Discount.list
 
@@ -32,5 +31,4 @@ class DiscountTest < Minitest::Test
     assert_equal Paddle::Discount, discount.class
     assert_equal "WELCOME", discount.code
   end
-
 end

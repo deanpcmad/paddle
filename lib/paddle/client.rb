@@ -1,8 +1,6 @@
 module Paddle
   class Client
-
     class << self
-
       def connection
         @connection ||= Faraday.new(Paddle.config.url) do |conn|
           conn.request :authorization, :Bearer, Paddle.config.api_key
@@ -65,8 +63,6 @@ module Paddle
 
         response
       end
-
     end
-
   end
 end

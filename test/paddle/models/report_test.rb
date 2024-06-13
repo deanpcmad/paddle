@@ -1,7 +1,6 @@
 require "test_helper"
 
 class ReportTest < Minitest::Test
-
   def test_report_list
     reports = Paddle::Report.list
 
@@ -28,13 +27,12 @@ class ReportTest < Minitest::Test
     report = Paddle::Report.create(
       type: "transactions",
       filters: [
-        {name: "updated_at", operator: "lt", value: "2024-04-30"},
-        {name: "updated_at", operator: "gte", value: "2024-04-01"}
+        { name: "updated_at", operator: "lt", value: "2024-04-30" },
+        { name: "updated_at", operator: "gte", value: "2024-04-01" }
       ]
     )
 
     assert_equal Paddle::Report, report.class
     assert_equal "transactions", report.type
   end
-
 end

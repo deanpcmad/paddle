@@ -1,7 +1,6 @@
 require "test_helper"
 
 class EventTest < Minitest::Test
-
   def test_event_list
     events = Paddle::Event.list
 
@@ -9,5 +8,4 @@ class EventTest < Minitest::Test
     assert_equal Paddle::Event, events.data.first.class
     assert_equal "business.updated", events.data.first.event_type
   end
-
 end

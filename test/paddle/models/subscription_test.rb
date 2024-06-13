@@ -1,7 +1,6 @@
 require "test_helper"
 
 class SubscriptionTest < Minitest::Test
-
   def test_subscription_list
     subscriptions = Paddle::Subscription.list
 
@@ -52,7 +51,7 @@ class SubscriptionTest < Minitest::Test
   end
 
   def test_subscription_update
-    subscription = Paddle::Subscription.update(id: "sub_01h7dvgvc6we84prca8gdhhr9c", billing_details: {purchase_order_number: "PO-1234"})
+    subscription = Paddle::Subscription.update(id: "sub_01h7dvgvc6we84prca8gdhhr9c", billing_details: { purchase_order_number: "PO-1234" })
 
     assert_equal Paddle::Subscription, subscription.class
     assert_equal "active", subscription.status
@@ -108,5 +107,4 @@ class SubscriptionTest < Minitest::Test
     assert_equal "active", subscription.status
     assert_equal "sub_01hd1drf5htjz45yt2346anmqt", subscription.id
   end
-
 end

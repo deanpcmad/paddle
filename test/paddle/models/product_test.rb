@@ -1,7 +1,6 @@
 require "test_helper"
 
 class ProductTest < Minitest::Test
-
   def test_product_list
     products = Paddle::Product.list
 
@@ -31,5 +30,4 @@ class ProductTest < Minitest::Test
     assert_equal Paddle::Product, product.class
     assert_equal "ChatApp Enterprise (old)", product.name
   end
-
 end

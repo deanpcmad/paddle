@@ -6,15 +6,15 @@ class ObjectTest < Minitest::Test
   end
 
   def test_nested_hash
-    assert_equal "foobar", Paddle::Object.new(foo: {bar: {baz: "foobar"}}).foo.bar.baz
+    assert_equal "foobar", Paddle::Object.new(foo: { bar: { baz: "foobar" } }).foo.bar.baz
   end
 
   def test_nested_number
-    assert_equal 1, Paddle::Object.new(foo: {bar: 1}).foo.bar
+    assert_equal 1, Paddle::Object.new(foo: { bar: 1 }).foo.bar
   end
 
   def test_array
-    object = Paddle::Object.new(foo: [{bar: :baz}])
+    object = Paddle::Object.new(foo: [ { bar: :baz } ])
     assert_equal OpenStruct, object.foo.first.class
     assert_equal :baz, object.foo.first.bar
   end

@@ -14,7 +14,7 @@ module Paddle
       # end
 
       def post_request(url, body: {}, headers: {})
-        attrs = {vendor_id: client.vendor_id, vendor_auth_code: client.vendor_auth_code}
+        attrs = { vendor_id: client.vendor_id, vendor_auth_code: client.vendor_auth_code }
         handle_response client.connection.post(url, attrs.merge(body), headers)
       end
 

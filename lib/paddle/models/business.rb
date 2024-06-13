@@ -1,15 +1,13 @@
 module Paddle
   class Business < Object
-
     class << self
-
       def list(customer:, **params)
         response = Client.get_request("customers/#{customer}/businesses", params: params)
         Collection.from_response(response, type: Business)
       end
 
       def create(customer:, name:, **params)
-        attrs = {name: name}
+        attrs = { name: name }
         response = Client.post_request("customers/#{customer}/businesses", body: attrs.merge(params))
         Business.new(response.body["data"])
       end
@@ -23,8 +21,6 @@ module Paddle
         response = Client.patch_request("customers/#{customer}/businesses/#{id}", body: params)
         Business.new(response.body["data"])
       end
-
     end
-
   end
 end

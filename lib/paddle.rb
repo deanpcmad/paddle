@@ -5,7 +5,6 @@ require "faraday"
 require_relative "paddle/version"
 
 module Paddle
-
   autoload :Configuration, "paddle/configuration"
   autoload :Client, "paddle/client"
   autoload :Collection, "paddle/collection"
@@ -75,5 +74,4 @@ module Paddle
     autoload :Modifier, "paddle/classic/objects/modifier"
     autoload :Charge, "paddle/classic/objects/charge"
   end
-
 end

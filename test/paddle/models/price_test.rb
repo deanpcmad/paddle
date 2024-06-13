@@ -1,7 +1,6 @@
 require "test_helper"
 
 class PriceTest < Minitest::Test
-
   def test_price_list
     prices = Paddle::Price.list
 
@@ -37,5 +36,4 @@ class PriceTest < Minitest::Test
     assert_equal Paddle::Price, price.class
     assert_equal "Annual (per seat) with 30 day trial", price.description
   end
-
 end

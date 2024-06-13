@@ -1,7 +1,6 @@
 require "test_helper"
 
 class AddressTest < Minitest::Test
-
   def test_address_list
     addresses = Paddle::Address.list(customer: "ctm_01h7dtf1yg8jge7980baqdkjk8")
 
@@ -32,5 +31,4 @@ class AddressTest < Minitest::Test
     assert_equal Paddle::Address, address.class
     assert_equal "Downing Street", address.description
   end
-
 end

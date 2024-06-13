@@ -1,7 +1,6 @@
 require "test_helper"
 
 class AdjustmentTest < Minitest::Test
-
   def test_adjustment_list
     adjustments = Paddle::Adjustment.list
 
@@ -26,5 +25,4 @@ class AdjustmentTest < Minitest::Test
     assert_equal Paddle::Adjustment, adjustment.class
     assert_equal "credit", adjustment.action
   end
-
 end

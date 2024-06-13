@@ -1,7 +1,6 @@
 require "test_helper"
 
 class NotificationSettingTest < Minitest::Test
-
   def test_notification_setting_list
     notification_settings = Paddle::NotificationSetting.list
 
@@ -23,7 +22,7 @@ class NotificationSettingTest < Minitest::Test
       description: "Test Webhook",
       destination: "http://localhost:3000/webhook",
       type: "url",
-      subscribed_events: ["transaction.billed"]
+      subscribed_events: [ "transaction.billed" ]
     )
 
     assert_equal Paddle::NotificationSetting, notification_setting.class
@@ -31,7 +30,7 @@ class NotificationSettingTest < Minitest::Test
   end
 
   def test_notification_setting_update
-    notification_setting = Paddle::NotificationSetting.update(id: "ntfset_01h7e0ebp7dz0ygz22bdkb5ckb", subscribed_events: ["transaction.billed", "subscription.activated"])
+    notification_setting = Paddle::NotificationSetting.update(id: "ntfset_01h7e0ebp7dz0ygz22bdkb5ckb", subscribed_events: [ "transaction.billed", "subscription.activated" ])
 
     assert_equal Paddle::NotificationSetting, notification_setting.class
     assert_equal "subscription.activated", notification_setting.subscribed_events.last.name
@@ -42,5 +41,4 @@ class NotificationSettingTest < Minitest::Test
 
     assert_equal true, notification_setting
   end
-
 end

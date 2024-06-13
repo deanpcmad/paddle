@@ -1,7 +1,6 @@
 require "test_helper"
 
 class TransactionTest < Minitest::Test
-
   def test_transaction_list
     transactions = Paddle::Transaction.list
 
@@ -78,5 +77,4 @@ class TransactionTest < Minitest::Test
     assert_equal Paddle::Transaction, transaction.class
     assert_equal 2, transaction.items.first.quantity
   end
-
 end

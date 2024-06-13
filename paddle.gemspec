@@ -5,8 +5,8 @@ require_relative "lib/paddle/version"
 Gem::Specification.new do |spec|
   spec.name          = "paddle"
   spec.version       = Paddle::VERSION
-  spec.authors       = ["Dean Perry"]
-  spec.email         = ["dean@deanpcmad.com"]
+  spec.authors       = [ "Dean Perry" ]
+  spec.email         = [ "dean@deanpcmad.com" ]
 
   spec.summary       = "Ruby library for the Paddle Billing & Classic APIs"
   spec.homepage      = "https://github.com/deanpcmad/paddle"
@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = [ "lib" ]
 
   spec.add_dependency "faraday", "~> 2.0"
 end

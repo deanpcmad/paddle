@@ -1,15 +1,13 @@
 module Paddle
   class NotificationSetting < Object
-
     class << self
-
       def list(**params)
         response = Client.get_request("notification-settings", params: params)
         Collection.from_response(response, type: NotificationSetting)
       end
 
       def create(description:, destination:, type:, subscribed_events:, **params)
-        attrs = {description: description, destination: destination, type: type, subscribed_events: subscribed_events}
+        attrs = { description: description, destination: destination, type: type, subscribed_events: subscribed_events }
         response = Client.post_request("notification-settings", body: attrs.merge(params))
         NotificationSetting.new(response.body["data"])
       end
@@ -27,8 +25,6 @@ module Paddle
       def delete(id:)
         Client.delete_request("notification-settings/#{id}")
       end
-
     end
-
   end
 end

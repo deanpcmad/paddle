@@ -1,7 +1,6 @@
 require "test_helper"
 
 class CustomerTest < Minitest::Test
-
   def test_customer_list
     customers = Paddle::Customer.list
 
@@ -48,5 +47,4 @@ class CustomerTest < Minitest::Test
     assert_equal "USD", credit.currency_code
     assert_equal "0", credit.balance.available
   end
-
 end

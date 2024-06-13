@@ -1,7 +1,6 @@
 require "test_helper"
 
 class BusinessTest < Minitest::Test
-
   def test_business_list
     businesses = Paddle::Business.list(customer: "ctm_01h7dtf1yg8jge7980baqdkjk8")
 
@@ -32,5 +31,4 @@ class BusinessTest < Minitest::Test
     assert_equal Paddle::Business, business.class
     assert_equal "123123", business.company_number
   end
-
 end

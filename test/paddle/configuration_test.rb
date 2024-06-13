@@ -11,25 +11,21 @@ class ConfigurationTest < Minitest::Test
 
   def test_environment_should_default_to_production
     Paddle.config.environment = nil
-    assert_not Paddle.config.environment.nil?
     assert_equal Paddle.config.url, "https://api.paddle.com"
   end
 
   def test_production_environment
     Paddle.config.environment = :production
-    assert_not Paddle.config.url.nil?
     assert_equal Paddle.config.url, "https://api.paddle.com"
   end
 
   def test_development_environment
     Paddle.config.environment = :development
-    assert_not Paddle.config.url.nil?
     assert_equal Paddle.config.url, "https://sandbox-api.paddle.com"
   end
 
   def test_sandbox_environment
     Paddle.config.environment = :sandbox
-    assert_not Paddle.config.url.nil?
     assert_equal Paddle.config.url, "https://sandbox-api.paddle.com"
   end
 

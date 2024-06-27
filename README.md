@@ -1,6 +1,6 @@
 # Paddle Ruby Library
 
-A Ruby library for the Paddle APIs, both Classic and Billing.
+The easiest and most complete Ruby library for the Paddle APIs, both Classic and Billing.
 
 ## Installation
 
@@ -31,6 +31,44 @@ Paddle.configure do |config|
   # Set the API version. Defaults to 1
   config.version = 1
 end
+```
+
+### Resources
+
+The gem maps as closely as we can to the Paddle API so you can easily convert API examples to gem code.
+
+Responses are created as objects like `Paddle::Product`. Having types like `Paddle::Product` is handy for understanding what
+type of object you're working with. They're built using OpenStruct so you can easily access data in a Ruby-ish way.
+
+### Pagination
+
+Some of the endpoints return pages of results. The result object will have a `data` key to access the results.
+
+An example of using collections, including pagination:
+
+```ruby
+results = Paddle::Product.list(per_page: 10)
+#=> Paddle::Collection
+
+results.total
+#=> 10
+
+results.data
+#=> [#<Paddle::Product>, #<Paddle::Product>]
+
+results.each do |result|
+  puts result.id
+end
+
+results.first
+#=> #<Paddle::Product>
+
+results.last
+#=> #<Paddle::Product>
+
+# Retrieve the next page
+Paddle::Product.list(per_page: 10, after: "abc123")
+#=> Paddle::Collection
 ```
 
 ### Caveats

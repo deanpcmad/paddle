@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox-api.paddle.com/customers/ctm_01h7dtf1yg8jge7980baqdkjk8
+    uri: https://sandbox-api.paddle.com/customers/ctm_01h7dth5z8q7df4r73r4jek70g
     body:
       encoding: US-ASCII
       string: ''
@@ -60,6 +60,6 @@ http_interactions:
       - gzip
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"id":"ctm_01h7dtf1yg8jge7980baqdkjk8","status":"active","name":"","email":"dean@mycompany.com","marketing_consent":false,"locale":"en","created_at":"2023-08-09T18:55:36.912Z","updated_at":"2023-08-09T18:55:36.912Z"},"meta":{"request_id":"cffc0ee1-a969-49b1-8030-26e8ac1c1c64"}}'
+      string: '{"data":{"id":"ctm_01h7dth5z8q7df4r73r4jek70g","status":"active","name":"","email":"dean@mycompany.com","marketing_consent":false,"locale":"en","created_at":"2023-08-09T18:55:36.912Z","updated_at":"2023-08-09T18:55:36.912Z"},"meta":{"request_id":"cffc0ee1-a969-49b1-8030-26e8ac1c1c64"}}'
   recorded_at: Wed, 09 Aug 2023 18:56:13 GMT
 recorded_with: VCR 6.2.0

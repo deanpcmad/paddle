@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox-api.paddle.com/discounts/dsc_01h7dtzexhveh8sqfm16b0yw4d
+    uri: https://sandbox-api.paddle.com/discounts/dsc_01h7dv1243xervzbkfxkg56cnn
     body:
       encoding: US-ASCII
       string: ''
@@ -60,7 +60,7 @@ http_interactions:
       - gzip
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"id":"dsc_01h7dtzexhveh8sqfm16b0yw4d","status":"active","description":"10%
+      string: '{"data":{"id":"dsc_01h7dv1243xervzbkfxkg56cnn","status":"active","description":"10%
         off","enabled_for_checkout":true,"code":"10OFF","type":"percentage","amount":"10","currency_code":null,"recur":false,"maximum_recurring_intervals":null,"usage_limit":null,"restrict_to":null,"expires_at":null,"times_used":0,"created_at":"2023-08-09T19:04:34.481Z","updated_at":"2023-08-09T19:04:34.481Z"},"meta":{"request_id":"5391814e-0014-4f53-924d-b7fed970b820"}}'
   recorded_at: Wed, 09 Aug 2023 19:05:27 GMT
 recorded_with: VCR 6.2.0

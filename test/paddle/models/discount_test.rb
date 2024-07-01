@@ -10,10 +10,10 @@ class DiscountTest < Minitest::Test
   end
 
   def test_discount_retrieve
-    discount = Paddle::Discount.retrieve(id: "dsc_01h7dtzexhveh8sqfm16b0yw4d")
+    discount = Paddle::Discount.retrieve(id: "dsc_01h7dv1243xervzbkfxkg56cnn")
 
     assert_equal Paddle::Discount, discount.class
-    assert_equal "dsc_01h7dtzexhveh8sqfm16b0yw4d", discount.id
+    assert_equal "dsc_01h7dv1243xervzbkfxkg56cnn", discount.id
     assert_equal "10% off", discount.description
   end
 
@@ -30,5 +30,34 @@ class DiscountTest < Minitest::Test
 
     assert_equal Paddle::Discount, discount.class
     assert_equal "WELCOME", discount.code
+  end
+
+  def test_object_update_without_ids
+    VCR.use_cassette("test_discount_retrieve") do
+      Paddle::Discount.retrieve(id: "dsc_01h7dv1243xervzbkfxkg56cnn").tap do |discount|
+        VCR.use_cassette("test_discount_update") do
+          discount.update(code: "WELCOME", enabled_for_checkout: true)
+        end
+
+        assert_equal Paddle::Discount, discount.class
+        assert_equal "WELCOME", discount.code
+        assert discount.enabled_for_checkout
+      end
+    end
+  end
+
+  def test_object_update_with_ids
+    VCR.use_cassette("test_discount_retrieve") do
+      Paddle::Discount.retrieve(id: "dsc_01h7dv1243xervzbkfxkg56cnn").tap do |discount|
+        VCR.use_cassette("test_discount_update") do
+          discount.update(code: "WELCOME", enabled_for_checkout: true, id: "lmao")
+        end
+
+        assert_equal Paddle::Discount, discount.class
+        assert_equal "WELCOME", discount.code
+        assert discount.enabled_for_checkout
+        refute_equal "lmao", discount.id
+      end
+    end
   end
 end

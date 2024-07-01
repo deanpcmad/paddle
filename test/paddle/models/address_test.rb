@@ -44,4 +44,19 @@ class AddressTest < Minitest::Test
       end
     end
   end
+
+  def test_object_update_with_ids
+    VCR.use_cassette("test_address_retrieve") do
+      Paddle::Address.retrieve(customer: "ctm_01h7dtf1yg8jge7980baqdkjk8", id: "add_01h7dtvh64g9c20asb65dc411r").tap do |address|
+        VCR.use_cassette("test_address_update") do
+          address.update(description: "Downing Street", customer: "lmao", id: "lmao")
+        end
+
+        assert_equal Paddle::Address, address.class
+        assert_equal "Downing Street", address.description
+        refute_equal "lmao", address.id
+        refute_equal "lmao", address.customer_id
+      end
+    end
+  end
 end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox-api.paddle.com/customers/ctm_01h7dtf1yg8jge7980baqdkjk8/businesses/biz_01h7dv63eze6r79924ch5c1rbd
+    uri: https://sandbox-api.paddle.com/customers/ctm_01h7dtf1yg8jge7980baqdkjk8/businesses/biz_01h7dz69ksn40x5zrvekgh1xrn
     body:
       encoding: US-ASCII
       string: ''
@@ -60,7 +60,7 @@ http_interactions:
       - gzip
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"id":"biz_01h7dv63eze6r79924ch5c1rbd","status":"active","name":"My
+      string: '{"data":{"id":"biz_01h7dz69ksn40x5zrvekgh1xrn", "customer_id": "ctm_01h7dtf1yg8jge7980baqdkjk8", "status":"active","name":"My
         Business","company_number":"123123","tax_identifier":"","contacts":[],"created_at":"2023-08-09T19:08:12.127Z","updated_at":"2023-08-09T19:08:12.127Z"},"meta":{"request_id":"8fe95e26-8c6d-43da-be91-99d4decc1941"}}'
   recorded_at: Wed, 09 Aug 2023 20:17:40 GMT
 recorded_with: VCR 6.2.0

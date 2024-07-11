@@ -48,7 +48,7 @@ module Paddle
     private
 
     def error_message
-      "Error 403: You are not allowed to perform that action."
+      "You are not allowed to perform that action."
     end
   end
 
@@ -56,7 +56,7 @@ module Paddle
     private
 
     def error_message
-      "Error 404: No results were found for your request."
+      "No results were found for your request."
     end
   end
 
@@ -64,7 +64,7 @@ module Paddle
     private
 
     def error_message
-      "Error 409: Your request was a conflict."
+      "Your request was a conflict."
     end
   end
 
@@ -72,7 +72,7 @@ module Paddle
     private
 
     def error_message
-      "Error 429: Your request exceeded the API rate limit."
+      "Your request exceeded the API rate limit."
     end
   end
 
@@ -80,7 +80,7 @@ module Paddle
     private
 
     def error_message
-      "Error 500: We were unable to perform the request due to server-side problems."
+      "We were unable to perform the request due to server-side problems."
     end
   end
 
@@ -88,7 +88,7 @@ module Paddle
     private
 
     def error_message
-      "Error 503: You have been rate limited for sending more than 20 requests per second."
+      "You have been rate limited for sending more than 20 requests per second."
     end
   end
 
@@ -96,7 +96,7 @@ module Paddle
     private
 
     def error_message
-      "Error 501: This resource has not been implemented."
+      "This resource has not been implemented."
     end
   end
 

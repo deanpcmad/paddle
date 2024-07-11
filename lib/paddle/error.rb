@@ -11,7 +11,7 @@ module Paddle
     private
 
     def error_message
-      @response.dig("error", "detail") || @response.dig("error", "code")
+      @response.dig(:error, :detail) || @response.dig(:error, :code)
     rescue NoMethodError
       "An unknown error occurred."
     end

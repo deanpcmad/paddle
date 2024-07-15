@@ -1,30 +1,34 @@
 module Paddle
   class Error < StandardError
-    attr_reader :response
+    attr_reader :http_status_code
+    attr_reader :paddle_error_code
+    attr_reader :paddle_error_message
 
-    def initialize(response_body, status_code)
-      @response = response_body
-      @status_code = status_code
+    def initialize(response_body, http_status_code)
+      @response_body = response_body
+      @http_status_code = http_status_code
+      set_paddle_error_values
       super(build_message)
     end
 
     private
 
+    def set_paddle_error_values
+      @paddle_error_code = @response_body.deep_symbolize_keys.dig(:error, :code)
+      @paddle_error_message = @response_body.deep_symbolize_keys.dig(:error, :detail)
+    end
+
     def error_message
-      @response.dig(:error, :detail) || @response.dig(:error, :code)
+      @paddle_error_message || @response_body.dig(:error, :code)
     rescue NoMethodError
       "An unknown error occurred."
     end
 
-    def paddle_error_code
-      @response.deep_symbolize_keys.dig(:error, :code) || nil
-    end
-
     def build_message
       if paddle_error_code.nil?
-        return "Error #{@status_code}: #{error_message}"
+        return "Error #{@http_status_code}: #{error_message}"
       end
-      "Error #{@status_code}: #{error_message} '#{paddle_error_code}'"
+      "Error #{@http_status_code}: #{error_message} '#{paddle_error_code}'"
     end
   end
 
@@ -100,13 +104,6 @@ module Paddle
     end
   end
 
-  class CustomerAlreadyExistsError < Error
-    private
-
-    def error_message
-      "#{@response.dig(:error, :detail)}"
-    end
-  end
 
   class ErrorFactory
     HTTP_ERROR_MAP = {
@@ -121,15 +118,10 @@ module Paddle
       501 => NotImplementedError
     }.freeze
 
-    PADDLE_ERROR_MAP = {
-      "customer_already_exists" => CustomerAlreadyExistsError
-    }.freeze
-
-    def self.create(response_body, status_code)
-      status = status_code
-      error_code = response_body.dig(:error, :code) || nil
-      error_class = PADDLE_ERROR_MAP[error_code] || HTTP_ERROR_MAP[status]
-      error_class.new(response_body, status_code) if error_class
+    def self.create(response_body, http_status_code)
+      status = http_status_code
+      error_class = HTTP_ERROR_MAP[status] || Error
+      error_class.new(response_body, http_status_code) if error_class
     end
   end
 end

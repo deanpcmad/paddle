@@ -1,52 +1,61 @@
+require "faraday"
+
 module Paddle
   class Client
     class << self
       def connection
-        @connection ||= Faraday.new(Paddle.config.url) do |conn|
+        @connection ||= create_connection
+      end
+
+      def get_request(url, params: {}, headers: {})
+        handle_response(connection.get(url, params, headers))
+      end
+
+      def post_request(url, body: {}, headers: {})
+        handle_response(connection.post(url, body, headers))
+      end
+
+      def patch_request(url, body:, headers: {})
+        handle_response(connection.patch(url, body, headers))
+      end
+
+      def delete_request(url, headers: {})
+        handle_response(connection.delete(url, headers))
+      end
+
+      private
+
+      def create_connection
+        Faraday.new(Paddle.config.url) do |conn|
           conn.request :authorization, :Bearer, Paddle.config.api_key
-
-          conn.headers = {
-            "User-Agent" => "paddle/v#{VERSION} (github.com/deanpcmad/paddle)",
-            "Paddle-Version" => Paddle.config.version.to_s
-          }
-
+          conn.headers = default_headers
           conn.request :json
           conn.response :json
         end
       end
 
-
-      def get_request(url, params: {}, headers: {})
-        handle_response connection.get(url, params, headers)
-      end
-
-      def post_request(url, body: {}, headers: {})
-        handle_response connection.post(url, body, headers)
-      end
-
-      def patch_request(url, body:, headers: {})
-        handle_response connection.patch(url, body, headers)
-      end
-
-      def delete_request(url, headers: {})
-        handle_response connection.delete(url, headers)
+      def default_headers
+        {
+          "User-Agent" => "paddle/v#{VERSION} (github.com/deanpcmad/paddle)",
+          "Paddle-Version" => Paddle.config.version.to_s
+        }
       end
 
       def handle_response(response)
-        case response.status
-        when 400, 401, 403, 404, 409, 429, 500, 503, 501
-          error = Paddle::ErrorFactory.create(response.body, response.status)
-          raise error if error
-        when 204
-          return true
-        end
+        return true if response.status == 204
+        return response unless error?(response)
 
-        if response.body && response.body["error"]
-          error = Paddle::ErrorFactory.create(response.body, response.status)
-          raise error if error
-        end
+        raise_error(response)
+      end
 
-        response
+      def error?(response)
+        [ 400, 401, 403, 404, 409, 429, 500, 501, 503 ].include?(response.status) ||
+          response.body&.key?("error")
+      end
+
+      def raise_error(response)
+        error = Paddle::ErrorFactory.create(response.body, response.status)
+        raise error if error
       end
     end
   end

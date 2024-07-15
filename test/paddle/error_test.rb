@@ -23,14 +23,15 @@ class ErrorTest < Minitest::Test
     assert_equal "Error 401: You did not supply valid authentication credentials.", error.message
   end
 
-  def test_customer_already_exists_error
-    error = Paddle::ErrorFactory.create(
-      { "error": { "type": "request_error", "code": "customer_already_exists", "detail": "customer email conflicts with customer of id ctm_01j2c063nh77j5qx5nwhhqkdcg", "documentation_url": "https://developer.paddle.com/v1/errors/customers/customer_already_exists" }, "meta": { "request_id": "f0815456-2b6e-49f5-963d-4772ccfa1630" } },
-      409
-    )
+  def test_paddle_error_code
+    error = Paddle::Error.new({ "error" => { "code" => 123, "detail" => "Paddle error message" } }, 409)
 
-    assert_kind_of Paddle::CustomerAlreadyExistsError, error
+    assert_equal 123, error.paddle_error_code
+  end
 
-    assert_equal "Error 409: customer email conflicts with customer of id ctm_01j2c063nh77j5qx5nwhhqkdcg 'customer_already_exists'", error.message
+  def test_paddle_error_message
+    error = Paddle::Error.new({ "error" => { "code" => 123, "detail" => "Paddle error message" } }, 409)
+
+    assert_equal "Paddle error message", error.paddle_error_message
   end
 end

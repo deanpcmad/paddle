@@ -7,7 +7,7 @@ class ErrorTest < Minitest::Test
 
   def test_bad_request_error
     error = Paddle::ErrorFactory.create(
-      { 'error': { "code" => 123, "detail" => "Paddle error message" } },
+      { "error" => { "code" => 123, "detail" => "Paddle error message" } },
       400
     )
 
@@ -16,7 +16,7 @@ class ErrorTest < Minitest::Test
 
   def test_authentication_missing_error
     error = Paddle::ErrorFactory.create(
-      { 'error': {} },
+      { "error": {} },
       401
     )
 

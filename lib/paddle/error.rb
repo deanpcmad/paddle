@@ -14,12 +14,12 @@ module Paddle
     private
 
     def set_paddle_error_values
-      @paddle_error_code = @response_body.deep_symbolize_keys.dig(:error, :code)
-      @paddle_error_message = @response_body.deep_symbolize_keys.dig(:error, :detail)
+      @paddle_error_code = @response_body.dig("error", "code")
+      @paddle_error_message = @response_body.dig("error", "detail")
     end
 
     def error_message
-      @paddle_error_message || @response_body.dig(:error, :code)
+      @paddle_error_message || @response_body.dig("error", "code")
     rescue NoMethodError
       "An unknown error occurred."
     end

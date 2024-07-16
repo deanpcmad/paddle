@@ -10,10 +10,10 @@ class CustomerTest < Minitest::Test
   end
 
   def test_customer_retrieve
-    customer = Paddle::Customer.retrieve(id: "ctm_01h7dtf1yg8jge7980baqdkjk8")
+    customer = Paddle::Customer.retrieve(id: "ctm_01h7dth5z8q7df4r73r4jek70g")
 
     assert_equal Paddle::Customer, customer.class
-    assert_equal "ctm_01h7dtf1yg8jge7980baqdkjk8", customer.id
+    assert_equal "ctm_01h7dth5z8q7df4r73r4jek70g", customer.id
     assert_equal "dean@mycompany.com", customer.email
   end
 
@@ -46,5 +46,32 @@ class CustomerTest < Minitest::Test
     assert_equal Paddle::CreditBalance, credit.class
     assert_equal "USD", credit.currency_code
     assert_equal "0", credit.balance.available
+  end
+
+  def test_object_update_without_ids
+    VCR.use_cassette("test_customer_retrieve") do
+      Paddle::Customer.retrieve(id: "ctm_01h7dth5z8q7df4r73r4jek70g").tap do |customer|
+        VCR.use_cassette("test_customer_update") do
+          customer.update(email: "gob@bluthcompany.com")
+        end
+
+        assert_equal Paddle::Customer, customer.class
+        assert_equal "gob@bluthcompany.com", customer.email
+      end
+    end
+  end
+
+  def test_object_update_with_ids
+    VCR.use_cassette("test_customer_retrieve") do
+      Paddle::Customer.retrieve(id: "ctm_01h7dth5z8q7df4r73r4jek70g").tap do |customer|
+        VCR.use_cassette("test_customer_update") do
+          customer.update(email: "gob@bluthcompany.com", id: "lmao")
+        end
+
+        assert_equal Paddle::Customer, customer.class
+        assert_equal "gob@bluthcompany.com", customer.email
+        refute_equal "lmao", customer.id
+      end
+    end
   end
 end

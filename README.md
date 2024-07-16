@@ -175,6 +175,7 @@ Paddle::Customer.list(email: "me@mydomain.com")
 
 # Create a customer
 # https://developer.paddle.com/api-reference/customers/create-customer
+# Returns a Paddle::ConflictError if the email is already used on Paddle
 Paddle::Customer.create(email: "myemail@mydomain.com", name: "Customer Name")
 
 # Retrieve a customer

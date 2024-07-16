@@ -77,6 +77,14 @@ Paddle::Product.list(per_page: 10, after: "abc123")
 >
 > The Paddle API doesn't take `nil` values for optional parameters. If you want to remove a value, you'll need to pass `"null"` instead.
 
+### Updating records
+
+For API endpoints that support it, you can use the `update` method to update a record, like so:
+
+```ruby
+Paddle::Product.retrieve(id: "pro_abc123").update(name: "My New Name")
+```
+
 ### Products
 
 ```ruby

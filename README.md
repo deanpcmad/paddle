@@ -101,10 +101,12 @@ Paddle::Product.create(name: "My SAAS Plan", tax_category: "saas")
 Paddle::Product.create(name: "My Standard Product", tax_category: "standard")
 
 # Retrieve a product
-Paddle::Product.retrieve(id: "pro_abc123")
+product = Paddle::Product.retrieve(id: "pro_abc123")
 
 # Update a product
 # https://developer.paddle.com/api-reference/products/update-product
+product.update(description: "This is a plan")
+# or 
 Paddle::Product.update(id: "pro_abc123", description: "This is a plan")
 ```
 
@@ -124,10 +126,12 @@ Paddle::Price.list(product_id: "pro_abc123")
 Paddle::Price.create(product_id: "pro_abc123", description: "A one off price", amount: "1000", currency: "GBP")
 
 # Retrieve a price
-Paddle::Price.retrieve(id: "pri_123abc")
+price = Paddle::Price.retrieve(id: "pri_123abc")
 
 # Update a price
 # https://developer.paddle.com/api-reference/prices/update-price
+price.update(description: "An updated description")
+# or
 Paddle::Price.update(id: "pri_123abc", description: "An updated description")
 ```
 
@@ -157,10 +161,12 @@ Paddle::Discount.create(description: "$5 off", type: "flat", amount: "500", curr
 Paddle::Discount.create(description: "10% Off", type: "percentage", amount: "10", code: "10OFF")
 
 # Retrieve a discount
-Paddle::Discount.retrieve(id: "dsc_abc123")
+discount = Paddle::Discount.retrieve(id: "dsc_abc123")
 
 # Update a discount
 # https://developer.paddle.com/api-reference/discounts/update-discount
+discount.update(description: "An updated description")
+# or
 Paddle::Discount.update(id: "dsc_abc123", description: "An updated description")
 ```
 
@@ -179,10 +185,12 @@ Paddle::Customer.list(email: "me@mydomain.com")
 Paddle::Customer.create(email: "myemail@mydomain.com", name: "Customer Name")
 
 # Retrieve a customer
-Paddle::Customer.retrieve(id: "ctm_abc123")
+customer = Paddle::Customer.retrieve(id: "ctm_abc123")
 
 # Update a customer
 # https://developer.paddle.com/api-reference/customers/update-customer
+customer.update(status: "archived")
+# or
 Paddle::Customer.update(id: "ctm_abc123", status: "archived")
 
 # Retrieve credit balance for a customer
@@ -202,10 +210,12 @@ Paddle::Address.list(customer: "ctm_abc123")
 Paddle::Address.create(customer: "ctm_abc123", country_code: "GB", postal_code: "SW1A 2AA")
 
 # Retrieve an address
-Paddle::Address.retrieve(customer: "ctm_abc123", id: "add_abc123")
+address = Paddle::Address.retrieve(customer: "ctm_abc123", id: "add_abc123")
 
 # Update an address
 # https://developer.paddle.com/api-reference/addresses/update-address
+address.update(status: "archived")
+# or
 Paddle::Address.update(customer: "ctm_abc123", id: "add_abc123", status: "archived")
 ```
 
@@ -221,10 +231,12 @@ Paddle::Business.list(customer: "ctm_abc123")
 Paddle::Business.create(customer: "ctm_abc123", name: "My Ltd Company")
 
 # Retrieve a business
-Paddle::Business.retrieve(customer: "ctm_abc123", id: "biz_abc123")
+business = Paddle::Business.retrieve(customer: "ctm_abc123", id: "biz_abc123")
 
 # Update a business
 # https://developer.paddle.com/api-reference/businesses/update-business
+business.update(status: "archived")
+# or
 Paddle::Business.update(customer: "ctm_abc123", id: "biz_abc123", status: "archived")
 ```
 
@@ -246,10 +258,12 @@ Paddle::Transaction.retrieve(id: "txn_abc123")
 
 # Retrieve a transaction with extra information
 # extra can be either "address", "adjustment", "adjustments_totals", "business", "customer", "discount"
-Paddle::Transaction.retrieve(id: "txn_abc123", extra: "customer")
+transaction = Paddle::Transaction.retrieve(id: "txn_abc123", extra: "customer")
 
 # Update a transaction
 # https://developer.paddle.com/api-reference/transaction/update-transaction
+transaction.update(items: [ { price_id: "pri_abc123", quantity: 2 } ])
+# or
 Paddle::Transaction.update(id: "txn_abc123", items: [ { price_id: "pri_abc123", quantity: 2 } ])
 
 # Preview a transaction
@@ -280,7 +294,7 @@ Paddle::Subscription.retrieve(id: "sub_abc123")
 
 # Retrieve a subscription with extra information
 # extra can be either "next_transaction" or "recurring_transaction_details"
-Paddle::Subscription.retrieve(id: "sub_abc123", extra: "next_transaction")
+subscription = Paddle::Subscription.retrieve(id: "sub_abc123", extra: "next_transaction")
 
 # Preview an update to a subscription
 # https://developer.paddle.com/api-reference/subscriptions/preview-subscription
@@ -288,6 +302,8 @@ Paddle::Subscription.preview(id: "sub_abc123", items: [ { price_id: "pri_123abc"
 
 # Update a subscription
 # https://developer.paddle.com/api-reference/subscriptions/update-subscription
+subscription.update(billing_details: {purchase_order_number: "PO-1234"})
+# or
 Paddle::Subscription.update(id: "sub_abc123", billing_details: {purchase_order_number: "PO-1234"})
 
 # Get a transaction to update payment method
@@ -367,7 +383,7 @@ Used for creating webhook and email notifications
 Paddle::NotificationSetting.list
 
 # Retrieve a notification setting
-Paddle::NotificationSetting.retrieve(id: "ntfset_abc123")
+setting = Paddle::NotificationSetting.retrieve(id: "ntfset_abc123")
 
 # Create a notification setting
 # https://developer.paddle.com/api-reference/notification-settings/create-notification-setting
@@ -383,6 +399,8 @@ Paddle::NotificationSetting.create(
 
 # Update a notification setting
 # https://developer.paddle.com/api-reference/notification-settings/update-notification-setting
+setting.update(subscribed_events: %w[subscription.activated transaction.completed transaction.billed])
+# or
 Paddle::NotificationSetting.update(id: "ntfset_abc123",
   subscribed_events: [
     "subscription.activated",

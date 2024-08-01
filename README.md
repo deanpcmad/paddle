@@ -106,7 +106,7 @@ product = Paddle::Product.retrieve(id: "pro_abc123")
 # Update a product
 # https://developer.paddle.com/api-reference/products/update-product
 product.update(description: "This is a plan")
-# or 
+# or
 Paddle::Product.update(id: "pro_abc123", description: "This is a plan")
 ```
 
@@ -181,7 +181,7 @@ Paddle::Customer.list(email: "me@mydomain.com")
 
 # Create a customer
 # https://developer.paddle.com/api-reference/customers/create-customer
-# Returns a Paddle::ConflictError if the email is already used on Paddle
+# Returns a Paddle::Errors::ConflictError if the email is already used on Paddle
 Paddle::Customer.create(email: "myemail@mydomain.com", name: "Customer Name")
 
 # Retrieve a customer

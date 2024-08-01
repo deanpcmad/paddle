@@ -50,6 +50,7 @@ module Paddle
     autoload :Client, "paddle/classic/client"
     autoload :Collection, "paddle/classic/collection"
     autoload :Resource, "paddle/classic/resource"
+    autoload :Error, "paddle/classic/error"
 
     autoload :PlansResource, "paddle/classic/resources/plans"
     autoload :CouponsResource, "paddle/classic/resources/coupons"

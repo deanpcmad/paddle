@@ -1,10 +1,4 @@
 class ErrorTest < Minitest::Test
-  def test_generic_error
-    error = Paddle::Error.new({ "error" => { "code" => 123, "detail" => "Paddle error message" } }, 409)
-
-    assert_equal "Error 409: Paddle error message '123'", error.message
-  end
-
   def test_bad_request_error
     error = Paddle::ErrorFactory.create(
       { "error" => { "code" => 123, "detail" => "Paddle error message" } },
@@ -23,15 +17,15 @@ class ErrorTest < Minitest::Test
     assert_equal "Error 401: You did not supply valid authentication credentials.", error.message
   end
 
-  def test_paddle_error_code
-    error = Paddle::Error.new({ "error" => { "code" => 123, "detail" => "Paddle error message" } }, 409)
+  def test_paddle_error_generator_message
+    error = Paddle::ErrorGenerator.new({ "error" => { "code" => 123, "detail" => "Paddle error message" } }, 409)
 
-    assert_equal 123, error.paddle_error_code
+    assert_equal "Paddle error message", error.paddle_error_message
   end
 
   def test_paddle_error_message
-    error = Paddle::Error.new({ "error" => { "code" => 123, "detail" => "Paddle error message" } }, 409)
+    error = Paddle::Error.new("Connection failed")
 
-    assert_equal "Paddle error message", error.paddle_error_message
+    assert_equal "Connection failed", error.message
   end
 end

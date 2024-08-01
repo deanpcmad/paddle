@@ -9,7 +9,8 @@ module Paddle
   autoload :Client, "paddle/client"
   autoload :Collection, "paddle/collection"
   autoload :Error, "paddle/error"
-  autoload :ErrorFactory, "paddle/error"
+  autoload :ErrorGenerator, "paddle/error_generator"
+  autoload :ErrorFactory, "paddle/error_generator"
 
   autoload :Object, "paddle/object"
 

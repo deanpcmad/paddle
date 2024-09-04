@@ -23,8 +23,8 @@ module Paddle
         Transaction.new(response.body["data"])
       end
 
-      def invoice(id:)
-        response = Client.get_request("transactions/#{id}/invoice")
+      def invoice(id:, disposition: "attachment")
+        response = Client.get_request("transactions/#{id}/invoice?disposition=#{disposition}")
         if response.success?
           response.body["data"]["url"]
         end

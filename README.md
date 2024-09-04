@@ -271,9 +271,10 @@ Paddle::Transaction.update(id: "txn_abc123", items: [ { price_id: "pri_abc123", 
 Paddle::Transaction.preview(items: [ { price_id: "pri_123abc", quantity: 5 } ])
 
 # Get a PDF invoice for a transaction
+# disposition defaults to "attachment"
 # Returns a raw URL. This URL is not permanent and will expire.
 # https://developer.paddle.com/api-reference/transaction/get-invoice-pdf
-Paddle::Transaction.invoice(id: "txn_abc123")
+Paddle::Transaction.invoice(id: "txn_abc123", disposition: "inline")
 #=> https://paddle-sandbox-invoice...
 ```
 

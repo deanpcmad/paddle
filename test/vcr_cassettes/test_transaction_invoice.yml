@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox-api.paddle.com/transactions/txn_01h7e2wz65er1fwbkqbzpng9th/invoice
+    uri: https://sandbox-api.paddle.com/transactions/txn_01h7e2wz65er1fwbkqbzpng9th/invoice?disposition=attachment
     body:
       encoding: US-ASCII
       string: ''

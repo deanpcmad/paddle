@@ -461,6 +461,14 @@ Paddle::Report.create(
 )
 ```
 
+### Webhook Simulation Types
+
+Retrieves a list of Simulation Types - https://developer.paddle.com/api-reference/simulation-types/overview
+
+```ruby
+Paddle::SimulationType.list
+```
+
 ## Classic API
 
 For accessing the Paddle Classic API

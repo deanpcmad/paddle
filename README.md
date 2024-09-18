@@ -7,7 +7,7 @@ The easiest and most complete Ruby library for the Paddle APIs, both Classic and
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "paddle", "~> 2.5"
+gem "paddle", "~> 2.6"
 ```
 
 ## Billing API

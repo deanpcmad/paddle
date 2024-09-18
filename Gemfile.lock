@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    paddle (2.5.2)
+    paddle (2.6.0)
       faraday (~> 2.11.0)
       ostruct (~> 0.6.0)
 

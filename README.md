@@ -358,6 +358,12 @@ Paddle::Adjustment.create(
     }
   ]
 )
+
+# Get a credit note for an adjustment
+# disposition defaults to "attachment"
+# Returns a raw URL. This URL is not permanent and will expire.
+# https://developer.paddle.com/api-reference/adjustments/get-credit-note-pdf
+Paddle::Adjustment.credit_note(id: "adj_abc123", disposition: "inline")
 ```
 
 ### Event Types

@@ -11,6 +11,13 @@ module Paddle
         response = Client.post_request("adjustments", body: attrs.merge(params))
         Adjustment.new(response.body["data"])
       end
+
+      def credit_note(id:, disposition: "attachment")
+        response = Client.get_request("adjustments/#{id}/credit-note?disposition=#{disposition}")
+        if response.success?
+          response.body["data"]["url"]
+        end
+      end
     end
   end
 end

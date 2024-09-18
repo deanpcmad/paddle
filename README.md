@@ -469,6 +469,45 @@ Retrieves a list of Simulation Types - https://developer.paddle.com/api-referenc
 Paddle::SimulationType.list
 ```
 
+### Webhook Simulations
+
+```ruby
+# List all simulations
+Paddle::Simulation.list
+Paddle::Simulation.list(status: "archived")
+Paddle::Simulation.list(notification_setting_id: "nftset_abc123")
+
+# Create a simulation
+# https://developer.paddle.com/api-reference/simulations/create-simulation
+Paddle::Simulation.create(notification_setting_id: "ntfset_abc123", name: "Customer Create", type: "customer.completed")
+Paddle::Simulation.create(notification_setting_id: "ntfset_abc123", name: "Subscription Created", type: "subscription_creation")
+
+# Retrieve a simulation
+Paddle::Simulation.retrieve(id: "ntfsim_abc123")
+
+# Update a simulation
+# https://developer.paddle.com/api-reference/simulations/update-simulation
+Paddle::Simulation.update(id: "ntfsim_abc123", name: "Simulation 2")
+Paddle::Simulation.update(id: "ntfsim_abc123", status: "archived")
+
+# List all simulation runs
+Paddle::Simulation.runs(id: "ntfsim_abc123")
+
+# Create a simulation run
+# https://developer.paddle.com/api-reference/simulations/create-simulation-run
+Paddle::SimulationRun.create(simulation_id: "ntfsim_abc123")
+
+# Retrieve a simulation run
+Paddle::SimulationRun.retrieve(simulation_id: "ntfsim_abc123", id: "ntfsimrun_abc123")
+
+# List all simulation run events
+Paddle::SimulationRun.events(simulation_id: "ntfsim_abc123", run_id: "ntfsimrun_abc123")
+
+# Replay a simulation run event
+# https://developer.paddle.com/api-reference/simulations/replay-simulation-run-event
+Paddle::SimulationRunEvent.replay(simulation_id: "ntfsim_abc123", run_id: "ntfsimrun_abc123", id: "ntfsimevt_abc123")
+```
+
 ## Classic API
 
 For accessing the Paddle Classic API

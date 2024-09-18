@@ -44,6 +44,9 @@ module Paddle
   autoload :Notification, "paddle/models/notification"
   autoload :Report, "paddle/models/report"
   autoload :SimulationType, "paddle/models/simulation_type"
+  autoload :Simulation, "paddle/models/simulation"
+  autoload :SimulationRun, "paddle/models/simulation_run"
+  autoload :SimulationRunEvent, "paddle/models/simulation_run_event"
 
   autoload :NotificationLog, "paddle/models/notification_log"
   autoload :CreditBalance, "paddle/models/credit_balance"

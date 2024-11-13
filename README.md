@@ -336,6 +336,16 @@ Paddle::Subscription.cancel(id: "sub_abc123", effective_from: "immediately")
 Paddle::Subscription.activate(id: "sub_abc123")
 ```
 
+### Customer Portal Sessions
+
+```ruby
+# Create a Customer Portal Session
+# https://developer.paddle.com/api-reference/customer-portals/create-customer-portal-session
+Paddle::PortalSession.create customer: "ctm_abc123"
+Paddle::PortalSession.create customer: "ctm_abc123", subscription_ids: ["sub_abc123"]
+```
+
+
 ### Adjustments
 
 ```ruby

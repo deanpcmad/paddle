@@ -77,6 +77,57 @@ Paddle::Product.list(per_page: 10, after: "abc123")
 >
 > The Paddle API doesn't take `nil` values for optional parameters. If you want to remove a value, you'll need to pass `"null"` instead.
 
+### Error Handling
+
+When API requests fail, the gem provides detailed error information to help you debug issues. Errors are raised as exceptions with comprehensive details including field-level validation errors.
+
+#### Error Structure
+
+All errors inherit from `Paddle::ErrorGenerator` and include:
+- HTTP status code
+- Error code from Paddle
+- Detailed error message
+- Field-specific validation errors (when applicable)
+- Documentation URL for more information
+- Request ID for support
+
+#### Available Error Classes
+
+- `Paddle::Errors::BadRequestError` (400) - Invalid request parameters
+- `Paddle::Errors::AuthenticationMissingError` (401) - Missing or invalid API credentials
+- `Paddle::Errors::ForbiddenError` (403) - Insufficient permissions
+- `Paddle::Errors::EntityNotFoundError` (404) - Resource not found
+- `Paddle::Errors::ConflictError` (409) - Request conflicts with existing data
+- `Paddle::Errors::TooManyRequestsError` (429) - Rate limit exceeded
+- `Paddle::Errors::InternalError` (500) - Server error
+- `Paddle::Errors::ServiceUnavailableError` (503) - Service unavailable
+
+#### Error Example
+
+When creating a Price with invalid parameters, you'll receive a detailed error:
+
+```ruby
+begin
+  Paddle::Price.create(product_id: "pro_123", trial_period: { frequency: "monthly" })
+rescue Paddle::Errors::BadRequestError => e
+  puts e.message
+  # => Error 400: Invalid request. 'bad_request'
+  #    Field errors:
+  #      - trial_period.frequency: Invalid type. Expected: integer, given: string
+  #      - trial_period: Must validate one and only one schema (oneOf)
+  #    Documentation: https://developer.paddle.com/v1/errors/shared/bad_request
+  #    Request ID: e385967f-4298-4240-a971-f988209b32ca
+
+  # Access error details programmatically
+  e.http_status_code      #=> 400
+  e.paddle_error_code     #=> "bad_request"
+  e.paddle_error_message  #=> "Invalid request."
+  e.paddle_errors         #=> [{"field"=>"trial_period.frequency", "message"=>"Invalid type. Expected: integer, given: string"}, ...]
+  e.documentation_url     #=> "https://developer.paddle.com/v1/errors/shared/bad_request"
+  e.request_id            #=> "e385967f-4298-4240-a971-f988209b32ca"
+end
+```
+
 ### Updating records
 
 For API endpoints that support it, you can use the `update` method to update a record, like so:

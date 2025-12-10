@@ -432,6 +432,22 @@ Paddle::Adjustment.create(
 Paddle::Adjustment.credit_note(id: "adj_abc123", disposition: "inline")
 ```
 
+### Payment Methods
+
+```ruby
+# List all payment methods for a customer
+# https://developer.paddle.com/api-reference/payment-methods/list-payment-methods
+Paddle::PaymentMethod.list customer: "ctm_abc123"
+
+# Retrieve a single payment method for a customer
+# https://developer.paddle.com/api-reference/payment-methods/get-payment-method
+Paddle::PaymentMethod.retrieve customer: "ctm_abc123", id: "paymtd_abc123"
+
+# Delete a payment method for a customer
+# https://developer.paddle.com/api-reference/payment-methods/delete-payment-method
+Paddle::PaymentMethod.delete customer: "ctm_abc123", id: "paymtd_abc123"
+```
+
 ### Event Types
 
 ```ruby

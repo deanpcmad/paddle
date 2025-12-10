@@ -49,6 +49,7 @@ module Paddle
   autoload :SimulationRunEvent, "paddle/models/simulation_run_event"
   autoload :PortalSession, "paddle/models/portal_session"
   autoload :PaymentMethod, "paddle/models/payment_method"
+  autoload :ClientToken, "paddle/models/client_token"
 
   autoload :NotificationLog, "paddle/models/notification_log"
   autoload :CreditBalance, "paddle/models/credit_balance"

@@ -596,6 +596,27 @@ Paddle::SimulationRun.events(simulation_id: "ntfsim_abc123", run_id: "ntfsimrun_
 Paddle::SimulationRunEvent.replay(simulation_id: "ntfsim_abc123", run_id: "ntfsimrun_abc123", id: "ntfsimevt_abc123")
 ```
 
+### Client Tokens
+
+```ruby
+# List all Client Tokens
+# https://developer.paddle.com/api-reference/client-tokens/list-client-tokens
+Paddle::ClientToken.list
+
+# Create a Client Token
+# https://developer.paddle.com/api-reference/client-tokens/create-client-token
+Paddle::ClientToken.create name: "My Token"
+
+# Get a Client Token
+# https://developer.paddle.com/api-reference/client-tokens/get-client-token
+Paddle::ClientToken.retrieve id: "ctkn_abc123"
+
+# Update a Client Token
+# https://developer.paddle.com/api-reference/client-tokens/update-client-token
+Paddle::ClientToken.update id: "ctkn_abc123", status: "revoked"
+```
+
+
 ## Classic API
 
 For accessing the Paddle Classic API

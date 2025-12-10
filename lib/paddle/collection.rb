@@ -1,5 +1,7 @@
 module Paddle
   class Collection
+    include Enumerable
+
     attr_reader :data, :total
 
     def self.from_response(response, type:)

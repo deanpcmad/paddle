@@ -26,6 +26,11 @@ module Paddle
         response = Client.get_request("customers/#{id}/credit-balances")
         CreditBalance.new(response.body["data"][0])
       end
+
+      def auth_token(id:)
+        response = Client.post_request("customers/#{id}/auth-token", body: "")
+        CustomerAuthToken.new(response.body["data"])
+      end
     end
   end
 end

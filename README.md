@@ -247,6 +247,11 @@ Paddle::Customer.update(id: "ctm_abc123", status: "archived")
 # Retrieve credit balance for a customer
 # https://developer.paddle.com/api-reference/customers/list-credit-balances
 Paddle::Customer.credit(id: "ctm_abc123")
+
+# Generate an authentication token for a customer
+# https://developer.paddle.com/api-reference/customers/generate-customer-authentication-token
+Paddle::Customer.auth_token id: "ctm_abc123"
+#=> #<Paddle::CustomerAuthToken customer_auth_token="pca_abc123", expires_at="2025-12-10T16:21:21.554Z">
 ```
 
 ### Addresses

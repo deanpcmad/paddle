@@ -3,6 +3,9 @@ module Paddle
     attr_reader :http_status_code
     attr_reader :paddle_error_code
     attr_reader :paddle_error_message
+    attr_reader :paddle_errors
+    attr_reader :documentation_url
+    attr_reader :request_id
 
     def initialize(response_body, http_status_code)
       @response_body = response_body
@@ -16,6 +19,9 @@ module Paddle
     def set_paddle_error_values
       @paddle_error_code = @response_body.dig("error", "code")
       @paddle_error_message = @response_body.dig("error", "detail")
+      @paddle_errors = @response_body.dig("error", "errors") || []
+      @documentation_url = @response_body.dig("error", "documentation_url")
+      @request_id = @response_body.dig("meta", "request_id")
     end
 
     def error_message
@@ -25,10 +31,31 @@ module Paddle
     end
 
     def build_message
-      if paddle_error_code.nil?
-        return "Error #{@http_status_code}: #{error_message}"
+      base_message = if paddle_error_code.nil?
+        "Error #{@http_status_code}: #{error_message}"
+      else
+        "Error #{@http_status_code}: #{error_message} '#{paddle_error_code}'"
       end
-      "Error #{@http_status_code}: #{error_message} '#{paddle_error_code}'"
+
+      # Add detailed field errors if present
+      if @paddle_errors && !@paddle_errors.empty?
+        field_errors = @paddle_errors.map do |err|
+          "  - #{err['field']}: #{err['message']}"
+        end.join("\n")
+        base_message += "\nField errors:\n#{field_errors}"
+      end
+
+      # Add documentation URL if present
+      if @documentation_url
+        base_message += "\nDocumentation: #{@documentation_url}"
+      end
+
+      # Add request ID if present (useful for support)
+      if @request_id
+        base_message += "\nRequest ID: #{@request_id}"
+      end
+
+      base_message
     end
   end
 
@@ -37,7 +64,8 @@ module Paddle
       private
 
       def error_message
-        "Your request was malformed."
+        # Use the detailed Paddle error message if available, otherwise fall back to generic message
+        @paddle_error_message || "Your request was malformed."
       end
     end
 

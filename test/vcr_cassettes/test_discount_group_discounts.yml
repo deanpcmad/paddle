@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-api.paddle.com/discounts?discount_group_id=dsg_01kdnzzfakgpvj1ky1rtb43cs5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - paddle/v2.8 (github.com/deanpcmad/paddle)
+      Paddle-Version:
+      - '1'
+      Authorization:
+      - Bearer <AUTHORIZATION>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 04 Jan 2026 17:24:03 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      content-encoding:
+      - gzip
+      allow:
+      - GET, POST, OPTIONS
+      cache-control:
+      - no-store, max-age=0
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),screen-wake-lock=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),web-share=(),xr-spatial-tracking=()
+      pragma:
+      - no-cache
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - 0430e598-2f22-4b6a-9145-7033ca539ccc
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      x-robots-tag:
+      - noindex, nofollow
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=9SkW3lAuKwOU4QkDgUqqzWCCgXWG_bB_kV1eKpAwEdo-1767547443-1.0.1.1-E4bCs2xPObhiJyJEsnLAwQ4XKtTYJyiI0k3Li6c51c9PiTQGGdVWypPMQWv0Y8OsKYa2gpoApAjX4NJ6JBe.ZUcjLgqHsQz7iNXhvkCk6Q4;
+        path=/; expires=Sun, 04-Jan-26 17:54:03 GMT; domain=.paddle.com; HttpOnly;
+        Secure; SameSite=None
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      server:
+      - cloudflare
+      cf-ray:
+      - 9b8c6d63d9765e99-VIE
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"id":"dsc_01kdp032j5131v4q3gv633g4hz","status":"active","description":"10%
+        Off","enabled_for_checkout":false,"code":"10OFF","type":"percentage","amount":"10","currency_code":null,"recur":false,"maximum_recurring_intervals":null,"usage_limit":null,"restrict_to":null,"expires_at":null,"mode":"standard","times_used":0,"custom_data":null,"import_meta":null,"discount_group_id":"dsg_01kdnzzfakgpvj1ky1rtb43cs5","created_at":"2025-12-29T21:26:38.917Z","updated_at":"2025-12-29T21:27:28.665Z"},{"id":"dsc_01kdp0dmv1d2rzdwx91zpc322j","status":"active","description":"20%
+        Off","enabled_for_checkout":false,"code":"20OFF","type":"percentage","amount":"20","currency_code":null,"recur":false,"maximum_recurring_intervals":null,"usage_limit":null,"restrict_to":null,"expires_at":null,"mode":"standard","times_used":0,"custom_data":null,"import_meta":null,"discount_group_id":"dsg_01kdnzzfakgpvj1ky1rtb43cs5","created_at":"2025-12-29T21:32:25.313Z","updated_at":"2025-12-29T21:32:25.313Z"},{"id":"dsc_01ke4zpyn3pm6n9r7c437pfvhh","status":"active","description":"$10
+        off","enabled_for_checkout":false,"code":null,"type":"flat","amount":"1000","currency_code":"USD","recur":false,"maximum_recurring_intervals":null,"usage_limit":null,"restrict_to":null,"expires_at":null,"mode":"standard","times_used":0,"custom_data":null,"import_meta":null,"discount_group_id":"dsg_01kdnzzfakgpvj1ky1rtb43cs5","created_at":"2026-01-04T17:08:38.179Z","updated_at":"2026-01-04T17:08:38.179Z"}],"meta":{"request_id":"0430e598-2f22-4b6a-9145-7033ca539ccc","pagination":{"per_page":50,"next":"https://sandbox-api.paddle.com/discounts?after=dsc_01ke4zpyn3pm6n9r7c437pfvhh\u0026discount_group_id=dsg_01kdnzzfakgpvj1ky1rtb43cs5","has_more":false,"estimated_total":3}}}'
+  recorded_at: Sun, 04 Jan 2026 17:24:03 GMT
+recorded_with: VCR 6.3.1

@@ -221,6 +221,37 @@ discount.update(description: "An updated description")
 Paddle::Discount.update(id: "dsc_abc123", description: "An updated description")
 ```
 
+### Discount Groups
+
+```ruby
+# List all discount groups
+# https://developer.paddle.com/api-reference/discount-groups/list-discount-groups
+Paddle::DiscountGroup.list
+Paddle::DiscountGroup.list(status: "active")
+
+# Create a discount group
+# https://developer.paddle.com/api-reference/discount-groups/create-discount-group
+Paddle::DiscountGroup.create(name: "Black Friday Promotion")
+
+# Retrieve a discount group
+# https://developer.paddle.com/api-reference/discount-groups/get-discount-group
+discount_group = Paddle::DiscountGroup.retrieve(id: "dsg_abc123")
+
+# Update a discount group
+# https://developer.paddle.com/api-reference/discount-groups/update-discount-group
+discount_group.update(name: "Updated name")
+# or
+Paddle::DiscountGroup.update(id: "dsg_abc123", name: "Updated name")
+
+# Create a discount in a discount group
+discount_group.create_discount(description: "$10 off", type: "flat", amount: "1000", currency_code: "USD")
+# or
+Paddle::Discount.create(discount_group_id: discount_group.id, description: "$10 off", type: "flat", amount: "1000", currency_code: "USD")
+
+# List discounts in a discount group
+discounts = discount_group.discounts
+```
+
 ### Customers
 
 ```ruby

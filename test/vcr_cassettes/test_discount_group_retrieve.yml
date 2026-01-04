@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-api.paddle.com/discount-groups/dsg_01kdnzzfakgpvj1ky1rtb43cs5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - paddle/v2.8 (github.com/deanpcmad/paddle)
+      Paddle-Version:
+      - '1'
+      Authorization:
+      - Bearer <AUTHORIZATION>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 04 Jan 2026 16:53:14 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      content-encoding:
+      - gzip
+      allow:
+      - GET, PATCH, OPTIONS
+      cache-control:
+      - no-store, max-age=0
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; base-uri 'none'
+      cross-origin-embedder-policy:
+      - require-corp
+      cross-origin-opener-policy:
+      - same-origin
+      cross-origin-resource-policy:
+      - same-site
+      permissions-policy:
+      - accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),screen-wake-lock=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),web-share=(),xr-spatial-tracking=()
+      pragma:
+      - no-cache
+      referrer-policy:
+      - no-referrer
+      request-id:
+      - 73789072-79c3-44cb-9375-13ec7a21e9e9
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-permitted-cross-domain-policies:
+      - none
+      x-robots-tag:
+      - noindex, nofollow
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=Xi6MiaM0VSFJHeEDDUrbHhiT5orvrOYnpXDB3ZBqcuI-1767545594-1.0.1.1-gB19K02ck1HZJMHjUTaBXiq1w5lpmk4vErhLk206RxaXCrCC0C4TKSyVwD7G673eLJ3jg8CVKW7YJoDbQMvU6fQ_MuoXvLbEcfvNgH51nCo;
+        path=/; expires=Sun, 04-Jan-26 17:23:14 GMT; domain=.paddle.com; HttpOnly;
+        Secure; SameSite=None
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      server:
+      - cloudflare
+      cf-ray:
+      - 9b8c403caad3f52b-VIE
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"id":"dsg_01kdnzzfakgpvj1ky1rtb43cs5","status":"active","name":"Test
+        group","import_meta":null,"created_at":"2025-12-29T21:24:40.915Z","updated_at":"2025-12-29T21:24:40.915Z"},"meta":{"request_id":"73789072-79c3-44cb-9375-13ec7a21e9e9"}}'
+  recorded_at: Sun, 04 Jan 2026 16:53:14 GMT
+recorded_with: VCR 6.3.1

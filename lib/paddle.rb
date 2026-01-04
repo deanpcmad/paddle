@@ -32,6 +32,7 @@ module Paddle
   autoload :Price, "paddle/models/price"
   autoload :PricingPreview, "paddle/models/pricing_preview"
   autoload :Discount, "paddle/models/discount"
+  autoload :DiscountGroup, "paddle/models/discount_group"
   autoload :Customer, "paddle/models/customer"
   autoload :Address, "paddle/models/address"
   autoload :Business, "paddle/models/business"

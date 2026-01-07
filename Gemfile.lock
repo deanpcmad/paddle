@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    paddle (2.8)
+    paddle (2.9)
       cgi
       faraday (~> 2.11)
       ostruct (~> 0.6.0)
@@ -107,4 +107,4 @@ DEPENDENCIES
   vcr
 
 BUNDLED WITH
-   4.0.3
+  4.0.3

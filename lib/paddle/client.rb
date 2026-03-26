@@ -26,7 +26,7 @@ module Paddle
       private
 
       def create_connection
-        Faraday.new(Paddle.config.url) do |conn|
+        Faraday.new(Paddle.config.url, Paddle.config.connection_options) do |conn|
           conn.request :authorization, :Bearer, Paddle.config.api_key
           conn.headers = default_headers
           conn.request :json

@@ -6,10 +6,12 @@ module Paddle
 
     attr_accessor :version
     attr_accessor :api_key
+    attr_accessor :connection_options
 
     def initialize
       @environment ||= :production
       @version ||= 1
+      @connection_options = {}
     end
 
     def environment=(env)

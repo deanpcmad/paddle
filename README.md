@@ -33,6 +33,21 @@ Paddle.configure do |config|
 end
 ```
 
+### Connection Options
+
+You can pass [options](https://lostisland.github.io/faraday/#/customization/connection-options) to the underlying [Faraday](https://lostisland.github.io/faraday/) connection using `connection_options`. This is useful for setting timeouts, proxies, or SSL configuration:
+
+```ruby
+Paddle.configure do |config|
+  config.environment = :sandbox
+  config.api_key = ENV["PADDLE_API_KEY"]
+
+  config.connection_options = {
+    request: { timeout: 10, open_timeout: 5 }
+  }
+end
+```
+
 ### Resources
 
 The gem maps as closely as we can to the Paddle API so you can easily convert API examples to gem code.
@@ -84,6 +99,7 @@ When API requests fail, the gem provides detailed error information to help you 
 #### Error Structure
 
 All errors inherit from `Paddle::ErrorGenerator` and include:
+
 - HTTP status code
 - Error code from Paddle
 - Detailed error message
@@ -432,7 +448,6 @@ Paddle::PortalSession.create customer: "ctm_abc123"
 Paddle::PortalSession.create customer: "ctm_abc123", subscription_ids: ["sub_abc123"]
 ```
 
-
 ### Adjustments
 
 ```ruby
@@ -582,7 +597,7 @@ Paddle::Report.create(
 
 ### Webhook Simulation Types
 
-Retrieves a list of Simulation Types - https://developer.paddle.com/api-reference/simulation-types/overview
+Retrieves a list of Simulation Types - <https://developer.paddle.com/api-reference/simulation-types/overview>
 
 ```ruby
 Paddle::SimulationType.list
@@ -647,7 +662,6 @@ Paddle::ClientToken.retrieve id: "ctkn_abc123"
 Paddle::ClientToken.update id: "ctkn_abc123", status: "revoked"
 ```
 
-
 ## Classic API
 
 For accessing the Paddle Classic API
@@ -705,7 +719,7 @@ or [here for sandbox](https://sandbox-vendors.paddle.com/authentication)
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/deanpcmad/paddle.
+Bug reports and pull requests are welcome on GitHub at <https://github.com/deanpcmad/paddle>.
 
 ## License
 

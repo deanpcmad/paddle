@@ -74,7 +74,7 @@ module Paddle
             "User-Agent" => "paddle/v#{VERSION} (github.com/deanpcmad/paddle)"
           }
 
-          conn.request :json
+          conn.request :url_encoded
 
           conn.response :json, content_type: "application/json"
 
